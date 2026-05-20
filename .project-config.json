@@ -1,0 +1,35 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [],
+  "dev_command": "pnpm run dev",
+  "env_vars": {},
+  "experiments": null,
+  "git_remote": {
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663671703947/ByE3kmzuQb5KTYZxGpjf2U",
+    "access_key_id": "ASIAZV3A2ECZHXM6Z6N5",
+    "secret_access_key": "v7mfp58v+aMNCuoAfO67+7X9/zGizZprZ3srIznX",
+    "session_token": "IQoJb3JpZ2luX2VjEB0aCXVzLWVhc3QtMSJIMEYCIQDVMR/gs/YrZUTvOhoQFIK9xS0yAANt8F4gIkdOyw4lxQIhAJy29/teKPsD3YcNDuWmj3btBmail0HymZSJmJ52ptVtKv8DCOb//////////wEQBBoMNjY1Mzg2MDk4ODY2Igwdyytw2TUXCwLLOy4q0wPgZGg1Y3N2SupeIti4wlrqe2AVYxfu/5bJoQ39R4tq/drD0i8kcvONluCjNxp+GCpVXznSook3PL39Q5VHa6BqtmUL1UeQPkfo6cjyI7ceaqgKwo2xqoCffsfBepxG6iTgp6R5jPYBwluVhqUzAb5/DrGWOoEbv66AmKwZm/6ToZmiFxWMV2vHFmYj5KeLX/hyDp4pEdOoBIhDqkrQ8ckm4uLYGGmgOOVh01HC+8kXGdJ+bXVsTMQEzMSH66TzxxDRYsxRdrjg6BVqBoMiaRcW63aWeyAGS9v6Mv5o+VprKy0cjrCDPu72lIOSu00UkIeRTrCWzuwbvRR8gNIf3vYf3wUV/jsrPgkEo4VYxFCnN6BUVot3tgxtti+abCW/qg1vpqVXWy7h1YK0HB0aC3/rd4e+aGBy+gDXWvVU2cp94DgqnuZ6bQZdJeXXR8ZwClllJMRvZ+JvLirs0/JfiWvmDbeuBM6H4/Lc0CnWFz/BNnfhHcWEddb4qIeWK3wTx482b9oXL7SAgk96r79GPKWqk1yuvRj+BQPNmA9Ix0pkZ1J1oB54CJsBq4GPzj6gMHCMp5JhlLHwgCa7qFiEmdDptrKghKVZFtIRAbgHb0J0V33LrzDD+rTQBjqcAYa88qqoe7z6Zb0lAomvRogRsOUAWwcJ+agTC9JQOqvXEl+1dLq5l8OHLq7OESAVOuenYYTAd2t2AtZ7TC/PUagL1MWVeEBAYOINY3QSINTv4L9R54Ch/kuudT5a1kPl3YMmLFkGA2ycmQQhPprakYc24Wl5XaMTnqjz6tNvJfxwt5K6NqTsPgY2YvuZeBznxxtGI7aHByNwN4UZsw==",
+    "expiration": "2026-05-20T16:49:07.000Z"
+  },
+  "name": "utsa-das-portfolio-new",
+  "path": "/home/ubuntu/utsa-das-portfolio-new",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "koR3GWaR3D6iHN63L8SzNe",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "JWT_SECRET": "d7xDYdjD3g3NLqMF2k5qMs",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "Utsa",
+    "OWNER_OPEN_ID": "6e7oPXPEz3rVL4HtVcTXfy",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "0a32c133-6924-4d52-8a87-2a803a75e384",
+    "VITE_APP_ID": "ByE3kmzuQb5KTYZxGpjf2U",
+    "VITE_APP_LOGO": "",
+    "VITE_APP_TITLE": "Utsa Das | SEO \u0026 GEO Strategist",
+    "VITE_FRONTEND_FORGE_API_KEY": "fGgLSWG8mgDew9K2W2qy5E",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-static",
+  "test_command": "pnpm test"
+}
