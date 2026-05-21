@@ -1,1 +1,324 @@
-import Layout from \"@/components/Layout\";\nimport SectionHeader from \"@/components/SectionHeader\";\nimport Hero from \"@/components/Hero\";\nimport { motion } from \"framer-motion\";\nimport { Code2, Zap, Brain, BarChart3 } from \"lucide-react\";\nimport { Button } from \"@/components/ui/button\";\nimport { Link } from \"wouter\";\n\nconst Skills = () => {\n  const skillCategories = [\n    {\n      icon: Zap,\n      title: \"Technical SEO\",\n      skills: [\n        \"Core Web Vitals Optimization\",\n        \"Site Architecture & Structure\",\n        \"XML Sitemaps & Robots.txt\",\n        \"Schema Markup & Structured Data\",\n        \"Mobile-First Indexing\",\n        \"Page Speed Optimization\",\n        \"Crawl Budget Management\",\n        \"Technical Audits\",\n      ],\n    },\n    {\n      icon: Brain,\n      title: \"GEO & AI Search\",\n      skills: [\n        \"ChatGPT Optimization\",\n        \"Gemini Visibility\",\n        \"Perplexity Ranking\",\n        \"AI Search Strategy\",\n        \"Generative Engine Optimization\",\n        \"AI Content Optimization\",\n        \"LLM-Friendly Content\",\n        \"AI Search Analytics\",\n      ],\n    },\n    {\n      icon: BarChart3,\n      title: \"Content & Strategy\",\n      skills: [\n        \"Keyword Research & Analysis\",\n        \"Content Strategy\",\n        \"SEO Copywriting\",\n        \"Content Calendar Management\",\n        \"Topic Clustering\",\n        \"Competitive Analysis\",\n        \"User Intent Mapping\",\n        \"Content Gap Analysis\",\n      ],\n    },\n    {\n      icon: Code2,\n      title: \"Development & Tools\",\n      skills: [\n        \"Next.js & React\",\n        \"TypeScript\",\n        \"Tailwind CSS\",\n        \"SEO Implementation\",\n        \"Web Performance\",\n        \"API Integration\",\n        \"Database Design\",\n        \"DevOps & Deployment\",\n      ],\n    },\n  ];\n\n  const tools = [\n    {\n      category: \"SEO & Analytics\",\n      items: [\n        \"SEMrush\",\n        \"Ahrefs\",\n        \"Moz\",\n        \"Google Search Console\",\n        \"Google Analytics 4\",\n        \"Screaming Frog\",\n        \"Lighthouse\",\n        \"GTmetrix\",\n      ],\n    },\n    {\n      category: \"AI & GEO Tools\",\n      items: [\n        \"ChatGPT\",\n        \"Gemini\",\n        \"Perplexity\",\n        \"Claude\",\n        \"Copilot\",\n        \"Custom AI Models\",\n        \"LLM APIs\",\n        \"AI Testing Tools\",\n      ],\n    },\n    {\n      category: \"Content & Collaboration\",\n      items: [\n        \"Notion\",\n        \"Airtable\",\n        \"Slack\",\n        \"Figma\",\n        \"Google Workspace\",\n        \"Zapier\",\n        \"Make\",\n        \"GitHub\",\n      ],\n    },\n    {\n      category: \"Development Stack\",\n      items: [\n        \"Next.js\",\n        \"React\",\n        \"TypeScript\",\n        \"Tailwind CSS\",\n        \"Node.js\",\n        \"PostgreSQL\",\n        \"Vercel\",\n        \"Docker\",\n      ],\n    },\n  ];\n\n  const certifications = [\n    {\n      title: \"Google Analytics Certification\",\n      issuer: \"Google\",\n      year: \"2023\",\n    },\n    {\n      title: \"Google Search Central Certification\",\n      issuer: \"Google\",\n      year: \"2023\",\n    },\n    {\n      title: \"Advanced SEO Certification\",\n      issuer: \"Moz Academy\",\n      year: \"2022\",\n    },\n    {\n      title: \"Technical SEO Specialist\",\n      issuer: \"SEMrush Academy\",\n      year: \"2022\",\n    },\n  ];\n\n  return (\n    <Layout>\n      <Hero\n        headline=\"Skills & Expertise\"\n        subheadline=\"Technical Mastery & Strategic Knowledge\"\n        ctaText=\"Work Together\"\n        ctaHref=\"/contact\"\n        secondaryCtaText=\"View Services\"\n        secondaryCtaHref=\"/services\"\n      />\n\n      <section className=\"py-20 md:py-32 border-b border-border\">\n        <div className=\"container\">\n          <SectionHeader\n            subtitle=\"Expertise Areas\"\n            title=\"Core Competencies\"\n            description=\"Deep expertise across technical SEO, GEO optimization, content strategy, and modern development\"\n          />\n\n          <div className=\"grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12\">\n            {skillCategories.map((category, index) => {\n              const Icon = category.icon;\n              return (\n                <motion.div\n                  key={index}\n                  initial={{ opacity: 0, y: 20 }}\n                  whileInView={{ opacity: 1, y: 0 }}\n                  transition={{ duration: 0.6, delay: index * 0.1 }}\n                  viewport={{ once: true }}\n                  className=\"bg-card border border-border rounded-xl p-6 hover:border-accent transition-all duration-300\"\n                >\n                  <div className=\"w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4\">\n                    <Icon className=\"w-6 h-6 text-accent\" />\n                  </div>\n                  <h3 className=\"font-bold text-lg mb-4 text-foreground\">\n                    {category.title}\n                  </h3>\n                  <ul className=\"space-y-2\">\n                    {category.skills.map((skill, idx) => (\n                      <li key={idx} className=\"flex items-start gap-2 text-sm\">\n                        <div className=\"w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0\" />\n                        <span className=\"text-foreground/70\">{skill}</span>\n                      </li>\n                    ))}\n                  </ul>\n                </motion.div>\n              );\n            })}\n          </div>\n        </div>\n      </section>\n\n      <section className=\"py-20 md:py-32 border-b border-border\">\n        <div className=\"container\">\n          <SectionHeader\n            subtitle=\"Tools & Technologies\"\n            title=\"What I Use\"\n            description=\"Industry-leading platforms and tools for optimal results\"\n          />\n\n          <div className=\"grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12\">\n            {tools.map((toolGroup, index) => (\n              <motion.div\n                key={index}\n                initial={{ opacity: 0, y: 20 }}\n                whileInView={{ opacity: 1, y: 0 }}\n                transition={{ duration: 0.6, delay: index * 0.1 }}\n                viewport={{ once: true }}\n                className=\"bg-card border border-border rounded-xl p-6\"\n              >\n                <h3 className=\"font-bold text-lg mb-4 text-foreground\">\n                  {toolGroup.category}\n                </h3>\n                <ul className=\"space-y-2\">\n                  {toolGroup.items.map((tool, idx) => (\n                    <li key={idx} className=\"flex items-center gap-2 text-sm\">\n                      <div className=\"w-1.5 h-1.5 rounded-full bg-accent\" />\n                      <span className=\"text-foreground/70\">{tool}</span>\n                    </li>\n                  ))}\n                </ul>\n              </motion.div>\n            ))}\n          </div>\n        </div>\n      </section>\n\n      <section className=\"py-20 md:py-32 border-b border-border\">\n        <div className=\"container max-w-4xl\">\n          <SectionHeader\n            subtitle=\"Credentials\"\n            title=\"Certifications\"\n            description=\"Industry-recognized certifications and continuous learning\"\n          />\n\n          <div className=\"grid md:grid-cols-2 gap-6 mt-12\">\n            {certifications.map((cert, index) => (\n              <motion.div\n                key={index}\n                initial={{ opacity: 0, y: 20 }}\n                whileInView={{ opacity: 1, y: 0 }}\n                transition={{ duration: 0.6, delay: index * 0.1 }}\n                viewport={{ once: true }}\n                className=\"bg-card border border-border rounded-xl p-6\"\n              >\n                <div className=\"flex items-start justify-between\">\n                  <div>\n                    <h3 className=\"font-bold text-foreground mb-1\">{cert.title}</h3>\n                    <p className=\"text-sm text-foreground/60 mb-2\">{cert.issuer}</p>\n                  </div>\n                  <span className=\"text-xs font-semibold text-accent\">{cert.year}</span>\n                </div>\n              </motion.div>\n            ))}\n          </div>\n        </div>\n      </section>\n\n      <section className=\"py-20 md:py-32\">\n        <div className=\"container max-w-4xl text-center\">\n          <motion.div\n            initial={{ opacity: 0, y: 20 }}\n            whileInView={{ opacity: 1, y: 0 }}\n            transition={{ duration: 0.6 }}\n            viewport={{ once: true }}\n            className=\"space-y-6\"\n          >\n            <h2 className=\"text-4xl md:text-5xl font-bold font-['Space_Grotesk'] text-foreground\">\n              Ready to Leverage This Expertise?\n            </h2>\n            <p className=\"text-lg text-foreground/60 max-w-2xl mx-auto\">\n              Let's discuss how my skills and experience can help your business achieve\n              exceptional results.\n            </p>\n            <div className=\"flex flex-col sm:flex-row items-center justify-center gap-4 pt-4\">\n              <Link href=\"/contact\">\n                <Button size=\"lg\" className=\"bg-accent hover:bg-accent/90 text-accent-foreground font-semibold\">\n                  Schedule Consultation\n                </Button>\n              </Link>\n              <Link href=\"/services\">\n                <Button\n                  size=\"lg\"\n                  variant=\"outline\"\n                  className=\"border-foreground/20 hover:border-accent hover:text-accent\"\n                >\n                  View Services\n                </Button>\n              </Link>\n            </div>\n          </motion.div>\n        </div>\n      </section>\n    </Layout>\n  );\n};\n\nexport default Skills;\n
+import Layout from "@/components/Layout";
+import SectionHeader from "@/components/SectionHeader";
+import Hero from "@/components/Hero";
+import SEO from "@/components/SEO";
+import { motion } from "framer-motion";
+import { Code2, Zap, Brain, BarChart3 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
+import { getBreadcrumbSchema } from "@/lib/schema";
+
+const Skills = () => {
+  const skillCategories = [
+    {
+      icon: Zap,
+      title: "Technical SEO",
+      skills: [
+        "Core Web Vitals Optimization",
+        "Site Architecture & Structure",
+        "XML Sitemaps & Robots.txt",
+        "Schema Markup & Structured Data",
+        "Mobile-First Indexing",
+        "Page Speed Optimization",
+        "Crawl Budget Management",
+        "Technical Audits",
+      ],
+    },
+    {
+      icon: Brain,
+      title: "GEO & AI Search",
+      skills: [
+        "ChatGPT Optimization",
+        "Gemini Visibility",
+        "Perplexity Ranking",
+        "AI Search Strategy",
+        "Generative Engine Optimization",
+        "AI Content Optimization",
+        "LLM-Friendly Content",
+        "AI Search Analytics",
+      ],
+    },
+    {
+      icon: BarChart3,
+      title: "Content & Strategy",
+      skills: [
+        "Keyword Research & Analysis",
+        "Content Strategy",
+        "SEO Copywriting",
+        "Content Calendar Management",
+        "Topic Clustering",
+        "Competitive Analysis",
+        "User Intent Mapping",
+        "Content Gap Analysis",
+      ],
+    },
+    {
+      icon: Code2,
+      title: "Development & Tools",
+      skills: [
+        "Next.js & React",
+        "TypeScript",
+        "Tailwind CSS",
+        "SEO Implementation",
+        "Web Performance",
+        "API Integration",
+        "Database Design",
+        "DevOps & Deployment",
+      ],
+    },
+  ];
+
+  const tools = [
+    {
+      category: "SEO & Analytics",
+      items: [
+        "SEMrush",
+        "Ahrefs",
+        "Moz",
+        "Google Search Console",
+        "Google Analytics 4",
+        "Screaming Frog",
+        "Lighthouse",
+        "GTmetrix",
+      ],
+    },
+    {
+      category: "AI & GEO Tools",
+      items: [
+        "ChatGPT",
+        "Gemini",
+        "Perplexity",
+        "Claude",
+        "Copilot",
+        "Custom AI Models",
+        "LLM APIs",
+        "AI Testing Tools",
+      ],
+    },
+    {
+      category: "Content & Collaboration",
+      items: [
+        "Notion",
+        "Airtable",
+        "Slack",
+        "Figma",
+        "Google Workspace",
+        "Zapier",
+        "Make",
+        "GitHub",
+      ],
+    },
+    {
+      category: "Development Stack",
+      items: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js",
+        "PostgreSQL",
+        "Vercel",
+        "Docker",
+      ],
+    },
+  ];
+
+  const certifications = [
+    {
+      title: "Google Analytics Certification",
+      issuer: "Google",
+      year: "2023",
+    },
+    {
+      title: "Google Search Central Certification",
+      issuer: "Google",
+      year: "2023",
+    },
+    {
+      title: "Advanced SEO Certification",
+      issuer: "Moz Academy",
+      year: "2022",
+    },
+    {
+      title: "Technical SEO Specialist",
+      issuer: "SEMrush Academy",
+      year: "2022",
+    },
+  ];
+
+  const breadcrumbs = [
+    { name: "Home", item: "/" },
+    { name: "Skills", item: "/skills" }
+  ];
+
+  const combinedSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      getBreadcrumbSchema(breadcrumbs)
+    ]
+  };
+
+  return (
+    <Layout>
+      <SEO 
+        title="SEO & GEO Expertise | Utsa Das"
+        description="Deep dive into the technical SEO, GEO, and digital growth skills of Utsa Das. Expert in AI search optimization, content strategy, and modern web development."
+        canonical="/skills"
+        schemaMarkup={combinedSchema}
+      />
+      <Hero
+        headline="Skills & Expertise"
+        subheadline="Technical Mastery & Strategic Knowledge"
+        ctaText="Work Together"
+        ctaHref="/contact"
+        secondaryCtaText="View Services"
+        secondaryCtaHref="/services"
+      />
+
+      <section className="py-20 md:py-32 border-b border-border">
+        <div className="container">
+          <SectionHeader
+            subtitle="Expertise Areas"
+            title="Core Competencies"
+            description="Deep expertise across technical SEO, GEO optimization, content strategy, and modern development"
+          />
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+            {skillCategories.map((category, index) => {
+              const Icon = category.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-card border border-border rounded-xl p-6 hover:border-accent transition-all duration-300"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-accent" />
+                  </div>
+                  <h3 className="font-bold text-lg mb-4 text-foreground">
+                    {category.title}
+                  </h3>
+                  <ul className="space-y-2">
+                    {category.skills.map((skill, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-sm">
+                        <div className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0" />
+                        <span className="text-foreground/70">{skill}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-32 border-b border-border">
+        <div className="container">
+          <SectionHeader
+            subtitle="Tools & Technologies"
+            title="What I Use"
+            description="Industry-leading platforms and tools for optimal results"
+          />
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+            {tools.map((toolGroup, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-card border border-border rounded-xl p-6"
+              >
+                <h3 className="font-bold text-lg mb-4 text-foreground">
+                  {toolGroup.category}
+                </h3>
+                <ul className="space-y-2">
+                  {toolGroup.items.map((tool, idx) => (
+                    <li key={idx} className="flex items-center gap-2 text-sm">
+                      <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+                      <span className="text-foreground/70">{tool}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-32 border-b border-border">
+        <div className="container max-w-4xl">
+          <SectionHeader
+            subtitle="Credentials"
+            title="Certifications"
+            description="Industry-recognized certifications and continuous learning"
+          />
+
+          <div className="grid md:grid-cols-2 gap-6 mt-12">
+            {certifications.map((cert, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-card border border-border rounded-xl p-6"
+              >
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h3 className="font-bold text-foreground mb-1">{cert.title}</h3>
+                    <p className="text-sm text-foreground/60 mb-2">{cert.issuer}</p>
+                  </div>
+                  <span className="text-xs font-semibold text-accent">{cert.year}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-32">
+        <div className="container max-w-4xl text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold font-['Space_Grotesk'] text-foreground">
+              Ready to Leverage This Expertise?
+            </h2>
+            <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
+              Let's discuss how my skills and experience can help your business achieve
+              exceptional results.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+              <Link href="/contact">
+                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
+                  Schedule Consultation
+                </Button>
+              </Link>
+              <Link href="/services">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-foreground/20 hover:border-accent hover:text-accent"
+                >
+                  View Services
+                </Button>
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+export default Skills;
