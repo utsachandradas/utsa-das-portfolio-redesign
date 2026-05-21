@@ -20,11 +20,11 @@ export default function Hero({ backgroundImage }: HeroProps) {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: {
+    visible: (i: number) => ({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: [0.23, 1, 0.32, 1] },
-    },
+      transition: { duration: 0.8, delay: i * 0.1 },
+    }),
   };
 
   return (
@@ -66,7 +66,7 @@ export default function Hero({ backgroundImage }: HeroProps) {
           className="space-y-6"
         >
           {/* Badge */}
-          <motion.div variants={itemVariants} className="flex justify-center">
+          <motion.div custom={0} variants={itemVariants} className="flex justify-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-accent/30 bg-accent/5 backdrop-blur-sm">
               <Sparkles className="w-4 h-4 text-accent" />
               <span className="text-sm font-medium text-foreground/80">
@@ -76,7 +76,7 @@ export default function Hero({ backgroundImage }: HeroProps) {
           </motion.div>
 
           {/* Main Headline */}
-          <motion.div variants={itemVariants}>
+          <motion.div custom={1} variants={itemVariants}>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-['Space_Grotesk'] leading-tight">
               <span className="text-foreground">Helping Brands Grow</span>
               <br />
@@ -94,6 +94,7 @@ export default function Hero({ backgroundImage }: HeroProps) {
 
           {/* Subheadline */}
           <motion.p
+            custom={2}
             variants={itemVariants}
             className="text-xl md:text-2xl text-foreground/70 max-w-2xl mx-auto leading-relaxed"
           >
@@ -102,6 +103,7 @@ export default function Hero({ backgroundImage }: HeroProps) {
 
           {/* CTA Buttons */}
           <motion.div
+            custom={3}
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
           >
@@ -127,6 +129,7 @@ export default function Hero({ backgroundImage }: HeroProps) {
 
           {/* Trust Indicators */}
           <motion.div
+            custom={4}
             variants={itemVariants}
             className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-foreground/60"
           >
