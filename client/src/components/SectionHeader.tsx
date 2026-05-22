@@ -1,1 +1,57 @@
-import { motion } from \"framer-motion\";\nimport { cn } from \"@/lib/utils\";\n\n/**\n * Section Header Component\n * Design: Premium typography with accent highlights\n * - Subtitle with accent color\n * - Large bold heading using Space Grotesk\n * - Optional description text\n * - Flexible alignment (center/left)\n */\n\ninterface SectionHeaderProps {\n  subtitle?: string;\n  title: string;\n  description?: string;\n  align?: \"center\" | \"left\";\n}\n\nconst SectionHeader = ({\n  subtitle,\n  title,\n  description,\n  align = \"center\",\n}: SectionHeaderProps) => {\n  return (\n    <motion.div\n      initial={{ opacity: 0, y: 20 }}\n      whileInView={{ opacity: 1, y: 0 }}\n      transition={{ duration: 0.6 }}\n      viewport={{ once: true }}\n      className={cn(\"space-y-4\", align === \"center\" && \"text-center\")}\n    >\n      {subtitle && (\n        <p className=\"text-sm font-semibold text-accent uppercase tracking-wider\">\n          {subtitle}\n        </p>\n      )}\n      <h2 className=\"text-4xl md:text-5xl font-bold font-['Space_Grotesk'] text-foreground\">\n        {title}\n      </h2>\n      {description && (\n        <p\n          className={cn(\n            \"text-lg text-foreground/60 leading-relaxed\",\n            align === \"center\" && \"max-w-2xl mx-auto\"\n          )}\n        >\n          {description}\n        </p>\n      )}\n    </motion.div>\n  );\n};\n\nexport default SectionHeader;\n
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
+
+/**
+ * Section Header Component
+ * Design: Premium typography with accent highlights
+ * - Subtitle with accent color
+ * - Large bold heading using Space Grotesk
+ * - Optional description text
+ * - Flexible alignment (center/left)
+ */
+
+interface SectionHeaderProps {
+  subtitle?: string;
+  title: string;
+  description?: string;
+  align?: "center" | "left";
+}
+
+const SectionHeader = ({
+  subtitle,
+  title,
+  description,
+  align = "center",
+}: SectionHeaderProps) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className={cn("space-y-4", align === "center" && "text-center")}
+    >
+      {subtitle && (
+        <p className="text-sm font-semibold text-accent uppercase tracking-wider">
+          {subtitle}
+        </p>
+      )}
+      <h2 className="text-4xl md:text-5xl font-bold font-['Space_Grotesk'] text-foreground">
+        {title}
+      </h2>
+      {description && (
+        <p
+          className={cn(
+            "text-lg text-foreground/60 leading-relaxed",
+            align === "center" && "max-w-2xl mx-auto"
+          )}
+        >
+          {description}
+        </p>
+      )}
+    </motion.div>
+  );
+};
+
+export default SectionHeader;
+

@@ -1,1 +1,36 @@
-import { ReactNode } from \"react\";\nimport Navbar from \"./Navbar\";\nimport Footer from \"./Footer\";\nimport { motion } from \"framer-motion\";\n\n/**\n * Layout Component\n * Design: Premium dark minimal wrapper with page transitions\n * - Fixed navbar at top\n * - Main content area with fade-in animation\n * - Footer at bottom\n */\n\ninterface LayoutProps {\n  children: ReactNode;\n}\n\nconst Layout = ({ children }: LayoutProps) => {\n  return (\n    <div className=\"min-h-screen bg-background text-foreground flex flex-col\">\n      <Navbar />\n      <motion.main\n        className=\"flex-1\"\n        initial={{ opacity: 0 }}\n        animate={{ opacity: 1 }}\n        transition={{ duration: 0.4 }}\n      >\n        {children}\n      </motion.main>\n      <Footer />\n    </div>\n  );\n};\n\nexport default Layout;\n
+import { ReactNode } from "react";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import { motion } from "framer-motion";
+
+/**
+ * Layout Component
+ * Design: Premium dark minimal wrapper with page transitions
+ * - Fixed navbar at top
+ * - Main content area with fade-in animation
+ * - Footer at bottom
+ */
+
+interface LayoutProps {
+  children: ReactNode;
+}
+
+const Layout = ({ children }: LayoutProps) => {
+  return (
+    <div className="min-h-screen bg-background text-foreground flex flex-col">
+      <Navbar />
+      <motion.main
+        className="flex-1"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4 }}
+      >
+        {children}
+      </motion.main>
+      <Footer />
+    </div>
+  );
+};
+
+export default Layout;
+

@@ -1,1 +1,171 @@
-import { motion } from \"framer-motion\";\nimport { ArrowRight, ChevronDown } from \"lucide-react\";\nimport { Button } from \"@/components/ui/button\";\nimport { Link } from \"wouter\";\n\n/**\n * Hero Component\n * Design: Premium dark hero with background image, overlay, and floating elements\n * - Full-screen hero section\n * - Optional background image with overlay\n * - Animated headline with gradient accent\n * - Trust indicators\n * - Scroll indicator animation\n */\n\ninterface HeroProps {\n  backgroundImage?: string;\n  badge?: string;\n  headline: string;\n  subheadline: string;\n  ctaText?: string;\n  ctaHref?: string;\n  secondaryCtaText?: string;\n  secondaryCtaHref?: string;\n  trustIndicators?: string[];\n}\n\nconst Hero = ({\n  backgroundImage,\n  badge = \"Founder & SEO Expert\",\n  headline,\n  subheadline,\n  ctaText = \"Get Started\",\n  ctaHref = \"/contact\",\n  secondaryCtaText = \"Learn More\",\n  secondaryCtaHref = \"/about\",\n  trustIndicators = [\n    \"50+ Projects Completed\",\n    \"280% Avg Traffic Growth\",\n    \"98% Client Satisfaction\",\n  ],\n}: HeroProps) => {\n  const containerVariants = {\n    hidden: { opacity: 0 },\n    visible: {\n      opacity: 1,\n      transition: {\n        staggerChildren: 0.1,\n        delayChildren: 0.2,\n      },\n    },\n  };\n\n  const itemVariants = {\n    hidden: { opacity: 0, y: 20 },\n    visible: {\n      opacity: 1,\n      y: 0,\n      transition: { duration: 0.6, ease: \"easeOut\" },\n    },\n  };\n\n  return (\n    <section\n      className=\"relative min-h-screen flex items-center justify-center overflow-hidden pt-20\"\n      style={{\n        backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,\n        backgroundSize: \"cover\",\n        backgroundPosition: \"center\",\n      }}\n    >\n      {/* Background Overlay */}\n      <div className=\"absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background\" />\n\n      {/* Floating Decorative Elements */}\n      <motion.div\n        className=\"absolute top-20 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl\"\n        animate={{ y: [0, 30, 0], x: [0, 20, 0] }}\n        transition={{ duration: 8, repeat: Infinity, ease: \"easeInOut\" }}\n      />\n      <motion.div\n        className=\"absolute bottom-20 right-10 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl\"\n        animate={{ y: [0, -30, 0], x: [0, -20, 0] }}\n        transition={{ duration: 10, repeat: Infinity, ease: \"easeInOut\", delay: 1 }}\n      />\n\n      {/* Content */}\n      <motion.div\n        className=\"container relative z-10 max-w-4xl text-center\"\n        variants={containerVariants}\n        initial=\"hidden\"\n        animate=\"visible\"\n      >\n        {/* Badge */}\n        <motion.div\n          variants={itemVariants}\n          className=\"inline-flex items-center gap-2 px-4 py-2 rounded-full border border-accent/30 bg-accent/5 mb-6\"\n        >\n          <div className=\"w-2 h-2 rounded-full bg-accent\" />\n          <span className=\"text-sm font-medium text-accent\">{badge}</span>\n        </motion.div>\n\n        {/* Headline */}\n        <motion.h1 variants={itemVariants} className=\"text-5xl md:text-7xl font-bold font-['Space_Grotesk'] text-foreground mb-6 leading-tight\">\n          {headline}\n          <span className=\"block bg-gradient-to-r from-accent via-cyan-500 to-accent bg-clip-text text-transparent mt-2\">\n            {subheadline}\n          </span>\n        </motion.h1>\n\n        {/* Description */}\n        <motion.p\n          variants={itemVariants}\n          className=\"text-xl text-foreground/60 max-w-2xl mx-auto mb-8 leading-relaxed\"\n        >\n          Helping founders and businesses achieve exceptional visibility and sustainable growth through strategic SEO, GEO optimization, and AI search expertise.\n        </motion.p>\n\n        {/* CTA Buttons */}\n        <motion.div\n          variants={itemVariants}\n          className=\"flex flex-col sm:flex-row items-center justify-center gap-4 mb-12\"\n        >\n          <Link href={ctaHref}>\n            <Button\n              size=\"lg\"\n              className=\"bg-accent hover:bg-accent/90 text-accent-foreground font-semibold group\"\n            >\n              {ctaText}\n              <ArrowRight className=\"ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform\" />\n            </Button>\n          </Link>\n          <Link href={secondaryCtaHref}>\n            <Button\n              size=\"lg\"\n              variant=\"outline\"\n              className=\"border-foreground/20 hover:border-accent hover:text-accent\"\n            >\n              {secondaryCtaText}\n            </Button>\n          </Link>\n        </motion.div>\n\n        {/* Trust Indicators */}\n        <motion.div\n          variants={itemVariants}\n          className=\"flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-foreground/60 mb-12\"\n        >\n          {trustIndicators.map((indicator, idx) => (\n            <div key={idx} className=\"flex items-center gap-2\">\n              <div className=\"w-1.5 h-1.5 rounded-full bg-accent\" />\n              {indicator}\n            </div>\n          ))}\n        </motion.div>\n      </motion.div>\n\n      {/* Scroll Indicator */}\n      <motion.div\n        className=\"absolute bottom-8 left-1/2 -translate-x-1/2 z-10\"\n        animate={{ y: [0, 10, 0] }}\n        transition={{ duration: 2, repeat: Infinity }}\n      >\n        <ChevronDown className=\"w-6 h-6 text-foreground/40\" />\n      </motion.div>\n    </section>\n  );\n};\n\nexport default Hero;\n
+import { motion } from "framer-motion";
+import { ArrowRight, ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
+
+/**
+ * Hero Component
+ * Design: Premium dark hero with background image, overlay, and floating elements
+ * - Full-screen hero section
+ * - Optional background image with overlay
+ * - Animated headline with gradient accent
+ * - Trust indicators
+ * - Scroll indicator animation
+ */
+
+interface HeroProps {
+  backgroundImage?: string;
+  badge?: string;
+  headline: string;
+  subheadline: string;
+  ctaText?: string;
+  ctaHref?: string;
+  secondaryCtaText?: string;
+  secondaryCtaHref?: string;
+  trustIndicators?: string[];
+}
+
+const Hero = ({
+  backgroundImage,
+  badge = "Founder & SEO Expert",
+  headline,
+  subheadline,
+  ctaText = "Get Started",
+  ctaHref = "/contact",
+  secondaryCtaText = "Learn More",
+  secondaryCtaHref = "/about",
+  trustIndicators = [
+    "50+ Projects Completed",
+    "280% Avg Traffic Growth",
+    "98% Client Satisfaction",
+  ],
+}: HeroProps) => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  return (
+    <section
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+      style={{
+        backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Background Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
+
+      {/* Floating Decorative Elements */}
+      <motion.div
+        className="absolute top-20 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl"
+        animate={{ y: [0, 30, 0], x: [0, 20, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute bottom-20 right-10 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl"
+        animate={{ y: [0, -30, 0], x: [0, -20, 0] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+      />
+
+      {/* Content */}
+      <motion.div
+        className="container relative z-10 max-w-4xl text-center"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {/* Badge */}
+        <motion.div
+          variants={itemVariants}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-accent/30 bg-accent/5 mb-6"
+        >
+          <div className="w-2 h-2 rounded-full bg-accent" />
+          <span className="text-sm font-medium text-accent">{badge}</span>
+        </motion.div>
+
+        {/* Headline */}
+        <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl font-bold font-['Space_Grotesk'] text-foreground mb-6 leading-tight">
+          {headline}
+          <span className="block bg-gradient-to-r from-accent via-cyan-500 to-accent bg-clip-text text-transparent mt-2">
+            {subheadline}
+          </span>
+        </motion.h1>
+
+        {/* Description */}
+        <motion.p
+          variants={itemVariants}
+          className="text-xl text-foreground/60 max-w-2xl mx-auto mb-8 leading-relaxed"
+        >
+          Helping founders and businesses achieve exceptional visibility and sustainable growth through strategic SEO, GEO optimization, and AI search expertise.
+        </motion.p>
+
+        {/* CTA Buttons */}
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
+        >
+          <Link href={ctaHref}>
+            <Button
+              size="lg"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold group"
+            >
+              {ctaText}
+              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
+          <Link href={secondaryCtaHref}>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-foreground/20 hover:border-accent hover:text-accent"
+            >
+              {secondaryCtaText}
+            </Button>
+          </Link>
+        </motion.div>
+
+        {/* Trust Indicators */}
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-foreground/60 mb-12"
+        >
+          {trustIndicators.map((indicator, idx) => (
+            <div key={idx} className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+              {indicator}
+            </div>
+          ))}
+        </motion.div>
+      </motion.div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        <ChevronDown className="w-6 h-6 text-foreground/40" />
+      </motion.div>
+    </section>
+  );
+};
+
+export default Hero;
+
