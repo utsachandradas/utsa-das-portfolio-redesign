@@ -53,7 +53,7 @@ const Footer = () => {
             </div>
 
             <p className="text-muted-foreground leading-relaxed text-sm max-w-sm">
-              Bangladesh-based founder, SEO strategist, and GEO strategist specializing in AI search optimization, technical SEO, ecommerce growth, and modern digital visibility systems. Helping brands dominate both traditional and AI-powered search.
+              Bangladesh-based Founder & SEO · GEO Strategist with 4+ years of experience since 2022. Specializing in AI search optimization, technical SEO, ecommerce growth, and generative engine optimization (GEO) for brands building AI-era search visibility.
             </p>
 
             {/* Social links */}

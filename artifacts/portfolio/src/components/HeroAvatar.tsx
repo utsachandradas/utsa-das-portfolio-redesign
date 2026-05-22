@@ -165,8 +165,8 @@ export default function HeroAvatar() {
         transition={{ delay: 0.4, duration: 0.5 }}
       >
         <p className="text-[10px] text-muted-foreground uppercase tracking-wide">Experience</p>
-        <p className="text-2xl font-bold text-primary">10+</p>
-        <p className="text-[10px] text-muted-foreground">Years</p>
+        <p className="text-2xl font-bold text-primary">4+</p>
+        <p className="text-[10px] text-muted-foreground">Yrs · Since 2022</p>
       </motion.div>
 
       <motion.div

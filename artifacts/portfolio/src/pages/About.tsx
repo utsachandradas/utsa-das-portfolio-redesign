@@ -9,24 +9,24 @@ const WHATSAPP_LINK = "https://wa.me/8801861393416?text=Hi%20Utsa%2C%20I%27d%20l
 export default function About() {
   const timeline = [
     {
-      year: "2014",
-      title: "Started Digital Journey",
-      description: "Began exploring digital marketing and SEO fundamentals"
+      year: "2022",
+      title: "Started the SEO Journey",
+      description: "Began building deep expertise in technical SEO, keyword research, and on-page optimization — approaching search as a systems problem from day one."
     },
     {
-      year: "2016",
-      title: "Specialized in SEO",
-      description: "Focused expertise on technical SEO and search optimization"
-    },
-    {
-      year: "2019",
-      title: "GEO Pioneer",
-      description: "Started exploring Generative Engine Optimization strategies"
+      year: "2023",
+      title: "GEO & AI Search Discovery",
+      description: "As AI search systems emerged, shifted focus to Generative Engine Optimization (GEO) — structuring content and entities for AI-powered discovery platforms."
     },
     {
       year: "2024",
-      title: "AI Search Expert",
-      description: "Leading authority in AI-powered search optimization"
+      title: "Founder-Led Strategy Practice",
+      description: "Launched a founder-led consultancy, delivering technical SEO, GEO optimization, and AI-search readiness strategies for brands across industries."
+    },
+    {
+      year: "2025",
+      title: "AI-Era SEO Authority",
+      description: "Building comprehensive AI-search optimization frameworks that help brands achieve Tier 1 citations in ChatGPT, Perplexity, Gemini, and Google AI Overviews."
     }
   ];
 
@@ -46,9 +46,20 @@ export default function About() {
             transition={{ duration: 0.5 }}
             className="text-center mb-20"
           >
+            <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-panel text-primary text-xs font-semibold border border-primary/25">
+                4+ Years Experience
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-panel text-muted-foreground text-xs font-medium border border-white/8">
+                SEO & GEO Strategist Since 2022
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-panel text-muted-foreground text-xs font-medium border border-white/8">
+                Founder-Led Growth Systems
+              </span>
+            </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">About Utsa Das</h1>
             <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto">
-              Digital Strategist & SEO Expert dedicated to building sustainable search visibility for modern brands.
+              Bangladesh-based Founder, SEO & GEO Strategist with 4+ years of experience building AI-era search visibility systems since 2022.
             </p>
           </motion.div>
 
