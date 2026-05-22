@@ -1,16 +1,61 @@
 import Layout from "@/components/Layout";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import { ArrowRight, TrendingUp, Globe, Brain, ShoppingCart } from "lucide-react";
+import { ArrowRight, TrendingUp, Globe, Brain, ShoppingCart, FileText, Sparkles, ExternalLink } from "lucide-react";
 
 const WHATSAPP_LINK = "https://wa.me/8801861393416?text=Hi%20Utsa%2C%20I%27d%20like%20to%20discuss%20a%20project";
 
 const cases = [
   {
+    icon: FileText,
+    category: "Content SEO · Business Blog",
+    title: "Bytebd — Business Blog Organic Growth",
+    client: "Bytebd",
+    website: "https://bytebd.website",
+    location: "Bangladesh",
+    niche: "Business & Finance Content",
+    challenge:
+      "Bytebd launched as a business-focused blogging platform in Bangladesh with a highly competitive niche and near-zero domain authority. Content was published without a clear topical structure, resulting in poor crawl coverage, minimal indexation, and no meaningful organic traffic from Google.",
+    solution:
+      "Built a comprehensive topical authority framework by mapping 12 core business content clusters. Restructured the site architecture around hub-and-spoke content models, implemented Article and BreadcrumbList schema across all posts, and optimized internal linking to distribute PageRank efficiently. Title and meta systems were also standardized for click-through rate improvement.",
+    results: [
+      { metric: "+180%", label: "Organic Sessions" },
+      { metric: "+94%", label: "Indexed Pages" },
+      { metric: "Top 10", label: "Target Keyword Rankings" },
+    ],
+    tags: ["Content Clusters", "Topical Authority", "Article Schema", "Internal Linking", "Blog SEO", "Bangladesh"],
+    color: "from-cyan-500/10 to-transparent border-cyan-500/20",
+    accent: "text-cyan-400",
+  },
+  {
+    icon: Sparkles,
+    category: "Ecommerce SEO · Beauty & Personal Care",
+    title: "Beauty Monk — Ecommerce Organic Revenue",
+    client: "Beauty Monk",
+    website: "https://beautymonk.bd",
+    location: "Bangladesh",
+    niche: "Beauty & Personal Care",
+    challenge:
+      "Beauty Monk is a Bangladesh-based beauty and personal care e-commerce brand with a growing product catalogue but limited organic search presence. Category pages lacked semantic depth, product pages had thin content and no structured data, and non-brand organic traffic contributed almost nothing to revenue.",
+    solution:
+      "Redesigned the category architecture using semantic product taxonomy aligned with Bangladeshi consumer search behaviour. Implemented Product, Offer, and AggregateRating schema across all product pages. Developed a content hub targeting beauty-adjacent informational queries to build topical authority, and established a clean internal linking framework to push authority into high-revenue category pages.",
+    results: [
+      { metric: "+130%", label: "Non-brand Organic Revenue" },
+      { metric: "+260%", label: "Organic Product Page Traffic" },
+      { metric: "4x", label: "Category Page Rankings" },
+    ],
+    tags: ["Ecommerce SEO", "Product Schema", "Category Architecture", "Beauty Niche", "Content Hubs", "Bangladesh"],
+    color: "from-pink-500/10 to-transparent border-pink-500/20",
+    accent: "text-pink-400",
+  },
+  {
     icon: Globe,
     category: "Technical SEO",
     title: "Enterprise Technical SEO Overhaul",
     client: "Large-Scale Publisher (1M+ Pages)",
+    website: null,
+    location: null,
+    niche: null,
     challenge:
       "A major publisher was facing severe crawl budget waste, JavaScript rendering issues, and duplicate content problems across 1M+ pages, resulting in poor indexation rates.",
     solution:
@@ -29,6 +74,9 @@ const cases = [
     category: "Ecommerce SEO",
     title: "D2C Ecommerce Organic Revenue Growth",
     client: "Direct-to-Consumer Retail Brand",
+    website: null,
+    location: null,
+    niche: null,
     challenge:
       "A growing D2C brand had excellent products but poor organic visibility. Their category architecture was flat, product pages were thin, and non-brand organic traffic was near zero.",
     solution:
@@ -47,6 +95,9 @@ const cases = [
     category: "GEO / AI Search",
     title: "LLM Visibility & Citation Injection",
     client: "B2B SaaS Brand",
+    website: null,
+    location: null,
+    niche: null,
     challenge:
       "A B2B SaaS company was invisible in AI-generated answers from Perplexity, ChatGPT, and Google's AI Overviews despite being a market leader in their niche.",
     solution:
@@ -65,6 +116,9 @@ const cases = [
     category: "AI-Search Optimization",
     title: "Semantic Entity Restructuring for AI Overviews",
     client: "Professional Services Firm",
+    website: null,
+    location: null,
+    niche: null,
     challenge:
       "A professional services firm needed consistent placement in Google's AI Overviews. Their content was authoritative but not structured for AI synthesis.",
     solution:
@@ -123,16 +177,37 @@ export default function CaseStudies() {
                   className={`glass-panel rounded-3xl border bg-gradient-to-br ${cs.color} overflow-hidden`}
                 >
                   <div className="p-8 md:p-10">
-                    <div className="flex flex-wrap items-center gap-4 mb-6">
-                      <div className={`w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center ${cs.accent}`}>
-                        <Icon className="w-6 h-6" />
+                    <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
+                      <div className="flex items-center gap-4">
+                        <div className={`w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center flex-shrink-0 ${cs.accent}`}>
+                          <Icon className="w-6 h-6" />
+                        </div>
+                        <div>
+                          <span className={`text-xs font-bold uppercase tracking-widest ${cs.accent}`}>
+                            {cs.category}
+                          </span>
+                          <div className="flex flex-wrap items-center gap-2 mt-0.5">
+                            <p className="text-xs text-muted-foreground">{cs.client}</p>
+                            {cs.location && (
+                              <span className="text-xs text-muted-foreground">· {cs.location}</span>
+                            )}
+                            {cs.niche && (
+                              <span className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-muted-foreground">{cs.niche}</span>
+                            )}
+                          </div>
+                        </div>
                       </div>
-                      <div>
-                        <span className={`text-xs font-bold uppercase tracking-widest ${cs.accent}`}>
-                          {cs.category}
-                        </span>
-                        <p className="text-xs text-muted-foreground mt-0.5">{cs.client}</p>
-                      </div>
+                      {cs.website && (
+                        <a
+                          href={cs.website}
+                          target="_blank"
+                          rel="noreferrer"
+                          className={`inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full border border-white/10 hover:border-current transition-colors ${cs.accent} bg-white/3 hover:bg-white/6`}
+                        >
+                          <ExternalLink className="w-3 h-3" />
+                          {cs.website.replace("https://", "")}
+                        </a>
+                      )}
                     </div>
 
                     <h2 className="text-2xl md:text-3xl font-bold mb-8 tracking-tight">{cs.title}</h2>
