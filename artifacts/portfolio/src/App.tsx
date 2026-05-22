@@ -4,6 +4,11 @@ import { Route, Switch, Router as WouterRouter } from "wouter";
 import { lazy, Suspense } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { HomeSkeleton } from "./components/skeletons/HomeSkeleton";
+import { BlogSkeleton } from "./components/skeletons/BlogSkeleton";
+import { BlogPostSkeleton } from "./components/skeletons/BlogPostSkeleton";
+import { ProjectsSkeleton } from "./components/skeletons/ProjectsSkeleton";
+import { GenericPageSkeleton } from "./components/skeletons/GenericPageSkeleton";
 
 const Home        = lazy(() => import("@/pages/Home"));
 const About       = lazy(() => import("@/pages/About"));
@@ -16,31 +21,47 @@ const BlogPost    = lazy(() => import("@/pages/BlogPost"));
 const CaseStudies = lazy(() => import("@/pages/CaseStudies"));
 const NotFound    = lazy(() => import("@/pages/NotFound"));
 
-function PageLoader() {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="w-8 h-8 rounded-full border-2 border-primary border-t-transparent animate-spin" />
-    </div>
-  );
+function S({ fallback, children }: { fallback: React.ReactNode; children: React.ReactNode }) {
+  return <Suspense fallback={fallback}>{children}</Suspense>;
 }
 
 function Router() {
   return (
-    <Suspense fallback={<PageLoader />}>
-      <Switch>
-        <Route path="/"             component={Home} />
-        <Route path="/about"        component={About} />
-        <Route path="/services"     component={Services} />
-        <Route path="/projects"     component={Projects} />
-        <Route path="/skills"       component={Skills} />
-        <Route path="/contact"      component={Contact} />
-        <Route path="/blog"         component={Blog} />
-        <Route path="/blog/:slug"   component={BlogPost} />
-        <Route path="/case-studies" component={CaseStudies} />
-        <Route path="/404"          component={NotFound} />
-        <Route                      component={NotFound} />
-      </Switch>
-    </Suspense>
+    <Switch>
+      <Route path="/">
+        <S fallback={<HomeSkeleton />}><Home /></S>
+      </Route>
+      <Route path="/about">
+        <S fallback={<GenericPageSkeleton />}><About /></S>
+      </Route>
+      <Route path="/services">
+        <S fallback={<GenericPageSkeleton />}><Services /></S>
+      </Route>
+      <Route path="/projects">
+        <S fallback={<ProjectsSkeleton />}><Projects /></S>
+      </Route>
+      <Route path="/skills">
+        <S fallback={<GenericPageSkeleton />}><Skills /></S>
+      </Route>
+      <Route path="/contact">
+        <S fallback={<GenericPageSkeleton />}><Contact /></S>
+      </Route>
+      <Route path="/blog">
+        <S fallback={<BlogSkeleton />}><Blog /></S>
+      </Route>
+      <Route path="/blog/:slug">
+        <S fallback={<BlogPostSkeleton />}><BlogPost /></S>
+      </Route>
+      <Route path="/case-studies">
+        <S fallback={<GenericPageSkeleton />}><CaseStudies /></S>
+      </Route>
+      <Route path="/404">
+        <S fallback={<GenericPageSkeleton />}><NotFound /></S>
+      </Route>
+      <Route>
+        <S fallback={<GenericPageSkeleton />}><NotFound /></S>
+      </Route>
+    </Switch>
   );
 }
 
