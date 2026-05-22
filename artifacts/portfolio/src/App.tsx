@@ -10,7 +10,8 @@ import Services from "./pages/Services";
 import Projects from "./pages/Projects";
 import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
-import Insights from "./pages/Insights";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import CaseStudies from "./pages/CaseStudies";
 
 function Router() {
@@ -22,7 +23,8 @@ function Router() {
       <Route path="/projects"     component={Projects} />
       <Route path="/skills"       component={Skills} />
       <Route path="/contact"      component={Contact} />
-      <Route path="/insights"     component={Insights} />
+      <Route path="/blog"         component={Blog} />
+      <Route path="/blog/:slug"   component={BlogPost} />
       <Route path="/case-studies" component={CaseStudies} />
       <Route path="/404"          component={NotFound} />
       <Route                      component={NotFound} />
