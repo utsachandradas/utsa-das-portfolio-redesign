@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import { ArrowRight, TrendingUp, Globe, Brain, ShoppingCart, FileText, Sparkles, ExternalLink } from "lucide-react";
+import { ArrowRight, FileText, Sparkles, ExternalLink } from "lucide-react";
 
 const WHATSAPP_LINK = "https://wa.me/8801861393416?text=Hi%20Utsa%2C%20I%27d%20like%20to%20discuss%20a%20project";
 
@@ -26,6 +26,7 @@ const cases = [
     tags: ["Content Clusters", "Topical Authority", "Article Schema", "Internal Linking", "Blog SEO", "Bangladesh"],
     color: "from-cyan-500/10 to-transparent border-cyan-500/20",
     accent: "text-cyan-400",
+    accentBg: "bg-cyan-400/8",
   },
   {
     icon: Sparkles,
@@ -47,90 +48,7 @@ const cases = [
     tags: ["Ecommerce SEO", "Product Schema", "Category Architecture", "Beauty Niche", "Content Hubs", "Bangladesh"],
     color: "from-pink-500/10 to-transparent border-pink-500/20",
     accent: "text-pink-400",
-  },
-  {
-    icon: Globe,
-    category: "Technical SEO",
-    title: "Enterprise Technical SEO Overhaul",
-    client: "Large-Scale Publisher (1M+ Pages)",
-    website: null,
-    location: null,
-    niche: null,
-    challenge:
-      "A major publisher was facing severe crawl budget waste, JavaScript rendering issues, and duplicate content problems across 1M+ pages, resulting in poor indexation rates.",
-    solution:
-      "Implemented a comprehensive crawl budget optimization strategy, resolved JS rendering issues via server-side rendering, and built a canonical architecture to eliminate duplicate signals.",
-    results: [
-      { metric: "+145%", label: "Crawl Efficiency" },
-      { metric: "+62%", label: "Indexed Pages" },
-      { metric: "-38%", label: "Crawl Errors" },
-    ],
-    tags: ["Core Web Vitals", "Crawl Budget", "JavaScript SEO", "Canonicalization"],
-    color: "from-blue-500/10 to-transparent border-blue-500/20",
-    accent: "text-blue-400",
-  },
-  {
-    icon: ShoppingCart,
-    category: "Ecommerce SEO",
-    title: "D2C Ecommerce Organic Revenue Growth",
-    client: "Direct-to-Consumer Retail Brand",
-    website: null,
-    location: null,
-    niche: null,
-    challenge:
-      "A growing D2C brand had excellent products but poor organic visibility. Their category architecture was flat, product pages were thin, and non-brand organic traffic was near zero.",
-    solution:
-      "Developed semantic category hub pages, implemented product schema, created a topical content cluster strategy, and optimized internal linking with PageRank sculpting.",
-    results: [
-      { metric: "+82%", label: "Non-brand Revenue" },
-      { metric: "+210%", label: "Organic Sessions" },
-      { metric: "3x", label: "Category Rankings" },
-    ],
-    tags: ["Category Architecture", "Product Schema", "Internal Linking", "Content Clusters"],
-    color: "from-emerald-500/10 to-transparent border-emerald-500/20",
-    accent: "text-emerald-400",
-  },
-  {
-    icon: Brain,
-    category: "GEO / AI Search",
-    title: "LLM Visibility & Citation Injection",
-    client: "B2B SaaS Brand",
-    website: null,
-    location: null,
-    niche: null,
-    challenge:
-      "A B2B SaaS company was invisible in AI-generated answers from Perplexity, ChatGPT, and Google's AI Overviews despite being a market leader in their niche.",
-    solution:
-      "Structured brand entities using schema markup, created authoritative reference content optimized for LLM retrieval, implemented knowledge panel strategy, and built entity co-citation signals across high-authority sources.",
-    results: [
-      { metric: "Tier 1", label: "Perplexity Citation" },
-      { metric: "Featured", label: "AI Overviews" },
-      { metric: "+3x", label: "Brand Mentions in AI" },
-    ],
-    tags: ["GEO", "AI Search", "Entity SEO", "Knowledge Graph"],
-    color: "from-violet-500/10 to-transparent border-violet-500/20",
-    accent: "text-violet-400",
-  },
-  {
-    icon: TrendingUp,
-    category: "AI-Search Optimization",
-    title: "Semantic Entity Restructuring for AI Overviews",
-    client: "Professional Services Firm",
-    website: null,
-    location: null,
-    niche: null,
-    challenge:
-      "A professional services firm needed consistent placement in Google's AI Overviews. Their content was authoritative but not structured for AI synthesis.",
-    solution:
-      "Aligned content models with Google's SGE requirements, implemented structured FAQ schema, created definition-first content formats, and built topical authority through semantic clustering.",
-    results: [
-      { metric: "Featured", label: "AI Overviews" },
-      { metric: "+95%", label: "Rich Results" },
-      { metric: "+44%", label: "Click-Through Rate" },
-    ],
-    tags: ["Google AI Overviews", "Schema Markup", "Topical Authority", "Content Strategy"],
-    color: "from-orange-500/10 to-transparent border-orange-500/20",
-    accent: "text-orange-400",
+    accentBg: "bg-pink-400/8",
   },
 ];
 
@@ -138,32 +56,35 @@ export default function CaseStudies() {
   return (
     <Layout>
       <Helmet>
-        <title>SEO & GEO Case Studies | Utsa Das</title>
+        <title>SEO & GEO Case Studies | Bytebd & Beauty Monk | Utsa Das</title>
         <meta
           name="description"
-          content="Real results from Utsa Das's SEO and GEO projects. Detailed case studies covering technical SEO, ecommerce growth, AI search visibility, and GEO optimization."
+          content="Real SEO results for Bangladesh brands. Case studies covering Bytebd (business blog) and Beauty Monk (beauty ecommerce) — from Utsa Das, SEO & GEO Strategist."
         />
       </Helmet>
 
-      <section className="py-24 pt-32 relative">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,var(--tw-gradient-from)_0,transparent_50%)] from-primary/8 pointer-events-none" />
-        <div className="container max-w-5xl mx-auto relative z-10">
+      <section className="py-20 pt-28 md:pt-32 relative">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,oklch(0.70_0.24_272_/_0.07)_0,transparent_50%)] pointer-events-none" />
+        <div className="container max-w-5xl mx-auto relative z-10 px-4 sm:px-6">
+
+          {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-16"
+            className="text-center mb-14"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-primary text-sm font-medium mb-6 border border-primary/20">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              Proven Results
+              Brand Case Studies
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Case Studies</h1>
-            <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto">
-              Deep dives into real SEO and GEO projects — the challenges, strategies, and measurable outcomes.
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 tracking-tight">Case Studies</h1>
+            <p className="text-lg md:text-xl text-muted-foreground font-light max-w-2xl mx-auto">
+              Real SEO strategies. Measurable outcomes. Two Bangladesh brands, built for search.
             </p>
           </motion.div>
 
+          {/* Case study cards */}
           <div className="space-y-10 mb-20">
             {cases.map((cs, i) => {
               const Icon = cs.icon;
@@ -174,64 +95,63 @@ export default function CaseStudies() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className={`glass-panel rounded-3xl border bg-gradient-to-br ${cs.color} overflow-hidden`}
+                  className={`glass-panel rounded-2xl md:rounded-3xl border bg-gradient-to-br ${cs.color} overflow-hidden`}
                 >
-                  <div className="p-8 md:p-10">
+                  <div className="p-6 md:p-10">
+
+                    {/* Card header */}
                     <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
                       <div className="flex items-center gap-4">
-                        <div className={`w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center flex-shrink-0 ${cs.accent}`}>
-                          <Icon className="w-6 h-6" />
+                        <div className={`w-11 h-11 md:w-13 md:h-13 rounded-xl ${cs.accentBg} border border-white/10 flex items-center justify-center flex-shrink-0 ${cs.accent}`}>
+                          <Icon className="w-5 h-5 md:w-6 md:h-6" />
                         </div>
                         <div>
-                          <span className={`text-xs font-bold uppercase tracking-widest ${cs.accent}`}>
+                          <span className={`text-[10px] md:text-xs font-bold uppercase tracking-widest ${cs.accent}`}>
                             {cs.category}
                           </span>
-                          <div className="flex flex-wrap items-center gap-2 mt-0.5">
-                            <p className="text-xs text-muted-foreground">{cs.client}</p>
-                            {cs.location && (
-                              <span className="text-xs text-muted-foreground">· {cs.location}</span>
-                            )}
-                            {cs.niche && (
-                              <span className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-muted-foreground">{cs.niche}</span>
-                            )}
+                          <div className="flex flex-wrap items-center gap-2 mt-1">
+                            <p className="text-sm font-semibold text-foreground">{cs.client}</p>
+                            <span className="text-xs text-muted-foreground">· {cs.location}</span>
+                            <span className="text-xs px-2 py-0.5 rounded-full border border-white/10 text-muted-foreground">{cs.niche}</span>
                           </div>
                         </div>
                       </div>
-                      {cs.website && (
-                        <a
-                          href={cs.website}
-                          target="_blank"
-                          rel="noreferrer"
-                          className={`inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full border border-white/10 hover:border-current transition-colors ${cs.accent} bg-white/3 hover:bg-white/6`}
-                        >
-                          <ExternalLink className="w-3 h-3" />
-                          {cs.website.replace("https://", "")}
-                        </a>
-                      )}
+                      <a
+                        href={cs.website}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={`inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full border border-white/10 hover:border-current transition-colors ${cs.accent} ${cs.accentBg} hover:bg-white/6`}
+                      >
+                        <ExternalLink className="w-3 h-3" />
+                        {cs.website.replace("https://", "")}
+                      </a>
                     </div>
 
-                    <h2 className="text-2xl md:text-3xl font-bold mb-8 tracking-tight">{cs.title}</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 tracking-tight">{cs.title}</h2>
 
-                    <div className="grid md:grid-cols-2 gap-8 mb-8">
+                    {/* Challenge / Solution */}
+                    <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-8">
                       <div>
-                        <h3 className="text-sm font-bold uppercase tracking-wide text-muted-foreground mb-3">Challenge</h3>
+                        <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">The Challenge</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">{cs.challenge}</p>
                       </div>
                       <div>
-                        <h3 className="text-sm font-bold uppercase tracking-wide text-muted-foreground mb-3">Solution</h3>
+                        <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">The Solution</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">{cs.solution}</p>
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-3 gap-4 mb-8 p-6 rounded-2xl bg-white/3 border border-white/5">
+                    {/* Results */}
+                    <div className="grid grid-cols-3 gap-3 md:gap-5 mb-8 p-5 md:p-6 rounded-xl md:rounded-2xl bg-white/3 border border-white/5">
                       {cs.results.map((r, j) => (
                         <div key={j} className="text-center">
-                          <p className={`text-3xl font-bold tracking-tight ${cs.accent}`}>{r.metric}</p>
-                          <p className="text-xs text-muted-foreground mt-1">{r.label}</p>
+                          <p className={`text-2xl md:text-3xl font-bold tracking-tight ${cs.accent}`}>{r.metric}</p>
+                          <p className="text-[10px] md:text-xs text-muted-foreground mt-1 leading-tight">{r.label}</p>
                         </div>
                       ))}
                     </div>
 
+                    {/* Tags */}
                     <div className="flex flex-wrap gap-2">
                       {cs.tags.map((tag) => (
                         <span
@@ -248,11 +168,12 @@ export default function CaseStudies() {
             })}
           </div>
 
-          <div className="text-center glass-panel rounded-3xl p-12 border border-primary/20 relative overflow-hidden">
+          {/* CTA */}
+          <div className="text-center glass-panel rounded-2xl md:rounded-3xl p-8 md:p-12 border border-primary/20 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none" />
             <div className="relative z-10">
-              <h2 className="text-3xl font-bold mb-4">Ready to Be the Next Success Story?</h2>
-              <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Be the Next Success Story?</h2>
+              <p className="text-muted-foreground mb-8 max-w-xl mx-auto text-sm md:text-base">
                 Let's discuss your current challenges and build a strategy that delivers measurable results.
               </p>
               <a
