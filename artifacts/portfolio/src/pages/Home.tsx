@@ -10,9 +10,21 @@ import {
   BrainCircuit,
   Database,
   Globe,
-  ChevronDown,
-  CheckCircle2
+  CheckCircle2,
+  ChevronDown
 } from "lucide-react";
+import {
+  SiGoogleanalytics,
+  SiGooglesearchconsole,
+  SiGoogletagmanager,
+  SiSemrush,
+  SiOpenai,
+  SiGooglegemini,
+  SiPerplexity,
+  SiWordpress,
+  SiShopify,
+} from "react-icons/si";
+import HeroAvatar from "@/components/HeroAvatar";
 
 const WHATSAPP_LINK = "https://wa.me/8801861393416?text=Hi%20Utsa%2C%20I%27d%20like%20to%20discuss%20a%20project";
 
@@ -179,18 +191,13 @@ export default function Home() {
                 <p>My methodology focuses on long-term strategic thinking—building semantic content structures that dominate traditional SERPs while positioning brands as authoritative entities within AI LLM training and retrieval mechanisms.</p>
               </div>
             </motion.div>
-            <motion.div 
-              className="relative"
+            <motion.div
+              className="relative flex justify-center"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="aspect-square rounded-3xl glass-panel p-12 flex flex-col justify-center items-center text-center relative overflow-hidden border border-primary/20 shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent pointer-events-none" />
-                <BrainCircuit className="w-24 h-24 text-primary mb-8 animate-pulse" />
-                <h3 className="text-3xl font-bold mb-4">Technical Mindset</h3>
-                <p className="text-lg text-muted-foreground font-light">Architecting visibility for both human intent and machine comprehension.</p>
-              </div>
+              <HeroAvatar />
             </motion.div>
           </div>
         </div>
@@ -343,15 +350,46 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="glass-panel p-12 rounded-3xl flex flex-wrap justify-center items-center gap-6 max-w-5xl mx-auto">
-            {["Google Search Console", "Google Analytics 4", "Ahrefs", "SEMrush", "Screaming Frog", "ChatGPT", "Gemini", "Claude", "Perplexity", "Lighthouse"].map((tool) => (
-              <span
-                key={tool}
-                className="px-5 py-2.5 rounded-xl border border-white/10 text-muted-foreground hover:text-primary hover:border-primary/40 transition-all duration-200 font-medium text-sm cursor-default"
-              >
-                {tool}
-              </span>
-            ))}
+          <div className="glass-panel p-8 md:p-12 rounded-3xl max-w-5xl mx-auto border border-white/5">
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 md:gap-6">
+              {[
+                { Icon: SiGoogleanalytics,    name: "Google Analytics",   color: "#E37400" },
+                { Icon: SiGooglesearchconsole,name: "Search Console",     color: "#458CF5" },
+                { Icon: SiGoogletagmanager,   name: "Tag Manager",        color: "#4285F4" },
+                { Icon: SiSemrush,            name: "SEMrush",            color: "#FF642D" },
+                { Icon: SiOpenai,             name: "ChatGPT",            color: "#74AA9C" },
+                { Icon: SiGooglegemini,       name: "Gemini",             color: "#4285F4" },
+                { Icon: SiPerplexity,         name: "Perplexity",         color: "#20B8CD" },
+                { Icon: SiWordpress,          name: "WordPress",          color: "#21759B" },
+                { Icon: SiShopify,            name: "Shopify",            color: "#96BF48" },
+                { Icon: null, name: "Ahrefs",          color: "#FF7A42" },
+                { Icon: null, name: "Screaming Frog",  color: "#6ABF00" },
+                { Icon: null, name: "Lighthouse",      color: "#F9AB00" },
+                { Icon: null, name: "Claude",          color: "#C96442" },
+                { Icon: null, name: "Google SGE",      color: "#EA4335" },
+                { Icon: null, name: "Log File Analysis", color: "#6366f1" },
+              ].map(({ Icon, name, color }) => (
+                <motion.div
+                  key={name}
+                  className="flex flex-col items-center gap-2.5 group cursor-default"
+                  whileHover={{ y: -3 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl glass-panel border border-white/8 flex items-center justify-center group-hover:border-primary/30 transition-all shadow-sm">
+                    {Icon ? (
+                      <Icon className="w-6 h-6 md:w-7 md:h-7" style={{ color }} />
+                    ) : (
+                      <span className="text-lg md:text-xl font-black" style={{ color }}>
+                        {name.charAt(0)}
+                      </span>
+                    )}
+                  </div>
+                  <span className="text-[10px] md:text-xs text-muted-foreground text-center leading-tight group-hover:text-foreground transition-colors font-medium max-w-[70px]">
+                    {name}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

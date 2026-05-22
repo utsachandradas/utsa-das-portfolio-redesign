@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import HeroAvatar from "@/components/HeroAvatar";
 
 const WHATSAPP_LINK = "https://wa.me/8801861393416?text=Hi%20Utsa%2C%20I%27d%20like%20to%20discuss%20a%20project";
 
@@ -52,45 +53,53 @@ export default function About() {
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-16 items-center mb-24">
+            {/* Avatar column */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="space-y-6 text-lg text-muted-foreground font-light leading-relaxed"
+              className="flex justify-center"
             >
-              <p>
-                My journey into digital marketing began with a simple curiosity about how search engines work. What started as a hobby evolved into a professional passion for understanding and optimizing the digital landscape.
-              </p>
-              <p>
-                Over the years, I have helped dozens of businesses improve their online visibility, increase organic traffic, and achieve sustainable growth. My approach combines technical expertise with strategic thinking, ensuring that every optimization serves a larger business goal.
-              </p>
-              <p>
-                Today, I am focused on the intersection of SEO, Generative Engine Optimization (GEO), and AI-powered search optimization—helping brands stay ahead in an increasingly AI-driven search landscape.
-              </p>
+              <HeroAvatar />
             </motion.div>
 
+            {/* Text + values column */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="glass-panel p-10 rounded-3xl border border-white/5"
+              className="space-y-8"
             >
-              <h3 className="text-2xl font-bold mb-8 tracking-tight text-foreground">Core Values</h3>
-              <ul className="space-y-6">
-                {[
-                  { title: "Transparency", desc: "Clear communication and honest reporting" },
-                  { title: "Innovation", desc: "Always exploring new strategies and tools" },
-                  { title: "Results-Driven", desc: "Focused on measurable business outcomes" }
-                ].map((val, i) => (
-                  <li key={i} className="flex gap-4">
-                    <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0" />
-                    <div>
-                      <h4 className="font-bold text-foreground mb-1">{val.title}</h4>
-                      <p className="text-sm text-muted-foreground">{val.desc}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
+              <div className="space-y-5 text-lg text-muted-foreground font-light leading-relaxed">
+                <p>
+                  My journey into digital marketing began with a simple curiosity about how search engines work. What started as a hobby evolved into a professional passion for understanding and optimizing the digital landscape.
+                </p>
+                <p>
+                  Over the years, I have helped dozens of businesses improve their online visibility, increase organic traffic, and achieve sustainable growth. My approach combines technical expertise with strategic thinking—ensuring every optimization serves a real business outcome.
+                </p>
+                <p>
+                  Today, I'm focused on the intersection of SEO, <strong className="text-foreground font-semibold">Generative Engine Optimization (GEO)</strong>, and AI-powered search—helping brands stay ahead in an increasingly AI-driven world.
+                </p>
+              </div>
+
+              <div className="glass-panel p-8 rounded-2xl border border-white/5">
+                <h3 className="text-lg font-bold mb-6 tracking-tight text-foreground">Core Values</h3>
+                <ul className="space-y-5">
+                  {[
+                    { title: "Transparency", desc: "Clear communication and honest reporting at every stage." },
+                    { title: "Innovation", desc: "Always exploring emerging strategies and AI-era tools." },
+                    { title: "Results-Driven", desc: "Focused on measurable business outcomes, not vanity metrics." }
+                  ].map((val, i) => (
+                    <li key={i} className="flex gap-4">
+                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-0.5">{val.title}</h4>
+                        <p className="text-sm text-muted-foreground">{val.desc}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </motion.div>
           </div>
 
