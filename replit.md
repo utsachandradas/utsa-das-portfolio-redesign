@@ -1,44 +1,50 @@
-# [Project name]
+# Utsa Das Portfolio
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A personal portfolio site for Utsa Das — SEO & GEO Strategist, showcasing services, projects, skills, and a contact form.
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
+- `pnpm --filter @workspace/portfolio run dev` — run the frontend (Vite dev server)
 - `pnpm run typecheck` — full typecheck across all packages
-- `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
+- Required env: none for frontend-only mode
 
 ## Stack
 
 - pnpm workspaces, Node.js 24, TypeScript 5.9
-- API: Express 5
-- DB: PostgreSQL + Drizzle ORM
-- Validation: Zod (`zod/v4`), `drizzle-zod`
-- API codegen: Orval (from OpenAPI spec)
-- Build: esbuild (CJS bundle)
+- Frontend: React + Vite (artifacts/portfolio)
+- Routing: wouter
+- Styling: Tailwind CSS v4 + custom dark theme
+- Animation: framer-motion
+- Font: Space Grotesk (Google Fonts)
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/portfolio/src/pages/` — page components (Home, About, Services, Projects, Skills, Contact)
+- `artifacts/portfolio/src/components/` — shared UI (Navbar, Footer, Layout, Hero, etc.)
+- `artifacts/portfolio/src/contexts/ThemeContext.tsx` — custom dark theme provider
+- `artifacts/portfolio/src/index.css` — Tailwind config + color variables (dark-first oklch palette)
+- `artifacts/portfolio/index.html` — entry HTML with Space Grotesk font + SEO meta
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- Pure frontend SPA — no backend needed; the Express api-server scaffold is present but unused
+- wouter for routing (lightweight, no React Router overhead); base path wired to `import.meta.env.BASE_URL`
+- Custom ThemeContext instead of next-themes for dark-mode management (default: dark)
+- ThemeProvider wraps the whole tree so any component can call `useTheme()`
+- `react-helmet-async` for per-page SEO meta tags
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+Portfolio website for Utsa Das with 6 pages: Home (hero + overview), About, Services, Projects, Skills, and Contact.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+_Populate as you build._
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- The Navbar uses wouter `<Link>` wrapping a `<motion.a>`, which causes a nested `<a>` warning — pre-existing from original code, not a regression
+- `artifacts/portfolio/src/components/Map.tsx` uses a Google Maps proxy via `VITE_FRONTEND_FORGE_API_KEY` env var — map won't render without it
 
 ## Pointers
 
