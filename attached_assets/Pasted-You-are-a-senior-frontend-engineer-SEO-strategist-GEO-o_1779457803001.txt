@@ -1,0 +1,218 @@
+You are a senior frontend engineer, SEO strategist, GEO optimization specialist, and DevOps deployment expert.
+
+Project Goal:
+Take my existing portfolio website and fully prepare, optimize, fix, and deploy it to Vercel production professionally.
+
+Portfolio Brand:
+Utsa Das
+Also naturally use:
+- Utsa Chandra Das
+- utsa das
+- utsa
+
+==================================================
+PHASE 1 — FULL PROJECT AUDIT
+==================================================
+
+1. Pull and scan the complete project codebase.
+2. Detect framework automatically:
+   - Next.js
+   - React
+   - Vite
+   - Astro
+   - Vue
+   - Static HTML/CSS/JS
+3. Fix:
+   - Broken imports
+   - Dependency conflicts
+   - Build issues
+   - Hydration errors
+   - Navigation bugs
+   - Mobile responsiveness issues
+   - CLS/LCP/Core Web Vitals problems
+   - Console errors
+   - Accessibility issues
+4. Remove:
+   - Dead code
+   - Duplicate components
+   - Unused assets
+   - Backup files
+   - Old branches references
+
+==================================================
+PHASE 2 — DESIGN UPGRADE
+==================================================
+
+Redesign the entire portfolio with a modern premium layout.
+
+Style Direction:
+- Minimal + premium
+- Bento grid sections
+- Dark/light support
+- Smooth animations
+- Modern typography
+- AI-era SEO expert branding
+- Glassmorphism where suitable
+- Soft gradients
+- Strong visual hierarchy
+
+Must include:
+- Hero section
+- About section
+- Skills section
+- SEO & GEO services section
+- AI Search Readiness section
+- Case studies section
+- Tool stack section
+- Testimonials section
+- FAQ section
+- Contact section
+- Footer
+
+Add:
+- Floating CTA buttons
+- Sticky navigation
+- Smooth scroll
+- Scroll reveal animations
+- Hover interactions
+- Performance-first animations
+
+==================================================
+PHASE 3 — SEO + GEO OPTIMIZATION
+==================================================
+
+Implement advanced SEO and AI-search optimization.
+
+Technical SEO:
+- Meta titles
+- Meta descriptions
+- Canonical tags
+- Open Graph
+- Twitter cards
+- Structured data
+- Robots.txt
+- Dynamic sitemap.xml
+- Semantic HTML
+- Internal linking
+- Proper heading structure
+
+AI Search / GEO Optimization:
+- Entity-rich content
+- Semantic relevance
+- FAQ schema
+- Answer-engine optimization
+- Conversational search formatting
+- AI crawler readability
+- Chunked content architecture
+- NLP-friendly copywriting
+
+Naturally use keywords:
+- Utsa Das
+- Utsa Chandra Das
+- SEO strategist
+- GEO strategist
+- AI search optimization expert
+- Technical SEO expert Bangladesh
+- SEO portfolio
+- SEO consultant Bangladesh
+
+==================================================
+PHASE 4 — PERFORMANCE OPTIMIZATION
+==================================================
+
+Target:
+- Lighthouse 95+
+- Mobile-first performance
+- Fast loading globally
+
+Optimize:
+- Images
+- Fonts
+- Lazy loading
+- Code splitting
+- Bundle size
+- Compression
+- Caching
+- Script loading
+- Asset delivery
+
+==================================================
+PHASE 5 — VERCEL DEPLOYMENT PREPARATION
+==================================================
+
+Prepare project fully for Vercel deployment.
+
+Requirements:
+1. Ensure production build passes successfully.
+2. Generate optimized vercel.json if needed.
+3. Configure:
+   - Clean routes
+   - SPA fallback
+   - Headers
+   - Redirects
+   - Security headers
+4. Configure environment variables properly.
+5. Optimize for edge delivery.
+6. Ensure GitHub repo structure is deployment-ready.
+
+==================================================
+PHASE 6 — DEPLOYMENT GUIDE
+==================================================
+
+After project optimization, provide a COMPLETE deployment guide for beginners.
+
+Include:
+1. How to push project to GitHub
+2. How to connect GitHub with Vercel
+3. How to import project in Vercel
+4. Build settings
+5. Framework preset selection
+6. Environment variable setup
+7. Domain connection guide
+8. SSL setup
+9. Re-deployment workflow
+10. Fix common Vercel deployment errors
+
+==================================================
+PHASE 7 — FINAL OUTPUT
+==================================================
+
+Provide:
+- Fully optimized final code
+- Deployment-ready structure
+- SEO report
+- GEO optimization report
+- Lighthouse improvement summary
+- Vercel deployment checklist
+- Final deployment URL structure recommendations
+
+==================================================
+TECH STACK PREFERENCE
+==================================================
+
+Preferred:
+- Next.js latest
+- Tailwind CSS
+- Framer Motion
+- TypeScript
+- App Router
+- Responsive design system
+
+==================================================
+IMPORTANT RULES
+==================================================
+
+- Mobile-first development
+- Production-ready code only
+- Clean scalable architecture
+- No placeholder sections
+- Human-written content style
+- SEO-friendly copywriting
+- GEO-friendly structure
+- Fully responsive
+- Accessible UI
+- Fast animations only
+- Do not break existing functionality
+
+Final objective:
+Create a world-class SEO & GEO strategist portfolio for Utsa Das and deploy it successfully on Vercel with complete production readiness.
