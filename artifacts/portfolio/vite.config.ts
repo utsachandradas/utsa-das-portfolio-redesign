@@ -40,6 +40,28 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    sourcemap: false,
+    cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "vendor-react":   ["react", "react-dom"],
+          "vendor-motion":  ["framer-motion"],
+          "vendor-icons":   ["lucide-react", "react-icons"],
+          "vendor-ui":      [
+            "@radix-ui/react-tooltip",
+            "@radix-ui/react-dialog",
+            "@radix-ui/react-dropdown-menu",
+            "@radix-ui/react-select",
+            "@radix-ui/react-tabs",
+            "@radix-ui/react-toast",
+            "@radix-ui/react-accordion",
+          ],
+          "vendor-router":  ["wouter"],
+          "vendor-helmet":  ["react-helmet-async"],
+        },
+      },
+    },
   },
   server: {
     port,
