@@ -1,479 +1,455 @@
 import Layout from "@/components/Layout";
-import Hero from "@/components/Hero";
-import SectionHeader from "@/components/SectionHeader";
-import SEO from "@/components/SEO";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  CheckCircle2,
-  Zap,
-  TrendingUp,
-  Users,
-  Award,
-  Star,
+import { 
+  ArrowRight, 
+  Search, 
+  BarChart, 
+  Code, 
+  Zap, 
+  BrainCircuit,
+  Database,
+  Globe,
+  ChevronDown,
+  CheckCircle2
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
-import { getPersonSchema, getWebsiteSchema, getFAQSchema } from "@/lib/schema";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
-const Home = () => {
-  const services = [
-    {
-      icon: Zap,
-      title: "Technical SEO",
-      description:
-        "Optimize your website's technical foundation for better performance and search visibility",
-    },
-    {
-      icon: TrendingUp,
-      title: "GEO Optimization",
-      description:
-        "Position your content for AI search engines like ChatGPT, Gemini, and Perplexity",
-    },
-    {
-      icon: Users,
-      title: "Strategic Growth",
-      description:
-        "Build sustainable organic growth through data-driven SEO and content strategies",
-    },
-    {
-      icon: Award,
-      title: "Expert Consulting",
-      description:
-        "Get personalized guidance from an experienced SEO and digital growth strategist",
-    },
-  ];
+const WHATSAPP_LINK = "https://wa.me/8801861393416?text=Hi%20Utsa%2C%20I%27d%20like%20to%20discuss%20a%20project";
 
-  const benefits = [
-    "Increased organic traffic and visibility",
-    "Higher search engine rankings",
-    "Better user experience and engagement",
-    "Sustainable long-term growth",
-    "Improved conversion rates",
-    "Data-driven decision making",
-  ];
+const FAQ_DATA = [
+  {
+    q: "Who is Utsa Das?",
+    a: "Utsa Das is a Bangladesh-based Founder, SEO Strategist, and GEO Strategist specializing in AI search optimization, technical SEO, and modern digital visibility systems."
+  },
+  {
+    q: "What is GEO optimization?",
+    a: "Generative Engine Optimization (GEO) is the process of optimizing content and digital assets to be understood, cited, and recommended by AI-powered search engines like ChatGPT, Perplexity, and Google's AI Overviews."
+  },
+  {
+    q: "What is the difference between SEO and GEO?",
+    a: "Traditional SEO focuses on ranking in standard search engine results pages (SERPs) using keywords and backlinks. GEO focuses on structuring semantic data and entity relationships so AI models synthesize and cite your brand in generated answers."
+  },
+  {
+    q: "Why does AI search matter for brands?",
+    a: "User behavior is shifting from traditional search queries to conversational AI prompts. If a brand isn't optimized for generative engines, they risk becoming invisible to the next generation of digital consumers."
+  },
+  {
+    q: "Why is technical SEO important?",
+    a: "Technical SEO ensures that both traditional crawlers and AI bots can access, render, and understand your website's architecture efficiently, forming the foundation of any visibility strategy."
+  },
+  {
+    q: "What does an SEO strategist do?",
+    a: "An SEO strategist analyzes market opportunities, technical infrastructure, and content ecosystems to design comprehensive frameworks that increase a brand's organic visibility, traffic, and revenue."
+  },
+  {
+    q: "Why is AI search optimization important for modern brands?",
+    a: "AI search engines synthesize answers rather than just providing links. Optimizing for AI search ensures your brand is the authoritative source these models rely on when answering user queries in your industry."
+  }
+];
 
-  const stats = [
-    { label: "Projects Completed", value: "50+" },
-    { label: "Average Traffic Growth", value: "280%" },
-    { label: "Client Satisfaction", value: "98%" },
-    { label: "Years of Experience", value: "10+" },
-  ];
-
-  const projects = [
-    {
-      title: "E-commerce Growth",
-      metric: "+250% Traffic",
-      description: "Increased organic traffic and revenue for an online retail store",
-    },
-    {
-      title: "Local SEO Success",
-      metric: "+320% Calls",
-      description: "Helped a service business rank #1 for 50+ local keywords",
-    },
-    {
-      title: "AI Search Visibility",
-      metric: "+95% Visibility",
-      description: "Optimized content for ChatGPT, Gemini, and Perplexity",
-    },
-  ];
-
-  const testimonials = [
-    {
-      quote:
-        "Utsa's SEO expertise helped us increase organic traffic by 300%. Highly recommended!",
-      author: "John Smith",
-      role: "CEO, E-commerce Store",
-    },
-    {
-      quote:
-        "The GEO optimization strategy was game-changing. We're now appearing in ChatGPT results.",
-      author: "Sarah Johnson",
-      role: "Marketing Director, SaaS",
-    },
-  ];
-
-  const process = [
-    {
-      step: "01",
-      title: "Discovery",
-      description: "Comprehensive audit of your current SEO performance",
-    },
-    {
-      step: "02",
-      title: "Strategy",
-      description: "Create a customized roadmap aligned with your goals",
-    },
-    {
-      step: "03",
-      title: "Implementation",
-      description: "Execute optimization strategies across all channels",
-    },
-    {
-      step: "04",
-      title: "Optimization",
-      description: "Track results and continuously improve performance",
-    },
-  ];
-
-  const faqs = [
-    {
-      question: "What is GEO (Generative Engine Optimization)?",
-      answer: "GEO is the process of optimizing your content to be easily understood and cited by AI-powered search engines like ChatGPT, Gemini, and Perplexity. It focuses on semantic structure, entity-rich content, and direct-answer formatting."
-    },
-    {
-      question: "How does Technical SEO impact my rankings?",
-      answer: "Technical SEO ensures that search engines can crawl, index, and understand your website efficiently. It includes optimizing site speed, mobile-friendliness, site architecture, and structured data, which are critical for higher rankings."
-    },
-    {
-      question: "Why should I choose Utsa Das for my SEO strategy?",
-      answer: "Utsa Das brings over 10 years of experience in SEO and digital growth, combining deep technical knowledge with strategic GEO optimization to ensure your brand remains visible in both traditional and AI-driven search landscapes."
-    }
-  ];
-
-  const combinedSchema = {
-    "@context": "https://schema.org",
+export default function Home() {
+  const schemaOrgJSONLD = {
+    "@context": "http://schema.org",
     "@graph": [
-      getPersonSchema(),
-      getWebsiteSchema(),
-      getFAQSchema(faqs)
+      {
+        "@type": "Person",
+        "name": "Utsa Das",
+        "alternateName": "Utsa Chandra Das",
+        "jobTitle": "SEO Strategist & GEO Strategist",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "Bangladesh"
+        },
+        "url": "https://utsadas.com",
+        "sameAs": [
+          "https://www.facebook.com/utsachandradasutsa",
+          "https://www.linkedin.com/in/utsa-das-3473a53a7"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "name": "Utsa Das Portfolio",
+        "url": "https://utsadas.com"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": FAQ_DATA.map(faq => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      }
     ]
   };
 
   return (
     <Layout>
-      <SEO 
-        title="Home"
-        description="Utsa Das is a Founder, SEO Strategist, and GEO Strategist specializing in Technical SEO, AI Search Optimization, and Ecommerce growth. Optimize your website for Google, ChatGPT, and Perplexity."
-        schemaMarkup={combinedSchema}
-      />
-      {/* Hero Section */}
-      <Hero
-        headline="Founder, SEO Strategist,"
-        subheadline="GEO Expert"
-        ctaText="Start Your Growth"
-        ctaHref="/contact"
-        secondaryCtaText="Explore Services"
-        secondaryCtaHref="/services"
-      />
+      <Helmet>
+        <title>Utsa Das | SEO Strategist, GEO Strategist & AI Search Optimization Expert | Bangladesh</title>
+        <meta name="description" content="Utsa Das is a Bangladesh-based founder, SEO strategist, and GEO strategist. Specializing in technical SEO, ecommerce growth, AI search optimization, and generative engine optimization (GEO)." />
+        <meta property="og:title" content="Utsa Das | SEO Strategist, GEO Strategist & AI Search Optimization Expert | Bangladesh" />
+        <meta property="og:description" content="Utsa Das is a Bangladesh-based founder, SEO strategist, and GEO strategist. Specializing in technical SEO, ecommerce growth, AI search optimization, and generative engine optimization (GEO)." />
+        <meta property="og:type" content="website" />
+        <script type="application/ld+json">
+          {JSON.stringify(schemaOrgJSONLD)}
+        </script>
+      </Helmet>
 
-      {/* Services Overview */}
-      <section className="py-20 md:py-32 border-b border-border">
-        <div className="container">
-          <SectionHeader
-            subtitle="Services"
-            title="What I Offer"
-            description="Comprehensive solutions for modern search optimization"
-          />
+      {/* 1. Hero Section */}
+      <section className="relative min-h-screen flex items-center pt-24 pb-16 px-4 overflow-hidden">
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_top,rgba(var(--primary),0.15)_0,transparent_50%)]" />
+        <div className="container relative z-10 max-w-6xl mx-auto flex flex-col items-center text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="w-full max-w-4xl"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-primary text-sm font-medium mb-8 tracking-wide uppercase shadow-lg shadow-primary/10">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              Utsa Das • Founder • SEO & GEO Strategist
+            </div>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8 leading-[1.1]">
+              I Help Brands Grow Through<br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-accent">SEO, GEO & AI-Driven</span><br/>
+              Search Visibility
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+              Founder-led SEO and GEO strategies that help businesses improve search rankings, AI visibility, and long-term digital growth.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a 
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noreferrer"
+                className="w-full sm:w-auto px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-all shadow-[0_0_30px_rgba(var(--primary),0.3)] hover:shadow-[0_0_40px_rgba(var(--primary),0.5)]"
+                data-testid="link-whatsapp-hero"
+              >
+                Chat on WhatsApp <ArrowRight className="w-4 h-4" />
+              </a>
+              <a 
+                href="#portfolio"
+                className="w-full sm:w-auto px-8 py-4 glass-panel text-foreground rounded-lg font-semibold hover:bg-white/10 transition-all"
+                data-testid="link-portfolio-hero"
+              >
+                View Work
+              </a>
+            </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="group bg-card border border-border rounded-xl p-6 hover:border-accent hover:shadow-lg hover:shadow-accent/10 transition-all duration-300"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-                    <Icon className="w-6 h-6 text-accent" />
-                  </div>
-                  <h3 className="font-bold mb-2 text-foreground">{service.title}</h3>
-                  <p className="text-sm text-foreground/60">{service.description}</p>
-                </motion.div>
-              );
-            })}
-          </div>
+            <div className="mt-16 flex items-center justify-center gap-8 text-muted-foreground">
+              <a href="https://www.facebook.com/utsachandradasutsa" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase">Facebook</a>
+              <a href="https://www.linkedin.com/in/utsa-das-3473a53a7" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors text-sm font-medium tracking-wide uppercase">LinkedIn</a>
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Why Choose Me */}
-      <section className="py-20 md:py-32 border-b border-border">
-        <div className="container max-w-5xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+      {/* 2. Positioning Statement */}
+      <section className="py-24 border-y border-border/50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-secondary/30" />
+        <div className="container relative z-10 max-w-5xl mx-auto text-center">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-5xl font-medium leading-tight text-foreground/90 font-light"
+          >
+            "Helping brands adapt to the <span className="text-primary font-semibold">future of search</span> through SEO, GEO, and AI-first visibility strategies."
+          </motion.h2>
+        </div>
+      </section>
+
+      {/* 3. About Section */}
+      <section className="py-32 relative" id="about">
+        <div className="container max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <SectionHeader
-                align="left"
-                subtitle="Why Choose Me"
-                title="Results-Driven SEO Strategy"
-                description="I combine technical expertise with strategic thinking to deliver measurable results"
-              />
-
-              <ul className="space-y-4 mt-8">
-                {benefits.map((benefit, index) => (
-                  <motion.li
-                    key={index}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.05 }}
-                    viewport={{ once: true }}
-                    className="flex items-center gap-3"
-                  >
-                    <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
-                    <span className="text-foreground/70">{benefit}</span>
-                  </motion.li>
-                ))}
-              </ul>
+              <h2 className="text-4xl font-bold mb-8 tracking-tight">Mastering the Search Ecosystem</h2>
+              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed font-light">
+                <p>As a founder and technical SEO specialist, my background is rooted in understanding how complex search algorithms evaluate and rank digital entities.</p>
+                <p>The landscape is shifting. Traditional SEO is foundational, but <strong className="text-foreground font-semibold">Generative Engine Optimization (GEO)</strong> is the frontier. I bridge the gap between technical optimization, ecommerce growth, and AI search understanding.</p>
+                <p>My methodology focuses on long-term strategic thinking—building semantic content structures that dominate traditional SERPs while positioning brands as authoritative entities within AI LLM training and retrieval mechanisms.</p>
+              </div>
             </motion.div>
-
-            <motion.div
+            <motion.div 
+              className="relative"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-accent/10 to-cyan-500/10 rounded-xl p-8 border border-accent/20"
             >
-              <div className="space-y-6">
-                <div>
-                  <p className="text-sm text-accent font-semibold mb-2">Approach</p>
-                  <p className="text-foreground/70">
-                    I don't believe in quick fixes. My strategies are built on thorough
-                    research, technical expertise, and a deep understanding of search
-                    engine algorithms.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm text-accent font-semibold mb-2">Transparency</p>
-                  <p className="text-foreground/70">
-                    You'll always know what I'm doing and why. Regular reporting and
-                    clear communication are fundamental to my process.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm text-accent font-semibold mb-2">Results</p>
-                  <p className="text-foreground/70">
-                    My success is measured by your success. I'm committed to delivering
-                    tangible results that impact your bottom line.
-                  </p>
-                </div>
+              <div className="aspect-square rounded-3xl glass-panel p-12 flex flex-col justify-center items-center text-center relative overflow-hidden border border-primary/20 shadow-2xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent pointer-events-none" />
+                <BrainCircuit className="w-24 h-24 text-primary mb-8 animate-pulse" />
+                <h3 className="text-3xl font-bold mb-4">Technical Mindset</h3>
+                <p className="text-lg text-muted-foreground font-light">Architecting visibility for both human intent and machine comprehension.</p>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section for GEO Optimization */}
-      <section className="py-20 md:py-32 border-b border-border bg-card/30">
-        <div className="container max-w-4xl">
-          <SectionHeader
-            subtitle="FAQ"
-            title="SEO & GEO Insights"
-            description="Direct answers to common questions about modern search optimization."
-          />
-          <div className="mt-12">
-            <Accordion type="single" collapsible className="w-full">
-              {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="text-left font-semibold">{faq.question}</AccordionTrigger>
-                  <AccordionContent className="text-foreground/70">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
+      {/* 4. Services Section */}
+      <section className="py-32 relative" id="services">
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 to-background pointer-events-none" />
+        <div className="container relative z-10 max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">Strategic Specializations</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-light">Comprehensive frameworks designed for the modern visibility landscape.</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {[
+              { icon: Search, title: "SEO Strategy", desc: "Holistic search strategy that improves rankings and drives qualified organic traffic." },
+              { icon: Code, title: "Technical SEO", desc: "Technical foundation audits, crawlability, indexing, and Core Web Vitals optimization." },
+              { icon: BarChart, title: "Ecommerce SEO", desc: "Product page optimization, category architecture, and conversion-focused organic growth." },
+              { icon: BrainCircuit, title: "GEO Optimization", desc: "Generative Engine Optimization for AI search systems like ChatGPT, Gemini, and Perplexity." },
+              { icon: Database, title: "AI Search Visibility", desc: "Structured content systems that surface prominently in AI-powered search results." },
+              { icon: Zap, title: "Website Optimization", desc: "Performance, UX, and technical improvements for superior search performance." },
+              { icon: Globe, title: "Content Strategy", desc: "Semantic content systems aligned with exact search intent and AI comprehension." }
+            ].map((service, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="glass-panel p-8 rounded-2xl hover:bg-white/5 transition-all group border border-white/5 hover:border-primary/30"
+              >
+                <service.icon className="w-10 h-10 text-primary mb-6 group-hover:scale-110 transition-transform" />
+                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{service.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Optimization Process */}
+      <section className="py-32 relative">
+        <div className="container max-w-6xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-24 text-center tracking-tight">The Optimization Lifecycle</h2>
+          
+          <div className="grid md:grid-cols-4 gap-8 relative">
+            <div className="absolute top-12 left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent hidden md:block" />
+            
+            {[
+              { phase: "01", title: "Research", desc: "Keyword & entity research, competitor analysis, search intent mapping." },
+              { phase: "02", title: "Audit", desc: "Technical SEO audits, indexing reviews, performance analysis." },
+              { phase: "03", title: "Optimization", desc: "Schema implementation, semantic content, GEO improvements." },
+              { phase: "04", title: "Growth", desc: "Continuous monitoring, scaling, and iterative enhancements." }
+            ].map((step, i) => (
+              <motion.div 
+                key={i} 
+                className="relative z-10 flex flex-col items-center text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+              >
+                <div className="w-24 h-24 rounded-2xl glass-panel border border-primary/30 flex items-center justify-center font-bold text-2xl text-primary mb-8 shadow-[0_0_20px_rgba(var(--primary),0.1)]">
+                  {step.phase}
+                </div>
+                <h3 className="text-xl font-bold mb-3">{step.title}</h3>
+                <p className="text-muted-foreground text-sm font-light leading-relaxed">{step.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Trust Signals & 7. Currently Exploring */}
+      <section className="py-32 relative border-y border-border/50">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_left,rgba(var(--primary),0.05)_0,transparent_70%)] pointer-events-none" />
+        <div className="container relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-20">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-10 tracking-tight">Pillars of Execution</h2>
+            <ul className="space-y-6">
+              {[
+                "Founder-led SEO + GEO strategy",
+                "AI search optimization expertise",
+                "Performance-focused execution",
+                "Mobile-first visibility systems",
+                "Technical implementation mastery",
+                "Long-term scalable growth architectures"
+              ].map((pillar, i) => (
+                <motion.li 
+                  key={i} 
+                  className="flex items-center gap-4 glass-panel p-4 rounded-xl"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0" />
+                  <span className="font-medium text-lg">{pillar}</span>
+                </motion.li>
               ))}
-            </Accordion>
+            </ul>
+          </div>
+          
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-10 tracking-tight">Currently Exploring</h2>
+            <div className="flex flex-wrap gap-4">
+              {[
+                "AI Search Behavior", "GEO Ranking Systems", 
+                "Semantic Content Structures", "LLM Visibility", 
+                "Future Search Systems", "Search Intent Evolution"
+              ].map((tag, i) => (
+                <motion.span 
+                  key={i} 
+                  className="px-6 py-3 rounded-full border border-primary/20 bg-primary/5 text-primary text-sm font-medium hover:bg-primary/10 transition-colors cursor-default"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  {tag}
+                </motion.span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 md:py-32 border-b border-border bg-card/50">
-        <div className="container">
-          <SectionHeader
-            subtitle="Track Record"
-            title="Proven Results"
-            description="Real numbers from real projects"
-          />
+      {/* 8. Skills Section & 9. Tools */}
+      <section className="py-32 relative" id="skills">
+        <div className="container max-w-6xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-16 tracking-tight">Technical Arsenal</h2>
+          
+          <div className="flex flex-wrap justify-center gap-4 mb-24 max-w-4xl mx-auto">
+            {[
+              "Technical SEO", "GEO Optimization", "AI Search Optimization", 
+              "Ecommerce SEO", "Keyword Research", "Schema Markup", 
+              "Content Strategy", "Analytics & Tracking", "Core Web Vitals"
+            ].map((skill, i) => (
+              <motion.span 
+                key={i} 
+                className="px-6 py-3 glass-panel rounded-xl font-medium shadow-sm hover:border-primary/50 transition-colors"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+              >
+                {skill}
+              </motion.span>
+            ))}
+          </div>
 
-          <div className="grid md:grid-cols-4 gap-8 mt-12">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
+          <div className="glass-panel p-12 rounded-3xl flex flex-wrap justify-center items-center gap-6 max-w-5xl mx-auto">
+            {["Google Search Console", "Google Analytics 4", "Ahrefs", "SEMrush", "Screaming Frog", "ChatGPT", "Gemini", "Claude", "Perplexity", "Lighthouse"].map((tool) => (
+              <span
+                key={tool}
+                className="px-5 py-2.5 rounded-xl border border-white/10 text-muted-foreground hover:text-primary hover:border-primary/40 transition-all duration-200 font-medium text-sm cursor-default"
+              >
+                {tool}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 10. Portfolio / Experience Section */}
+      <section className="py-32 relative" id="portfolio">
+        <div className="absolute inset-0 bg-secondary/20 pointer-events-none" />
+        <div className="container relative z-10 max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-20 text-center tracking-tight">Selected Work & Impact</h2>
+          
+          <div className="grid md:grid-cols-2 gap-10">
+            {[
+              { title: "Enterprise Technical SEO", category: "Technical SEO", metric: "+145%", metricDesc: "Organic Crawl Efficiency", details: "Restructured site architecture and resolved critical rendering issues for a 1M+ page enterprise site." },
+              { title: "D2C Ecommerce Architecture", category: "Ecommerce SEO", metric: "+82%", metricDesc: "Non-brand Organic Revenue", details: "Developed semantic category hubs and optimized product data feeds for a growing retail brand." },
+              { title: "LLM Visibility Injection", category: "GEO Experiments", metric: "Tier 1", metricDesc: "Citation Frequency in Perplexity", details: "Structured brand entities and semantic data to secure primary citations in AI search overviews." },
+              { title: "Semantic Entity Restructuring", category: "AI-Search", metric: "Featured", metricDesc: "AI Overviews Placement", details: "Aligned content models with Google's SGE requirements resulting in consistent featured placements." }
+            ].map((project, i) => (
+              <motion.div 
+                key={i} 
+                className="glass-panel p-10 rounded-3xl group cursor-pointer border border-white/5 hover:border-primary/50 transition-all duration-300 relative overflow-hidden"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center"
+                transition={{ delay: i * 0.1 }}
               >
-                <div className="text-4xl md:text-5xl font-bold text-accent mb-2">
-                  {stat.value}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full transition-colors group-hover:bg-primary/10" />
+                <div className="text-sm text-primary mb-6 font-semibold tracking-wide uppercase">{project.category}</div>
+                <h3 className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-primary transition-colors tracking-tight">{project.title}</h3>
+                <p className="text-muted-foreground font-light mb-10 text-sm leading-relaxed">{project.details}</p>
+                <div className="flex items-end gap-6 border-t border-border/50 pt-8 mt-auto">
+                  <div className="text-5xl font-bold tracking-tighter text-foreground">{project.metric}</div>
+                  <div className="text-muted-foreground pb-1 font-medium">{project.metricDesc}</div>
                 </div>
-                <p className="text-foreground/60">{stat.label}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Projects */}
-      <section className="py-20 md:py-32 border-b border-border">
-        <div className="container">
-          <SectionHeader
-            subtitle="Portfolio"
-            title="Featured Projects"
-            description="Recent case studies and success stories"
-          />
-
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
-            {projects.map((project, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
+      {/* 11. FAQ Section */}
+      <section className="py-32 relative">
+        <div className="container max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center tracking-tight">Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            {FAQ_DATA.map((faq, i) => (
+              <motion.details 
+                key={i} 
+                className="group glass-panel rounded-2xl [&_summary::-webkit-details-marker]:hidden border border-white/5 overflow-hidden"
+                initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group bg-card border border-border rounded-xl p-6 hover:border-accent hover:shadow-lg hover:shadow-accent/10 transition-all duration-300"
+                transition={{ delay: i * 0.1 }}
               >
-                <div className="text-2xl font-bold text-accent mb-2">
-                  {project.metric}
+                <summary className="flex items-center justify-between p-8 cursor-pointer font-semibold text-lg hover:text-primary transition-colors">
+                  {faq.q}
+                  <ChevronDown className="w-5 h-5 transition-transform group-open:rotate-180 text-muted-foreground" />
+                </summary>
+                <div className="px-8 pb-8 text-muted-foreground leading-relaxed font-light border-t border-border/30 pt-4">
+                  {faq.a}
                 </div>
-                <h3 className="font-bold mb-2 text-lg text-foreground">
-                  {project.title}
-                </h3>
-                <p className="text-foreground/60 text-sm mb-4">{project.description}</p>
-                <button className="text-accent font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
-                  View Case Study
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </motion.div>
+              </motion.details>
             ))}
           </div>
+        </div>
+      </section>
 
+      {/* 12. Final CTA Section */}
+      <section className="py-40 relative text-center border-t border-border/50 overflow-hidden">
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_bottom,rgba(var(--primary),0.2)_0,transparent_60%)]" />
+        <div className="container relative z-10 max-w-4xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="text-center mt-12"
           >
-            <Link href="/projects">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-foreground/20 hover:border-accent hover:text-accent"
-              >
-                View All Projects
-              </Button>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 md:py-32 border-b border-border">
-        <div className="container max-w-4xl">
-          <SectionHeader
-            subtitle="Client Feedback"
-            title="What Clients Say"
-            description="Real testimonials from satisfied clients"
-          />
-
-          <div className="grid md:grid-cols-2 gap-8 mt-12">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-card border border-border rounded-xl p-6"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-accent text-accent" />
-                  ))}
-                </div>
-                <p className="text-foreground/70 mb-4 italic">
-                  "{testimonial.quote}"
-                </p>
-                <div>
-                  <p className="font-semibold text-foreground">{testimonial.author}</p>
-                  <p className="text-sm text-foreground/60">{testimonial.role}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="py-20 md:py-32 border-b border-border">
-        <div className="container max-w-5xl">
-          <SectionHeader
-            subtitle="How It Works"
-            title="My Process"
-            description="A structured approach to delivering results"
-          />
-
-          <div className="grid md:grid-cols-4 gap-6 mt-12">
-            {process.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="relative"
-              >
-                {index !== 3 && (
-                  <div className="hidden md:block absolute top-6 left-1/2 w-full h-1 bg-gradient-to-r from-accent to-transparent" />
-                )}
-                <div className="relative z-10 bg-card border border-border rounded-xl p-6">
-                  <div className="w-10 h-10 rounded-full bg-accent text-accent-foreground flex items-center justify-center font-bold mb-3 text-sm">
-                    {item.step}
-                  </div>
-                  <h3 className="font-bold mb-2 text-foreground">{item.title}</h3>
-                  <p className="text-sm text-foreground/60">{item.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-gradient-to-br from-accent/20 to-cyan-500/20" />
-        <div className="container relative z-10 max-w-4xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="space-y-6"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold font-['Space_Grotesk'] text-foreground">
-              Ready to Grow?
-            </h2>
-            <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
-              Let's discuss how I can help your business achieve better visibility and
-              sustainable growth through strategic SEO and GEO optimization.
+            <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight">Let's Build the<br/>Future of Search</h2>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-16 font-light max-w-2xl mx-auto">
+              Secure your brand's visibility across traditional algorithms and emerging generative engines.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-              <Link href="/contact">
-                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
-                  Schedule a Consultation
-                </Button>
-              </Link>
-              <Link href="/services">
-                <Button size="lg" variant="outline" className="border-foreground/20 hover:border-accent hover:text-accent">
-                  View Services
-                </Button>
-              </Link>
+            <div className="flex flex-col sm:flex-row justify-center gap-6">
+              <a 
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noreferrer"
+                className="px-10 py-5 bg-primary text-primary-foreground rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-primary/90 transition-all shadow-[0_0_30px_rgba(var(--primary),0.3)] text-lg"
+              >
+                Start Project <ArrowRight className="w-5 h-5" />
+              </a>
+              <a 
+                href="#portfolio"
+                className="px-10 py-5 glass-panel text-foreground rounded-xl font-bold hover:bg-white/10 transition-all text-lg"
+              >
+                View Portfolio
+              </a>
             </div>
           </motion.div>
         </div>
       </section>
     </Layout>
   );
-};
-
-export default Home;
+}

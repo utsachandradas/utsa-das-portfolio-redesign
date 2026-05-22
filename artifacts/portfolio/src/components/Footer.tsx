@@ -1,143 +1,74 @@
 import { Link } from "wouter";
-import { Mail, Linkedin, Twitter, Github } from "lucide-react";
 import { motion } from "framer-motion";
 
-/**
- * Premium Footer Component
- * Design: Dark minimal with asymmetric multi-column layout
- * - Brand section with mission statement
- * - Navigation links
- * - Social links with hover animations
- * - Copyright and legal links
- */
+const WHATSAPP_LINK = "https://wa.me/8801861393416?text=Hi%20Utsa%2C%20I%27d%20like%20to%20discuss%20a%20project";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const footerSections = [
-    {
-      title: "Navigation",
-      links: [
-        { label: "Home", href: "/" },
-        { label: "About", href: "/about" },
-        { label: "Services", href: "/services" },
-        { label: "Projects", href: "/projects" },
-      ],
-    },
-    {
-      title: "Services",
-      links: [
-        { label: "Technical SEO", href: "/services" },
-        { label: "GEO Optimization", href: "/services" },
-        { label: "AI Search", href: "/services" },
-        { label: "Consulting", href: "/services" },
-      ],
-    },
-  ];
-
-  const socialLinks = [
-    { icon: Mail, href: "mailto:utsa@example.com", label: "Email" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-    { icon: Github, href: "https://github.com", label: "GitHub" },
-  ];
-
   return (
-    <footer className="bg-card border-t border-border">
-      <div className="container py-16 md:py-24">
-        {/* Main Footer Content */}
-        <div className="grid md:grid-cols-12 gap-12 mb-12">
-          {/* Brand Section - Spans 4 columns */}
-          <motion.div
-            className="md:col-span-4 space-y-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-cyan-500 flex items-center justify-center">
-                <span className="text-accent-foreground font-bold">UD</span>
+    <footer className="bg-background border-t border-border relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(var(--primary),0.05)_0,transparent_70%)] pointer-events-none" />
+      <div className="container relative z-10 py-16 md:py-24">
+        <div className="grid md:grid-cols-12 gap-12 mb-16">
+          <div className="md:col-span-6 space-y-6">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/20">
+                <span className="text-primary-foreground font-bold tracking-tight">UD</span>
               </div>
-              <span className="font-semibold text-lg text-foreground">Utsa Das</span>
+              <span className="font-bold text-xl tracking-tight text-foreground">Utsa Das</span>
             </div>
-            <p className="text-sm text-foreground/60 leading-relaxed">
-              SEO Strategist & GEO Expert helping founders and businesses achieve visibility and sustainable growth through modern search optimization.
+            
+            <p className="text-muted-foreground leading-relaxed">
+              Utsa Das is a Bangladesh-based founder, SEO strategist, and GEO strategist specializing in AI search optimization, technical SEO, ecommerce growth, and modern digital visibility systems. He helps brands improve organic search performance and build AI-ready content systems for the future of search.
             </p>
-            {/* Social Links */}
-            <div className="flex gap-3 pt-4">
-              {socialLinks.map((social) => {
-                const Icon = social.icon;
-                return (
-                  <motion.a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-lg bg-secondary hover:bg-accent hover:text-accent-foreground flex items-center justify-center text-foreground/60 transition-all"
-                    whileHover={{ scale: 1.1, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    title={social.label}
-                  >
-                    <Icon size={18} />
-                  </motion.a>
-                );
-              })}
-            </div>
-          </motion.div>
+          </div>
 
-          {/* Footer Sections */}
-          {footerSections.map((section, idx) => (
-            <motion.div
-              key={section.title}
-              className="md:col-span-4 space-y-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: (idx + 1) * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="font-semibold text-foreground text-sm uppercase tracking-wider">
-                {section.title}
-              </h3>
-              <ul className="space-y-2">
-                {section.links.map((link) => (
-                  <li key={link.href}>
-                    <Link href={link.href}>
-                      <a className="text-sm text-foreground/60 hover:text-accent transition-colors cursor-pointer">
-                        {link.label}
-                      </a>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+          <div className="md:col-span-3 space-y-4">
+            <h3 className="font-bold text-foreground tracking-wide uppercase text-sm">Navigation</h3>
+            <ul className="space-y-3">
+              {['Home', 'About', 'Services', 'Projects', 'Skills'].map((item) => (
+                <li key={item}>
+                  <Link href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}>
+                    <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-sm">
+                      {item}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div className="md:col-span-3 space-y-4">
+            <h3 className="font-bold text-foreground tracking-wide uppercase text-sm">Connect</h3>
+            <ul className="space-y-3">
+              <li>
+                <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  WhatsApp
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/utsachandradasutsa" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/utsa-das-3473a53a7" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  LinkedIn
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        {/* Bottom Bar */}
-        <motion.div
-          className="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between gap-4"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <p className="text-xs text-foreground/50">
+        <div className="border-t border-border/50 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-muted-foreground">
             © {currentYear} Utsa Das. All rights reserved.
           </p>
-          <div className="flex gap-6 text-xs text-foreground/50">
-            <a href="#" className="hover:text-accent transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-accent transition-colors">
-              Terms of Service
-            </a>
-          </div>
-        </motion.div>
+        </div>
       </div>
     </footer>
   );
 };
 
 export default Footer;
-

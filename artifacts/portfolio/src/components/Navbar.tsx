@@ -1,21 +1,15 @@
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
-/**
- * Premium Navbar Component
- * Design: Dark minimal with smooth animations and asymmetric layout
- * - Sticky top navigation with blur backdrop
- * - Responsive mobile menu with slide-in animation
- * - Smooth hover effects on nav items
- * - CTA button with accent color
- */
+const WHATSAPP_LINK = "https://wa.me/8801861393416?text=Hi%20Utsa%2C%20I%27d%20like%20to%20discuss%20a%20project";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,86 +29,73 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Main Navbar */}
       <motion.nav
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-background/80 backdrop-blur-md border-b border-border"
+            ? "bg-background/80 backdrop-blur-md border-b border-border shadow-sm"
             : "bg-transparent"
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <div className="container flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
+        <div className="container flex items-center justify-between h-20">
           <Link href="/">
-            <motion.div
-              className="flex items-center gap-2 cursor-pointer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-cyan-500 flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-lg">UD</span>
+            <div className="flex items-center gap-3 cursor-pointer group" data-testid="nav-logo">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg group-hover:shadow-primary/20 transition-all">
+                <span className="text-primary-foreground font-bold text-lg tracking-tight">UD</span>
               </div>
-              <span className="hidden sm:inline font-semibold text-foreground">Utsa Das</span>
-            </motion.div>
+              <span className="hidden sm:inline font-bold text-lg tracking-tight">Utsa Das</span>
+            </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-2">
             {navItems.map((item) => (
               <Link key={item.href} href={item.href}>
-                <motion.a
-                  className="px-4 py-2 text-sm font-medium text-foreground/70 hover:text-foreground transition-colors cursor-pointer"
-                  whileHover={{ color: "var(--foreground)" }}
+                <span
+                  className={`px-4 py-2 text-sm font-medium rounded-md transition-colors cursor-pointer ${
+                    location === item.href
+                      ? "text-primary bg-primary/5"
+                      : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                  }`}
+                  data-testid={`nav-link-${item.label.toLowerCase()}`}
                 >
                   {item.label}
-                </motion.a>
+                </span>
               </Link>
             ))}
           </div>
 
-          {/* CTA Button & Mobile Menu Toggle */}
           <div className="flex items-center gap-4">
-            <Link href="/contact">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+            <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" data-testid="nav-whatsapp-btn">
+              <Button
+                className="hidden sm:inline-flex bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-md shadow-primary/20"
               >
-                <Button
-                  size="sm"
-                  className="hidden sm:inline-flex bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
-                >
-                  Get in Touch
-                </Button>
-              </motion.div>
-            </Link>
+                Let's Chat
+              </Button>
+            </a>
 
-            {/* Mobile Menu Button */}
-            <motion.button
+            <button
               onClick={() => setIsOpen(!isOpen)}
               className="md:hidden p-2 text-foreground hover:bg-secondary rounded-lg transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
+              data-testid="nav-mobile-toggle"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </motion.button>
+            </button>
           </div>
         </div>
       </motion.nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 top-16 md:hidden bg-background/95 backdrop-blur-md z-40"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
+            className="fixed inset-0 top-20 md:hidden bg-background/98 backdrop-blur-xl z-40 border-t border-border"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
           >
-            <div className="container py-6 space-y-4">
+            <div className="container py-8 flex flex-col gap-2">
               {navItems.map((item, index) => (
                 <motion.div
                   key={item.href}
@@ -123,12 +104,16 @@ const Navbar = () => {
                   transition={{ delay: index * 0.05 }}
                 >
                   <Link href={item.href}>
-                    <a
+                    <span
                       onClick={() => setIsOpen(false)}
-                      className="block px-4 py-3 text-lg font-medium text-foreground hover:text-accent transition-colors cursor-pointer"
+                      className={`block px-4 py-4 rounded-lg text-lg font-medium transition-colors cursor-pointer ${
+                        location === item.href
+                          ? "bg-primary/10 text-primary"
+                          : "text-foreground hover:bg-secondary"
+                      }`}
                     >
                       {item.label}
-                    </a>
+                    </span>
                   </Link>
                 </motion.div>
               ))}
@@ -136,24 +121,23 @@ const Navbar = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: navItems.length * 0.05 }}
-                className="pt-4 border-t border-border"
+                className="pt-6 mt-4 border-t border-border"
               >
-                <Link href="/contact">
+                <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="block w-full">
                   <Button
                     onClick={() => setIsOpen(false)}
-                    className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
+                    className="w-full h-14 text-lg bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
                   >
-                    Get in Touch
+                    Discuss Project via WhatsApp
                   </Button>
-                </Link>
+                </a>
               </motion.div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Spacer for fixed navbar */}
-      <div className="h-16 md:h-20" />
+      <div className="h-20" />
     </>
   );
 };
