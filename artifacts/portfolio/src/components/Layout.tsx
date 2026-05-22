@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import WhatsAppFAB from "./WhatsAppFAB";
 import { motion } from "framer-motion";
 
 /**
@@ -28,6 +29,7 @@ const Layout = ({ children }: LayoutProps) => {
         {children}
       </motion.main>
       <Footer />
+      <WhatsAppFAB />
     </div>
   );
 };
