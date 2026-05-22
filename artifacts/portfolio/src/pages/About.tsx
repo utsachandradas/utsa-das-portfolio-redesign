@@ -10,31 +10,31 @@ export default function About() {
   const timeline = [
     {
       year: "2022",
-      title: "Started the SEO Journey",
-      description: "Began building deep expertise in technical SEO, keyword research, and on-page optimization — approaching search as a systems problem from day one."
+      title: "Where It Started — Technical SEO",
+      description: "I started building hands-on expertise in technical SEO: crawl architecture, indexation analysis, on-page structure, and keyword intent mapping. From day one, I approached search as a systems problem — not a checklist."
     },
     {
       year: "2023",
-      title: "GEO & AI Search Discovery",
-      description: "As AI search systems emerged, shifted focus to Generative Engine Optimization (GEO) — structuring content and entities for AI-powered discovery platforms."
+      title: "Discovering Generative Engine Optimization",
+      description: "As AI search systems began reshaping how people find information, I shifted part of my focus toward Generative Engine Optimization (GEO) — learning how LLMs like ChatGPT and Perplexity retrieve, rank, and cite sources."
     },
     {
       year: "2024",
-      title: "Founder-Led Strategy Practice",
-      description: "Launched a founder-led consultancy, delivering technical SEO, GEO optimization, and AI-search readiness strategies for brands across industries."
+      title: "Building a Founder-Led Practice",
+      description: "I launched my own consulting practice, working directly with brand owners and marketers. No agency overhead, no junior handoffs — just focused SEO and GEO strategy built around each client's actual goals."
     },
     {
       year: "2025",
-      title: "AI-Era SEO Authority",
-      description: "Building comprehensive AI-search optimization frameworks that help brands achieve Tier 1 citations in ChatGPT, Perplexity, Gemini, and Google AI Overviews."
+      title: "Specializing in AI-Era Search Visibility",
+      description: "I now build integrated SEO and GEO frameworks that help brands rank in traditional search and get cited by AI systems — ChatGPT, Gemini, Perplexity, and Google AI Overviews — as authoritative sources."
     }
   ];
 
   return (
     <Layout>
       <Helmet>
-        <title>About Utsa Das | SEO & GEO Strategist</title>
-        <meta name="description" content="Learn more about Utsa Das, an expert SEO Strategist and GEO Architect with over 10 years of experience in digital growth and search optimization." />
+        <title>About Utsa Das — SEO & GEO Strategist from Bangladesh</title>
+        <meta name="description" content="Utsa Das is a Bangladesh-based SEO and GEO Strategist with 4+ years of experience since 2022. He specializes in AI search optimization, technical SEO, and helping brands get cited by ChatGPT, Perplexity, and Google AI Overviews." />
       </Helmet>
 
       <section className="py-24 pt-32 relative">
@@ -48,23 +48,22 @@ export default function About() {
           >
             <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
               <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-panel text-primary text-xs font-semibold border border-primary/25">
-                4+ Years Experience
+                4+ Years of SEO & GEO Experience
               </span>
               <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-panel text-muted-foreground text-xs font-medium border border-white/8">
-                SEO & GEO Strategist Since 2022
+                Active since 2022
               </span>
               <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-panel text-muted-foreground text-xs font-medium border border-white/8">
-                Founder-Led Growth Systems
+                Founder-Led Strategy
               </span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">About Utsa Das</h1>
             <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto">
-              Bangladesh-based Founder, SEO & GEO Strategist with 4+ years of experience building AI-era search visibility systems since 2022.
+              Bangladesh-based SEO and GEO Strategist helping brands build search visibility that works in both traditional and AI-powered discovery systems.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center mb-14 md:mb-24">
-            {/* Avatar column */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -74,7 +73,6 @@ export default function About() {
               <HeroAvatar />
             </motion.div>
 
-            {/* Text + values column */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -83,23 +81,23 @@ export default function About() {
             >
               <div className="space-y-5 text-lg text-muted-foreground font-light leading-relaxed">
                 <p>
-                  My journey into digital marketing began with a simple curiosity about how search engines work. What started as a hobby evolved into a professional passion for understanding and optimizing the digital landscape.
+                  I started in SEO because I wanted to understand why some websites consistently show up when people search — and others don't. That curiosity became a craft. Since 2022, I've spent every year going deeper into both the technical infrastructure of search and the strategic layer above it.
                 </p>
                 <p>
-                  Over the years, I have helped dozens of businesses improve their online visibility, increase organic traffic, and achieve sustainable growth. My approach combines technical expertise with strategic thinking—ensuring every optimization serves a real business outcome.
+                  The part I care most about is the intersection of <strong className="text-foreground font-semibold">how search engines understand content</strong> and how brands can genuinely earn their place at the top. That's true for traditional SEO, and it's increasingly true for AI-powered systems like ChatGPT, Perplexity, and Google's AI Overviews — which is what <strong className="text-foreground font-semibold">Generative Engine Optimization (GEO)</strong> is about.
                 </p>
                 <p>
-                  Today, I'm focused on the intersection of SEO, <strong className="text-foreground font-semibold">Generative Engine Optimization (GEO)</strong>, and AI-powered search—helping brands stay ahead in an increasingly AI-driven world.
+                  I work directly with founders and brand teams — no layers, no diluted strategy. The work I do for one client doesn't get handed off to someone junior. That's a deliberate choice, and it's why my clients see results that actually stick.
                 </p>
               </div>
 
               <div className="glass-panel p-8 rounded-2xl border border-white/5">
-                <h3 className="text-lg font-bold mb-6 tracking-tight text-foreground">Core Values</h3>
+                <h3 className="text-lg font-bold mb-6 tracking-tight text-foreground">What I Believe In</h3>
                 <ul className="space-y-5">
                   {[
-                    { title: "Transparency", desc: "Clear communication and honest reporting at every stage." },
-                    { title: "Innovation", desc: "Always exploring emerging strategies and AI-era tools." },
-                    { title: "Results-Driven", desc: "Focused on measurable business outcomes, not vanity metrics." }
+                    { title: "Honesty Over Hype", desc: "I'll tell you what your site actually needs — not what sounds impressive in a pitch deck." },
+                    { title: "Systems Over Tactics", desc: "One-off optimizations fade. I build structures that keep compounding over time." },
+                    { title: "Outcomes, Not Outputs", desc: "Traffic, rankings, and citations only matter if they connect to real business results." }
                   ].map((val, i) => (
                     <li key={i} className="flex gap-4">
                       <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
@@ -115,7 +113,7 @@ export default function About() {
           </div>
 
           <div className="mb-14 md:mb-24">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center tracking-tight">Career Timeline</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center tracking-tight">How I Got Here</h2>
             <div className="max-w-3xl mx-auto space-y-8">
               {timeline.map((item, index) => (
                 <motion.div
@@ -144,15 +142,17 @@ export default function About() {
           </div>
           
           <div className="text-center bg-secondary/30 rounded-3xl p-6 sm:p-12 border border-border">
-            <h2 className="text-3xl font-bold mb-6">Ready to work together?</h2>
-            <p className="text-muted-foreground mb-8 max-w-xl mx-auto">Let's discuss how I can help your business achieve better visibility and sustainable growth.</p>
+            <h2 className="text-3xl font-bold mb-4">Want to work together?</h2>
+            <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+              If you're trying to grow organic visibility — in traditional search or in AI systems — I'd love to hear what you're working on.
+            </p>
             <a 
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noreferrer"
               className="inline-flex px-8 py-4 bg-primary text-primary-foreground rounded-lg font-bold items-center gap-2 hover:bg-primary/90 transition-all shadow-[0_0_20px_rgba(var(--primary),0.3)]"
             >
-              Contact me on WhatsApp <ArrowRight className="w-5 h-5" />
+              Message me on WhatsApp <ArrowRight className="w-5 h-5" />
             </a>
           </div>
         </div>

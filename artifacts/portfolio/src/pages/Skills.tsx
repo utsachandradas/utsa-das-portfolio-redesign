@@ -5,20 +5,63 @@ import { ArrowRight } from "lucide-react";
 
 const WHATSAPP_LINK = "https://wa.me/8801861393416?text=Hi%20Utsa%2C%20I%27d%20like%20to%20discuss%20a%20project";
 
-export default function Skills() {
-  const skills = [
-    "Technical SEO", "GEO Optimization", "AI Search Optimization", 
-    "Ecommerce SEO", "Keyword Research", "Schema Markup", 
-    "Content Strategy", "Analytics & Tracking", "Core Web Vitals",
-    "Entity SEO", "Log File Analysis", "JavaScript SEO",
-    "Local SEO", "Migration Strategy", "SGE Readiness"
-  ];
+const skillGroups = [
+  {
+    heading: "Search & GEO Strategy",
+    skills: [
+      { name: "Technical SEO", desc: "Crawl architecture, indexation, rendering, log file analysis" },
+      { name: "GEO Optimization", desc: "AI citation structure, entity optimization, generative engine strategy" },
+      { name: "AI Search Visibility", desc: "ChatGPT, Perplexity, Gemini, and Google AI Overviews positioning" },
+      { name: "Keyword Research", desc: "Search intent mapping, gap analysis, cluster planning" },
+      { name: "SEO Strategy", desc: "Roadmap development, competitive analysis, long-term planning" },
+    ],
+  },
+  {
+    heading: "Content & On-Page",
+    skills: [
+      { name: "Content Strategy", desc: "Topic clusters, topical authority, editorial planning" },
+      { name: "Schema Markup", desc: "Article, Product, FAQ, Organization, and Entity schema" },
+      { name: "Entity SEO", desc: "Brand entity definition, knowledge panel optimization" },
+      { name: "On-Page Optimization", desc: "Title tags, meta descriptions, heading hierarchy, internal links" },
+      { name: "E-E-A-T Signals", desc: "Author authority, trust indicators, citation building" },
+    ],
+  },
+  {
+    heading: "Specialist Areas",
+    skills: [
+      { name: "Ecommerce SEO", desc: "Category architecture, product schema, shopping feeds" },
+      { name: "Core Web Vitals", desc: "LCP, CLS, INP optimization and performance auditing" },
+      { name: "JavaScript SEO", desc: "Rendering diagnostics, hydration issues, SPA crawlability" },
+      { name: "Local SEO", desc: "Google Business Profile, local citations, geo-targeting" },
+      { name: "Migration Strategy", desc: "Site migrations, redirect mapping, indexation recovery" },
+    ],
+  },
+];
 
+const tools = [
+  "Google Search Console",
+  "Google Analytics 4",
+  "Google Tag Manager",
+  "Ahrefs",
+  "SEMrush",
+  "Screaming Frog",
+  "Lighthouse",
+  "Log File Analyser",
+  "ChatGPT",
+  "Google Gemini",
+  "Perplexity AI",
+  "Claude",
+  "WordPress",
+  "Shopify",
+  "Google SGE / AI Overviews",
+];
+
+export default function Skills() {
   return (
     <Layout>
       <Helmet>
-        <title>SEO & GEO Expertise | Utsa Das</title>
-        <meta name="description" content="Deep dive into the technical SEO, GEO, and digital growth skills of Utsa Das. Expert in AI search optimization, content strategy, and modern web development." />
+        <title>SEO & GEO Skills | Technical Expertise | Utsa Das</title>
+        <meta name="description" content="Explore the technical SEO, GEO optimization, content strategy, and AI search expertise of Utsa Das — including tools like Ahrefs, Screaming Frog, Google Search Console, and AI platforms." />
       </Helmet>
 
       <section className="py-24 pt-32 relative">
@@ -30,47 +73,68 @@ export default function Skills() {
             transition={{ duration: 0.5 }}
             className="text-center mb-20"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Technical Arsenal</h1>
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-panel text-primary text-xs font-semibold border border-primary/25 mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary" /> Built Over 4+ Years of Practice
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Skills & Expertise</h1>
             <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto">
-              Deep expertise across technical SEO, GEO optimization, content strategy, and modern digital visibility systems.
+              A detailed breakdown of the SEO, GEO, and AI search skills I've developed since 2022 — and the tools I use to put them into practice.
             </p>
           </motion.div>
 
-          <div className="mb-24">
-            <h2 className="text-2xl font-bold mb-10 text-center">Core Competencies</h2>
-            <div className="flex flex-wrap justify-center gap-4">
-              {skills.map((skill, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  viewport={{ once: true }}
-                  className="px-6 py-4 glass-panel rounded-2xl font-medium shadow-sm hover:border-primary/50 transition-colors border border-white/5"
-                >
-                  {skill}
-                </motion.div>
-              ))}
-            </div>
+          <div className="space-y-12 mb-14 md:mb-24">
+            {skillGroups.map((group, gi) => (
+              <motion.div
+                key={gi}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: gi * 0.1 }}
+              >
+                <h2 className="text-xl font-bold mb-6 text-foreground tracking-tight">{group.heading}</h2>
+                <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+                  {group.skills.map((skill, si) => (
+                    <motion.div
+                      key={si}
+                      initial={{ opacity: 0, scale: 0.96 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: gi * 0.08 + si * 0.04 }}
+                      className="glass-panel rounded-xl p-5 border border-white/5 hover:border-primary/30 transition-all"
+                    >
+                      <p className="font-semibold text-foreground mb-1 text-sm">{skill.name}</p>
+                      <p className="text-xs text-muted-foreground leading-relaxed">{skill.desc}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
           </div>
 
-          <div className="mb-24">
-            <h2 className="text-2xl font-bold mb-10 text-center">Tools & Technologies</h2>
-            <div className="glass-panel p-12 rounded-3xl flex flex-wrap justify-center items-center gap-6 border border-white/5">
-              {["Google Search Console", "Google Analytics 4", "Ahrefs", "SEMrush", "Screaming Frog", "ChatGPT", "Gemini", "Claude", "Perplexity", "Lighthouse"].map((tool) => (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-14 md:mb-24"
+          >
+            <h2 className="text-xl font-bold mb-6 text-foreground tracking-tight">Tools & Platforms</h2>
+            <div className="glass-panel p-7 md:p-10 rounded-3xl flex flex-wrap gap-3 border border-white/5">
+              {tools.map((tool) => (
                 <span
                   key={tool}
-                  className="px-5 py-2.5 rounded-xl border border-white/10 text-muted-foreground hover:text-primary hover:border-primary/40 transition-all duration-200 font-medium text-sm cursor-default"
+                  className="px-4 py-2 rounded-xl border border-white/10 text-muted-foreground hover:text-primary hover:border-primary/40 transition-all duration-200 font-medium text-sm cursor-default"
                 >
                   {tool}
                 </span>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          <div className="text-center bg-secondary/30 rounded-3xl p-12 border border-border">
-            <h2 className="text-3xl font-bold mb-6">Ready to Leverage This Expertise?</h2>
-            <p className="text-muted-foreground mb-8 max-w-xl mx-auto">Let's discuss how my skills and experience can help your business achieve exceptional results.</p>
+          <div className="text-center bg-secondary/30 rounded-3xl p-6 sm:p-12 border border-border">
+            <h2 className="text-3xl font-bold mb-4">Want to put this expertise to work?</h2>
+            <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+              Tell me what you're trying to build — whether it's traditional search rankings, AI search visibility, or both. I'll be direct about where I can add the most value.
+            </p>
             <a 
               href={WHATSAPP_LINK}
               target="_blank"

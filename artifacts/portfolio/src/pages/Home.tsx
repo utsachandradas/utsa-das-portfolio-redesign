@@ -26,13 +26,13 @@ const stagger = {
 };
 
 const FAQ_DATA = [
-  { q: "Who is Utsa Das?", a: "Utsa Das is a Bangladesh-based Founder, SEO Strategist, and GEO Strategist with 4+ years of experience since 2022. He specializes in AI search optimization, technical SEO, and modern digital visibility systems that help brands grow in both traditional and AI-powered search environments." },
-  { q: "What is GEO optimization?", a: "Generative Engine Optimization (GEO) is the process of optimizing content and digital assets to be understood, cited, and recommended by AI-powered search engines like ChatGPT, Perplexity, and Google's AI Overviews." },
-  { q: "What is the difference between SEO and GEO?", a: "Traditional SEO focuses on ranking in standard search engine results pages (SERPs) using keywords and backlinks. GEO focuses on structuring semantic data and entity relationships so AI models synthesize and cite your brand in generated answers." },
-  { q: "Why does AI search matter for brands?", a: "User behavior is shifting from traditional search queries to conversational AI prompts. If a brand isn't optimized for generative engines, they risk becoming invisible to the next generation of digital consumers." },
-  { q: "Why is technical SEO important?", a: "Technical SEO ensures that both traditional crawlers and AI bots can access, render, and understand your website's architecture efficiently, forming the foundation of any visibility strategy." },
-  { q: "What does an SEO strategist do?", a: "An SEO strategist analyzes market opportunities, technical infrastructure, and content ecosystems to design comprehensive frameworks that increase a brand's organic visibility, traffic, and revenue." },
-  { q: "Why is AI search optimization important for modern brands?", a: "AI search engines synthesize answers rather than just providing links. Optimizing for AI search ensures your brand is the authoritative source these models rely on when answering user queries in your industry." },
+  { q: "Who is Utsa Das?", a: "Utsa Das is a Bangladesh-based SEO and GEO Strategist with 4+ years of experience since 2022. He works directly with brand owners and founders to build organic visibility in both traditional search engines and AI-powered platforms like ChatGPT, Perplexity, and Google AI Overviews — no agency layers, no junior handoffs." },
+  { q: "What is GEO optimization?", a: "Generative Engine Optimization (GEO) is the practice of structuring your content, brand entities, and website data so AI systems like ChatGPT, Perplexity, and Google's AI Overviews choose to cite your brand when answering relevant questions. It's different from traditional SEO — instead of optimizing for ranking positions, you're optimizing to become the source an AI system trusts and references." },
+  { q: "What is the difference between SEO and GEO?", a: "Traditional SEO gets your website into Google's top organic results through keyword targeting, backlinks, and technical optimization. GEO gets your brand cited inside AI-generated answers — the responses ChatGPT, Perplexity, or Gemini produce when a user asks a question in your niche. Both matter, and the best foundation for GEO is a technically sound SEO setup." },
+  { q: "Why does AI search matter for my brand?", a: "More and more people are getting answers directly from AI tools without clicking through to websites. If your brand isn't structured to appear in those answers, you're invisible to a growing segment of your audience. GEO is the discipline that fixes that — and the brands investing in it now are building a compounding advantage that will be hard to replicate later." },
+  { q: "Why is technical SEO still important?", a: "Technical SEO is the foundation everything else is built on. If search crawlers and AI bots can't properly access, render, and understand your site — your content strategy and GEO work won't deliver results. A clean technical foundation means faster indexation, better crawl coverage, and more accurate AI interpretation of your content." },
+  { q: "What does an SEO strategist actually do?", a: "A good SEO strategist translates your business goals into a search visibility system. That means identifying what your audience is searching for, finding where you're missing out to competitors, fixing the technical issues holding you back, and building a content and entity strategy that compounds over time. The output is sustainable organic traffic that isn't dependent on paid ads." },
+  { q: "Do you work with businesses outside Bangladesh?", a: "Yes — I work with brands globally. Most work is done remotely via WhatsApp and email. The SEO and GEO work I do applies to any website regardless of location, though I also have deep familiarity with Bangladeshi consumer search behaviour for brands operating in that market." },
 ];
 
 /* ── Proof of Expertise: analytics bento data ───────────── */
@@ -136,15 +136,15 @@ export default function Home() {
               variants={fadeUp}
               className="text-3xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tight mb-7 leading-[1.05]"
             >
-              I Help Brands Grow<br />
+              Helping Brands Get Found<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-violet-400 to-cyan-400">
-                Through SEO, GEO &
+                In Google, ChatGPT &
               </span>
-              <br />AI‑Driven Search
+              <br />Every AI Search Engine
             </motion.h1>
 
             <motion.p variants={fadeUp} className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-              Founder-led SEO and GEO strategies — engineered for brands that want to dominate traditional search <em>and</em> AI-powered discovery systems.
+              I build SEO and GEO systems for brands that want to rank in Google <em>and</em> get cited by AI systems like ChatGPT, Perplexity, and Gemini — not just one or the other.
             </motion.p>
 
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-12">
@@ -203,17 +203,17 @@ export default function Home() {
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" /> Founder-Led Growth Strategy
               </div>
               <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight leading-tight">
-                Mastering the<br />Search Ecosystem
+                Building Visibility<br />That Compounds
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed font-light">
                 <p>
-                  Since 2022, I've been building at the intersection of technical SEO, AI search systems, and semantic content architecture. My work is grounded in a simple belief: <strong className="text-foreground font-semibold">search optimization must evolve with search itself.</strong>
+                  I'm Utsa Das — a Bangladesh-based SEO and GEO Strategist working since 2022. My focus is helping brands show up where their customers actually search, which increasingly means both Google <strong className="text-foreground font-semibold">and</strong> AI tools like ChatGPT, Perplexity, and Gemini.
                 </p>
                 <p>
-                  The landscape is shifting. Traditional SEO is foundational, but <strong className="text-foreground font-semibold">Generative Engine Optimization (GEO)</strong> is the frontier. I bridge the gap — building semantic content structures that dominate traditional SERPs while positioning brands as authoritative entities within AI LLM retrieval systems.
+                  Most SEO work treats these as separate problems. I think that's a mistake. <strong className="text-foreground font-semibold">Generative Engine Optimization (GEO)</strong> and traditional SEO share the same foundation: clean structure, clear entities, and content that genuinely answers what people are looking for. Build that once, and it performs everywhere.
                 </p>
                 <p>
-                  My approach is founder-led: no agency layers, no juniors doing the work. Every strategy is built with long-term compounding in mind.
+                  I work directly with every client — no account managers, no junior handoffs. That's a deliberate choice that keeps the strategy sharp and the execution consistent.
                 </p>
               </div>
 
@@ -266,7 +266,7 @@ export default function Home() {
               <div className="absolute top-0 right-0 w-48 h-48 bg-primary/5 rounded-bl-full group-hover:bg-primary/8 transition-colors" />
               <BrainCircuit className="w-10 h-10 text-primary mb-5" />
               <h3 className="text-2xl font-bold mb-3 tracking-tight">GEO Optimization</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-5 max-w-md">Generative Engine Optimization — structuring your brand's entities, semantic content, and data architecture so AI systems like ChatGPT, Gemini, and Perplexity cite you as the authoritative answer.</p>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-5 max-w-md">Generative Engine Optimization is about becoming the source AI systems choose to cite. I structure your brand entities, content, and data so that when someone asks ChatGPT, Gemini, or Perplexity a question in your field — your brand is the answer they get.</p>
               <div className="flex flex-wrap gap-2">
                 {["Entity SEO", "AI Citations", "Answer Engine Visibility", "Semantic Structure"].map(t => (
                   <span key={t} className="text-xs px-2.5 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary">{t}</span>
@@ -281,7 +281,7 @@ export default function Home() {
             >
               <Code className="w-10 h-10 text-primary mb-5" />
               <h3 className="text-2xl font-bold mb-3">Technical SEO</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">Crawlability, rendering, Core Web Vitals, schema markup, JavaScript SEO, and architecture audits for sites of all sizes.</p>
+              <p className="text-muted-foreground text-sm leading-relaxed">Crawlability, rendering, Core Web Vitals, schema markup, JavaScript SEO, and site architecture — audited and fixed so both search crawlers and AI bots can properly access your content.</p>
             </motion.div>
 
             <motion.div
@@ -291,7 +291,7 @@ export default function Home() {
             >
               <Database className="w-10 h-10 text-primary mb-5" />
               <h3 className="text-2xl font-bold mb-3">AI Search Visibility</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">Structured content systems designed to surface prominently in AI-generated search results and conversational queries.</p>
+              <p className="text-muted-foreground text-sm leading-relaxed">Content systems built to appear in AI-generated responses — structured so that when a user asks an AI tool a question in your space, your brand is what gets surfaced.</p>
             </motion.div>
 
             <motion.div
@@ -302,7 +302,7 @@ export default function Home() {
               <div className="absolute bottom-0 left-0 w-40 h-40 bg-primary/4 rounded-tr-full" />
               <BarChart className="w-10 h-10 text-primary mb-5" />
               <h3 className="text-2xl font-bold mb-3 tracking-tight">Ecommerce SEO</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-5 max-w-md">Category architecture, product schema, semantic hubs, and conversion-focused organic growth systems for D2C and enterprise retail brands.</p>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-5 max-w-md">Ecommerce SEO is its own discipline. I build category architectures that rank, product schema systems that win rich results, and semantic content hubs that turn informational traffic into product page visits and revenue.</p>
               <div className="flex flex-wrap gap-2">
                 {["Category Architecture", "Product Schema", "Internal Linking", "Shopping Feeds"].map(t => (
                   <span key={t} className="text-xs px-2.5 py-1 rounded-full border border-white/10 text-muted-foreground">{t}</span>
@@ -311,9 +311,9 @@ export default function Home() {
             </motion.div>
 
             {[
-              { Icon: Globe,   title: "Content Strategy",    desc: "Semantic content systems aligned with search intent and AI comprehension models." },
-              { Icon: Zap,     title: "Core Web Vitals",     desc: "Performance, UX, and technical improvements that boost rankings and user experience." },
-              { Icon: Search,  title: "SEO Strategy",        desc: "Holistic frameworks covering keyword research, competitive analysis, and long-term growth planning." },
+              { Icon: Globe,   title: "Content Strategy",    desc: "Topic clusters and content frameworks that build topical authority, match real search intent, and are structured to be cited by AI systems." },
+              { Icon: Zap,     title: "Core Web Vitals",     desc: "LCP, CLS, and INP fixes that improve page experience scores — and signal quality to both Google and AI crawlers." },
+              { Icon: Search,  title: "SEO Strategy",        desc: "Keyword research, competitive gap analysis, and long-term content roadmaps that turn search visibility into compounding organic growth." },
             ].map(({ Icon, title, desc }, i) => (
               <motion.div
                 key={title}
@@ -610,10 +610,10 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 relative">
             <div className="absolute top-12 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent hidden md:block" />
             {[
-              { phase: "01", title: "Research & Discovery", desc: "Keyword & entity research, competitor analysis, search intent mapping, AI search landscape review." },
-              { phase: "02", title: "Technical Audit", desc: "Crawlability, indexing, rendering, Core Web Vitals, schema coverage, and AI-bot accessibility." },
-              { phase: "03", title: "Optimization & GEO", desc: "Schema implementation, semantic content structure, entity building, GEO improvements." },
-              { phase: "04", title: "Monitor & Scale", desc: "Continuous tracking across traditional SERPs and AI platforms, iterative improvements." },
+              { phase: "01", title: "Research & Discovery", desc: "I map your keyword landscape, analyze competitors, identify search intent patterns, and assess where you stand across both Google and AI search platforms." },
+              { phase: "02", title: "Technical Audit", desc: "I audit crawlability, indexation, rendering, Core Web Vitals, schema coverage, and AI-bot accessibility — finding every technical issue that's limiting your visibility." },
+              { phase: "03", title: "Optimization & GEO", desc: "I implement fixes, restructure content for semantic clarity, build entity signals, and apply GEO frameworks so AI systems recognize your brand as an authoritative source." },
+              { phase: "04", title: "Track & Compound", desc: "I monitor performance across traditional SERPs and AI citation platforms, iterate based on data, and keep refining the system as search evolves." },
             ].map((step, i) => (
               <motion.div
                 key={i}
@@ -645,20 +645,20 @@ export default function Home() {
             {[
               {
                 icon: "💡",
-                title: "SEO is not dying — it's bifurcating",
-                quote: "Traditional search rankings still matter enormously, but there's now a parallel game being played inside AI systems. Brands that only play one game will lose the other by default. The future belongs to those who build for both simultaneously.",
+                title: "SEO isn't dying — it's splitting in two",
+                quote: "Traditional search rankings still matter enormously. But there's now a parallel game inside AI systems, and most brands aren't playing it. The ones that figure this out early will be very hard to displace later.",
                 tag: "Search Evolution",
               },
               {
                 icon: "🌐",
-                title: "GEO is the next compounding asset",
-                quote: "Every authoritative brand mention, structured schema implementation, and entity-aligned content piece is a long-term signal that compounds into AI citation authority. Brands starting this work now are building moats that will be nearly impossible to replicate in 3–5 years.",
+                title: "GEO compounds like SEO used to",
+                quote: "Every entity signal, schema implementation, and citation-worthy content piece you add today makes your brand harder to ignore tomorrow — by both search crawlers and AI models. The brands starting this work now are building structural advantages that take years to replicate.",
                 tag: "GEO Strategy",
               },
               {
                 icon: "🧠",
-                title: "Semantic understanding is the new PageRank",
-                quote: "AI models don't count backlinks — they synthesize meaning. The brands that become authoritative in AI systems are those whose content clearly and consistently defines what they do, who they serve, and why they're the best at it. Semantic clarity is the new authority signal.",
+                title: "AI systems reward clarity, not volume",
+                quote: "LLMs don't count backlinks. They synthesize meaning. The brands that get cited consistently in AI answers are the ones whose content is unambiguous about what they do, who they serve, and why they're the right answer. That's a very different optimization problem than traditional SEO.",
                 tag: "AI Search",
               },
             ].map(({ icon, title, quote, tag }, i) => (
@@ -816,10 +816,10 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              { title: "Enterprise Technical SEO", category: "Technical SEO", metric: "+145%", metricDesc: "Organic Crawl Efficiency", details: "Restructured site architecture and resolved critical rendering issues for a 1M+ page enterprise site." },
-              { title: "D2C Ecommerce Architecture", category: "Ecommerce SEO", metric: "+82%", metricDesc: "Non-brand Organic Revenue", details: "Developed semantic category hubs and optimized product data feeds for a growing retail brand." },
-              { title: "LLM Visibility Injection", category: "GEO Strategy", metric: "Tier 1", metricDesc: "Citation Frequency in Perplexity", details: "Structured brand entities and semantic data to secure primary citations in AI search overviews." },
-              { title: "Semantic Entity Restructuring", category: "AI-Search", metric: "Featured", metricDesc: "AI Overviews Placement", details: "Aligned content models with Google's SGE requirements resulting in consistent featured placements." },
+              { title: "Enterprise Technical SEO Overhaul", category: "Technical SEO", metric: "+145%", metricDesc: "Crawl Efficiency", details: "A 1M+ page site was bleeding crawl budget on low-value pages. I restructured the crawl architecture, resolved rendering blockers, and rebuilt internal linking to prioritize revenue pages." },
+              { title: "D2C Ecommerce Organic Growth", category: "Ecommerce SEO", metric: "+82%", metricDesc: "Non-brand Organic Revenue", details: "Built semantic category hubs, implemented Product and Offer schema across the full catalogue, and developed a keyword strategy targeting high-intent non-brand queries." },
+              { title: "AI Citation Visibility Program", category: "GEO Strategy", metric: "Tier 1", metricDesc: "Citation Rate in Perplexity", details: "Structured brand entities, rewrote key pages for AI readability, and built semantic co-citation signals. The brand now appears consistently in Perplexity and ChatGPT answers." },
+              { title: "Google AI Overviews Positioning", category: "AI Search", metric: "Featured", metricDesc: "AI Overviews Placement", details: "Aligned the content model with SGE requirements — restructuring answers, adding FAQ schema, and building entity authority. Now consistently featured in AI Overview panels." },
             ].map((project, i) => (
               <motion.div
                 key={i}
@@ -873,31 +873,31 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,oklch(0.70_0.24_272_/_0.12),transparent)] pointer-events-none" />
         <div className="container max-w-4xl mx-auto relative z-10 text-center">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger}>
-            <motion.p variants={fadeUp} className="text-primary text-sm font-semibold uppercase tracking-widest mb-4">Built for the Future of Search</motion.p>
+            <motion.p variants={fadeUp} className="text-primary text-sm font-semibold uppercase tracking-widest mb-4">Let's Build Something That Lasts</motion.p>
             <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
-              Ready to Build<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">AI-Ready Search Visibility?</span>
+              Ready to Show Up<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">Everywhere Customers Search?</span>
             </motion.h2>
             <motion.p variants={fadeUp} className="text-base sm:text-xl text-muted-foreground mb-10 font-light max-w-xl mx-auto">
-              4+ years of founder-led SEO & GEO strategy. Let's discuss what modern search visibility looks like for your brand.
+              Whether it's Google rankings, AI citations, or both — I'll tell you honestly what your brand needs and build a strategy to get there.
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href={WHATSAPP_LINK} target="_blank" rel="noreferrer"
                 className="w-full sm:w-auto px-10 py-5 bg-primary text-primary-foreground rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-primary/90 transition-all shadow-xl shadow-primary/30 hover:shadow-primary/50 hover:-translate-y-1"
               >
-                Start on WhatsApp <ArrowRight className="w-5 h-5" />
+                Message on WhatsApp <ArrowRight className="w-5 h-5" />
               </a>
               <a
                 href="#proof"
                 className="w-full sm:w-auto px-10 py-5 glass-panel text-foreground rounded-xl font-bold text-lg border border-white/10 hover:border-primary/30 hover:-translate-y-1 transition-all text-center"
               >
-                View Proof of Expertise
+                See the Results
               </a>
             </motion.div>
 
             <motion.p variants={fadeUp} className="mt-10 text-xs text-muted-foreground">
-              Search visibility engineered for the AI era · Technical SEO for modern discovery systems · Semantic optimization beyond traditional search
+              SEO & GEO strategy for the AI era · Technical SEO · Entity optimization · AI search citations · Based in Bangladesh, serving brands globally
             </motion.p>
           </motion.div>
         </div>

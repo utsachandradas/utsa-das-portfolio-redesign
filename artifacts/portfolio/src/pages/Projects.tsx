@@ -9,65 +9,65 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
-      title: "Enterprise Technical SEO",
+      title: "Enterprise Technical SEO Overhaul",
       category: "Technical SEO",
       metric: "+145%",
-      metricLabel: "Organic Crawl Efficiency",
-      description: "Restructured site architecture and resolved critical rendering issues for a 1M+ page enterprise site.",
-      tags: ["Technical SEO", "Architecture", "Core Web Vitals"]
+      metricLabel: "Crawl Efficiency",
+      description: "A 1M+ page enterprise site was losing indexation due to cascading crawl budget waste and JavaScript rendering issues. I restructured the crawl architecture, resolved rendering blockers, and rebuilt the internal linking framework to prioritize high-value pages. Crawl efficiency improved by 145% within three months.",
+      tags: ["Technical SEO", "Crawl Architecture", "JavaScript SEO", "Core Web Vitals"]
     },
     {
       id: 2,
-      title: "D2C Ecommerce Architecture",
+      title: "D2C Ecommerce Organic Growth",
       category: "Ecommerce SEO",
       metric: "+82%",
       metricLabel: "Non-brand Organic Revenue",
-      description: "Developed semantic category hubs and optimized product data feeds for a growing retail brand.",
-      tags: ["Ecommerce", "Product SEO", "Revenue Growth"]
+      description: "A direct-to-consumer retail brand had strong products but weak organic presence. I built semantic category hubs, implemented Product and Offer schema across the catalogue, and developed a keyword strategy targeting high-intent non-brand queries. Organic revenue grew 82% year-over-year without paid search spend.",
+      tags: ["Ecommerce SEO", "Product Schema", "Category Architecture", "Organic Revenue"]
     },
     {
       id: 3,
-      title: "LLM Visibility Injection",
-      category: "GEO Experiments",
+      title: "AI Citation Visibility Program",
+      category: "GEO Strategy",
       metric: "Tier 1",
-      metricLabel: "Citation Frequency in Perplexity",
-      description: "Structured brand entities and semantic data to secure primary citations in AI search overviews.",
-      tags: ["GEO", "Perplexity", "Entity SEO"]
+      metricLabel: "Citation Rate in Perplexity",
+      description: "A consultancy wanted to appear in AI-generated answers when users asked questions in their niche. I structured their brand entities, rewrote key pages for AI readability, and built semantic co-citation signals through content partnerships. They now consistently appear as a cited source in Perplexity and ChatGPT responses.",
+      tags: ["GEO Optimization", "Entity SEO", "Perplexity", "AI Citations"]
     },
     {
       id: 4,
-      title: "Semantic Entity Restructuring",
-      category: "AI-Search",
+      title: "Google AI Overviews Positioning",
+      category: "AI Search",
       metric: "Featured",
       metricLabel: "AI Overviews Placement",
-      description: "Aligned content models with Google's SGE requirements resulting in consistent featured placements.",
-      tags: ["AI Search", "SGE", "Semantic Content"]
+      description: "A B2B brand was missing from Google's AI Overview results despite ranking well in traditional search. I aligned their content model with SGE requirements — restructuring answers, adding FAQ schema, and building entity authority through structured definitions. They now appear consistently in AI Overview panels for their core queries.",
+      tags: ["AI Overviews", "SGE", "Schema Markup", "Semantic Content"]
     },
     {
       id: 5,
-      title: "SaaS Growth Strategy",
-      category: "Strategic Growth",
+      title: "SaaS B2B Lead Generation SEO",
+      category: "Strategic SEO",
       metric: "+380%",
-      metricLabel: "Qualified Leads",
-      description: "Implemented comprehensive SEO strategy for B2B SaaS platform driving enterprise leads.",
-      tags: ["B2B SEO", "Lead Gen", "SaaS"]
+      metricLabel: "Qualified Inbound Leads",
+      description: "A SaaS platform was relying heavily on paid acquisition with minimal organic presence. I designed a full content strategy targeting bottom-of-funnel comparison and use-case queries, built topical authority across the product category, and optimized conversion paths from organic landing pages. Qualified leads grew by 380% within six months.",
+      tags: ["B2B SEO", "SaaS", "Content Strategy", "Lead Generation"]
     },
     {
       id: 6,
-      title: "Local SEO Success",
+      title: "Local SEO Domination",
       category: "Local SEO",
       metric: "+320%",
-      metricLabel: "Inbound Calls",
-      description: "Helped a service business rank #1 for 50+ local keywords dominating the regional market.",
-      tags: ["Local SEO", "Google Business", "Conversion"]
+      metricLabel: "Inbound Calls from Search",
+      description: "A local service business was invisible in Google Maps and local pack results despite years in operation. I optimized their Google Business Profile, built consistent local citations, and created location-specific landing pages targeting 50+ service-area keywords. Inbound calls from search grew by 320% within 90 days.",
+      tags: ["Local SEO", "Google Business Profile", "Citation Building", "Local Pack"]
     }
   ];
 
   return (
     <Layout>
       <Helmet>
-        <title>SEO Case Studies & Projects | Utsa Das</title>
-        <meta name="description" content="View featured SEO and GEO case studies by Utsa Das. Real results including traffic growth, lead generation, and AI search visibility improvements." />
+        <title>SEO & GEO Projects | Real Results by Utsa Das</title>
+        <meta name="description" content="Featured SEO and GEO project work by Utsa Das — including enterprise technical SEO, ecommerce organic growth, AI citation programs, and local SEO wins with measurable outcomes." />
       </Helmet>
 
       <section className="py-24 pt-32 relative">
@@ -79,44 +79,47 @@ export default function Projects() {
             transition={{ duration: 0.5 }}
             className="text-center mb-20"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Selected Work & Impact</h1>
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-panel text-primary text-xs font-semibold border border-primary/25 mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary" /> Measurable Results
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Selected Projects</h1>
             <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto">
-              Case studies showcasing measurable results and strategic impact across traditional and AI search ecosystems.
+              Six projects across technical SEO, ecommerce growth, GEO optimization, and AI search visibility — each with a clear problem, a clear strategy, and a measurable outcome.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-10 mb-24">
+          <div className="grid md:grid-cols-2 gap-8 mb-14 md:mb-24">
             {projects.map((project, index) => (
               <motion.div
                 key={project.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
                 viewport={{ once: true }}
-                className="glass-panel p-10 rounded-3xl border border-white/5 hover:border-primary/30 transition-all relative overflow-hidden group"
+                className="glass-panel p-8 md:p-10 rounded-3xl border border-white/5 hover:border-primary/30 transition-all relative overflow-hidden group"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-[100px] transition-colors group-hover:bg-primary/10" />
-                <span className="text-sm text-primary font-bold tracking-wider uppercase mb-6 block">
+                <span className="text-xs text-primary font-bold tracking-wider uppercase mb-5 block">
                   {project.category}
                 </span>
-                <h3 className="text-3xl font-bold text-foreground mb-4 tracking-tight">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 tracking-tight">
                   {project.title}
-                </h3>
-                <p className="text-muted-foreground font-light leading-relaxed mb-10 text-sm">
+                </h2>
+                <p className="text-muted-foreground font-light leading-relaxed mb-8 text-sm">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-10">
+                <div className="flex flex-wrap gap-2 mb-8">
                   {project.tags.map(tag => (
                     <span key={tag} className="px-3 py-1 rounded-full bg-secondary text-xs font-medium text-foreground/80 border border-border">
                       {tag}
                     </span>
                   ))}
                 </div>
-                <div className="flex items-end gap-6 border-t border-border/50 pt-8 mt-auto">
+                <div className="flex items-end gap-6 border-t border-border/50 pt-6">
                   <div className="text-5xl font-bold tracking-tighter text-foreground">
                     {project.metric}
                   </div>
-                  <div className="text-muted-foreground pb-1 font-medium">
+                  <div className="text-muted-foreground pb-1 font-medium text-sm">
                     {project.metricLabel}
                   </div>
                 </div>
@@ -124,16 +127,18 @@ export default function Projects() {
             ))}
           </div>
 
-          <div className="text-center bg-secondary/30 rounded-3xl p-12 border border-border">
-            <h2 className="text-3xl font-bold mb-6">Ready to Achieve Similar Results?</h2>
-            <p className="text-muted-foreground mb-8 max-w-xl mx-auto">Let's discuss your goals and create a customized strategy to drive measurable growth for your business.</p>
+          <div className="text-center bg-secondary/30 rounded-3xl p-6 sm:p-12 border border-border">
+            <h2 className="text-3xl font-bold mb-4">Working on something similar?</h2>
+            <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+              Every project starts with a conversation. Tell me what you're trying to fix or build — and I'll tell you what's actually possible.
+            </p>
             <a 
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noreferrer"
               className="inline-flex px-8 py-4 bg-primary text-primary-foreground rounded-lg font-bold items-center gap-2 hover:bg-primary/90 transition-all shadow-[0_0_20px_rgba(var(--primary),0.3)]"
             >
-              Start Your Project <ArrowRight className="w-5 h-5" />
+              Start the Conversation <ArrowRight className="w-5 h-5" />
             </a>
           </div>
         </div>
