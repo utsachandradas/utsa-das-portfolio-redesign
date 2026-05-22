@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import WhatsAppFAB from "./WhatsAppFAB";
+import ScrollToTop from "./ScrollToTop";
 import { motion } from "framer-motion";
 
 /**
@@ -30,6 +31,7 @@ const Layout = ({ children }: LayoutProps) => {
       </motion.main>
       <Footer />
       <WhatsAppFAB />
+      <ScrollToTop />
     </div>
   );
 };
