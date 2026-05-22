@@ -184,7 +184,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="mt-12 space-y-6 bg-card border border-border rounded-xl p-8"
+            className="mt-12 space-y-6 bg-card border border-border rounded-xl p-5 sm:p-8"
           >
             <div className="grid md:grid-cols-2 gap-6">
               <div>

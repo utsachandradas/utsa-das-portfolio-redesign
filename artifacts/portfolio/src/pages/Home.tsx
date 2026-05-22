@@ -110,7 +110,7 @@ export default function Home() {
       </Helmet>
 
       {/* ── 1. HERO ──────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center pt-20 pb-16 px-4 overflow-hidden">
+      <section className="relative min-h-screen flex items-center pt-20 pb-12 px-4 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,oklch(0.70_0.24_272_/_0.18),transparent)]" />
           <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
@@ -134,7 +134,7 @@ export default function Home() {
 
             <motion.h1
               variants={fadeUp}
-              className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tight mb-7 leading-[1.05]"
+              className="text-3xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tight mb-7 leading-[1.05]"
             >
               I Help Brands Grow<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-violet-400 to-cyan-400">
@@ -143,7 +143,7 @@ export default function Home() {
               <br />AI‑Driven Search
             </motion.h1>
 
-            <motion.p variants={fadeUp} className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+            <motion.p variants={fadeUp} className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed font-light">
               Founder-led SEO and GEO strategies — engineered for brands that want to dominate traditional search <em>and</em> AI-powered discovery systems.
             </motion.p>
 
@@ -194,10 +194,10 @@ export default function Home() {
       </section>
 
       {/* ── 3. ABOUT / WHO IS UTSA DAS ───────────────────────── */}
-      <section className="py-28 relative" id="about">
+      <section className="py-14 md:py-28 relative" id="about">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_100%_50%,oklch(0.70_0.24_272_/_0.06),transparent)] pointer-events-none" />
         <div className="container max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-panel text-primary text-xs font-semibold mb-6 border border-primary/20">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" /> Founder-Led Growth Strategy
@@ -246,7 +246,7 @@ export default function Home() {
       </section>
 
       {/* ── 4. SERVICES ──────────────────────────────────────── */}
-      <section className="py-28 relative" id="services">
+      <section className="py-14 md:py-28 relative" id="services">
         <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 via-transparent to-transparent pointer-events-none" />
         <div className="container relative z-10 max-w-7xl mx-auto">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
@@ -331,7 +331,7 @@ export default function Home() {
       </section>
 
       {/* ── 5. PROOF OF EXPERTISE ────────────────────────────── */}
-      <section className="py-28 relative" id="proof">
+      <section className="py-14 md:py-28 relative" id="proof">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_30%_50%,oklch(0.70_0.24_272_/_0.07),transparent)] pointer-events-none" />
         <div className="container max-w-7xl mx-auto relative z-10">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
@@ -457,7 +457,7 @@ export default function Home() {
       </section>
 
       {/* ── 6. AI SEARCH READINESS ───────────────────────────── */}
-      <section className="py-28 relative border-y border-border/40">
+      <section className="py-14 md:py-28 relative border-y border-border/40">
         <div className="absolute inset-0 bg-secondary/20 pointer-events-none" />
         <div className="container max-w-6xl mx-auto relative z-10">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
@@ -536,7 +536,7 @@ export default function Home() {
       </section>
 
       {/* ── 7. SEARCH SYSTEMS I OPTIMIZE FOR ────────────────── */}
-      <section className="py-28 relative">
+      <section className="py-14 md:py-28 relative">
         <div className="container max-w-6xl mx-auto">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
             <motion.p variants={fadeUp} className="text-primary text-sm font-semibold uppercase tracking-widest mb-3">Multi-Platform Visibility</motion.p>
@@ -599,7 +599,7 @@ export default function Home() {
       </section>
 
       {/* ── 8. PROCESS ───────────────────────────────────────── */}
-      <section className="py-28 relative border-y border-border/40">
+      <section className="py-14 md:py-28 relative border-y border-border/40">
         <div className="absolute inset-0 bg-secondary/20 pointer-events-none" />
         <div className="container max-w-6xl mx-auto relative z-10">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
@@ -607,7 +607,7 @@ export default function Home() {
             <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-bold tracking-tight mb-4">The Optimization Lifecycle</motion.h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-4 gap-6 relative">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 relative">
             <div className="absolute top-12 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent hidden md:block" />
             {[
               { phase: "01", title: "Research & Discovery", desc: "Keyword & entity research, competitor analysis, search intent mapping, AI search landscape review." },
@@ -632,7 +632,7 @@ export default function Home() {
       </section>
 
       {/* ── 9. FOUNDER PERSPECTIVE ───────────────────────────── */}
-      <section className="py-28 relative">
+      <section className="py-14 md:py-28 relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_70%_50%,oklch(0.70_0.24_272_/_0.06),transparent)] pointer-events-none" />
         <div className="container max-w-6xl mx-auto relative z-10">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="mb-16">
@@ -684,9 +684,9 @@ export default function Home() {
       </section>
 
       {/* ── 10. TRUST + EXPLORING ────────────────────────────── */}
-      <section className="py-28 relative border-y border-border/40">
+      <section className="py-14 md:py-28 relative border-y border-border/40">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_left,oklch(0.70_0.24_272_/_0.05)_0,transparent_70%)] pointer-events-none" />
-        <div className="container relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-20">
+        <div className="container relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 lg:gap-20">
           <div>
             <p className="text-primary text-sm font-semibold uppercase tracking-widest mb-4">Why Work With Me</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-10 tracking-tight">Pillars of Execution</h2>
@@ -736,7 +736,7 @@ export default function Home() {
       </section>
 
       {/* ── 11. SKILLS + TOOLS ───────────────────────────────── */}
-      <section className="py-28 relative" id="skills">
+      <section className="py-14 md:py-28 relative" id="skills">
         <div className="container max-w-6xl mx-auto text-center">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="mb-16">
             <motion.p variants={fadeUp} className="text-primary text-sm font-semibold uppercase tracking-widest mb-3">Technical Arsenal</motion.p>
@@ -806,7 +806,7 @@ export default function Home() {
       </section>
 
       {/* ── 12. PORTFOLIO / WORK ─────────────────────────────── */}
-      <section className="py-28 relative border-t border-border/40" id="portfolio">
+      <section className="py-14 md:py-28 relative border-t border-border/40" id="portfolio">
         <div className="absolute inset-0 bg-secondary/20 pointer-events-none" />
         <div className="container relative z-10 max-w-7xl mx-auto">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
@@ -842,7 +842,7 @@ export default function Home() {
       </section>
 
       {/* ── 13. FAQ ──────────────────────────────────────────── */}
-      <section className="py-28 relative">
+      <section className="py-14 md:py-28 relative">
         <div className="container max-w-4xl mx-auto">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
             <motion.p variants={fadeUp} className="text-primary text-sm font-semibold uppercase tracking-widest mb-3">Common Questions</motion.p>
@@ -855,11 +855,11 @@ export default function Home() {
                 className="group glass-panel rounded-2xl [&_summary::-webkit-details-marker]:hidden border border-white/5 overflow-hidden hover:border-primary/20 transition-all"
                 initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }}
               >
-                <summary className="flex items-center justify-between p-7 cursor-pointer font-semibold hover:text-primary transition-colors">
+                <summary className="flex items-center justify-between p-5 sm:p-7 cursor-pointer font-semibold hover:text-primary transition-colors">
                   <span className="pr-4">{faq.q}</span>
                   <ChevronDown className="w-5 h-5 transition-transform group-open:rotate-180 text-muted-foreground flex-shrink-0" />
                 </summary>
-                <div className="px-7 pb-7 text-muted-foreground leading-relaxed font-light border-t border-border/30 pt-5">
+                <div className="px-5 sm:px-7 pb-5 sm:pb-7 text-muted-foreground leading-relaxed font-light border-t border-border/30 pt-5">
                   {faq.a}
                 </div>
               </motion.details>
@@ -869,16 +869,16 @@ export default function Home() {
       </section>
 
       {/* ── 14. FINAL CTA ────────────────────────────────────── */}
-      <section className="py-28 relative border-t border-border/40">
+      <section className="py-14 md:py-28 relative border-t border-border/40">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,oklch(0.70_0.24_272_/_0.12),transparent)] pointer-events-none" />
         <div className="container max-w-4xl mx-auto relative z-10 text-center">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger}>
             <motion.p variants={fadeUp} className="text-primary text-sm font-semibold uppercase tracking-widest mb-4">Built for the Future of Search</motion.p>
-            <motion.h2 variants={fadeUp} className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
+            <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
               Ready to Build<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">AI-Ready Search Visibility?</span>
             </motion.h2>
-            <motion.p variants={fadeUp} className="text-xl text-muted-foreground mb-10 font-light max-w-xl mx-auto">
+            <motion.p variants={fadeUp} className="text-base sm:text-xl text-muted-foreground mb-10 font-light max-w-xl mx-auto">
               4+ years of founder-led SEO & GEO strategy. Let's discuss what modern search visibility looks like for your brand.
             </motion.p>
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center justify-center gap-4">

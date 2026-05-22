@@ -67,7 +67,7 @@ export default function Services() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 mb-14 md:mb-24">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
@@ -97,7 +97,7 @@ export default function Services() {
             })}
           </div>
 
-          <div className="text-center bg-secondary/30 rounded-3xl p-12 border border-border">
+          <div className="text-center bg-secondary/30 rounded-3xl p-6 sm:p-12 border border-border">
             <h2 className="text-3xl font-bold mb-6">Ready to Transform Your SEO?</h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">Let's discuss which services are right for your business and create a customized strategy to achieve your goals.</p>
             <a 

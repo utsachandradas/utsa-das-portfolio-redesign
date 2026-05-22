@@ -63,7 +63,7 @@ export default function About() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-16 items-center mb-24">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center mb-14 md:mb-24">
             {/* Avatar column */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -114,7 +114,7 @@ export default function About() {
             </motion.div>
           </div>
 
-          <div className="mb-24">
+          <div className="mb-14 md:mb-24">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center tracking-tight">Career Timeline</h2>
             <div className="max-w-3xl mx-auto space-y-8">
               {timeline.map((item, index) => (
@@ -143,7 +143,7 @@ export default function About() {
             </div>
           </div>
           
-          <div className="text-center bg-secondary/30 rounded-3xl p-12 border border-border">
+          <div className="text-center bg-secondary/30 rounded-3xl p-6 sm:p-12 border border-border">
             <h2 className="text-3xl font-bold mb-6">Ready to work together?</h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">Let's discuss how I can help your business achieve better visibility and sustainable growth.</p>
             <a 

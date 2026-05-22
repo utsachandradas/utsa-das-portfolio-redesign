@@ -159,7 +159,7 @@ export default function HeroAvatar() {
 
       {/* Floating stat badges */}
       <motion.div
-        className="absolute -right-5 top-10 glass-panel px-4 py-3 rounded-2xl border border-primary/30 shadow-xl shadow-primary/10 backdrop-blur-xl"
+        className="absolute right-0 sm:-right-5 top-10 glass-panel px-4 py-3 rounded-2xl border border-primary/30 shadow-xl shadow-primary/10 backdrop-blur-xl"
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.4, duration: 0.5 }}
@@ -170,7 +170,7 @@ export default function HeroAvatar() {
       </motion.div>
 
       <motion.div
-        className="absolute -left-5 bottom-20 glass-panel px-4 py-3 rounded-2xl border border-primary/30 shadow-xl shadow-primary/10 backdrop-blur-xl"
+        className="absolute left-0 sm:-left-5 bottom-20 glass-panel px-4 py-3 rounded-2xl border border-primary/30 shadow-xl shadow-primary/10 backdrop-blur-xl"
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.55, duration: 0.5 }}
@@ -181,7 +181,7 @@ export default function HeroAvatar() {
       </motion.div>
 
       <motion.div
-        className="absolute -right-5 bottom-28 glass-panel px-4 py-3 rounded-2xl border border-primary/30 shadow-xl shadow-primary/10 backdrop-blur-xl"
+        className="absolute right-0 sm:-right-5 bottom-28 glass-panel px-4 py-3 rounded-2xl border border-primary/30 shadow-xl shadow-primary/10 backdrop-blur-xl"
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.7, duration: 0.5 }}
