@@ -49,22 +49,41 @@ const Navbar = () => {
       >
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
 
-          {/* Logo */}
+          {/* Logo — "Utsa Das" text brand */}
           <Link href="/">
-            <div className="flex items-center gap-2 cursor-pointer group" data-testid="nav-logo">
-              <span className="font-bold text-base sm:text-lg tracking-tight text-foreground group-hover:text-primary transition-colors">
-                Utsa Das
-              </span>
-              <span
-                className="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full border hidden xs:inline"
-                style={{
-                  color: "oklch(0.70 0.24 272)",
-                  borderColor: "oklch(0.70 0.24 272 / 0.3)",
-                  background: "oklch(0.70 0.24 272 / 0.08)",
-                }}
-              >
-                SEO · GEO
-              </span>
+            <div className="flex items-center gap-2.5 cursor-pointer group" data-testid="nav-logo">
+              {/* Wordmark */}
+              <div className="flex flex-col leading-none">
+                <span
+                  className="font-bold tracking-tight text-foreground group-hover:text-primary transition-colors duration-200"
+                  style={{
+                    fontSize: "clamp(1.05rem, 2vw, 1.25rem)",
+                    fontFamily: "'Space Grotesk', system-ui, -apple-system, sans-serif",
+                    letterSpacing: "-0.03em",
+                    lineHeight: 1,
+                  }}
+                >
+                  Utsa Das
+                </span>
+                <span
+                  className="font-medium tracking-widest uppercase"
+                  style={{
+                    fontSize: "0.52rem",
+                    color: "oklch(0.68 0.22 272)",
+                    letterSpacing: "0.18em",
+                    lineHeight: 1.4,
+                    marginTop: "0.15rem",
+                  }}
+                >
+                  SEO · GEO Strategist
+                </span>
+              </div>
+
+              {/* Separator dot accent */}
+              <div
+                className="hidden sm:block w-1 h-1 rounded-full opacity-60 group-hover:opacity-100 transition-opacity"
+                style={{ background: "oklch(0.70 0.24 272)" }}
+              />
             </div>
           </Link>
 

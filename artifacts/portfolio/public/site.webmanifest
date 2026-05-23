@@ -1,0 +1,23 @@
+{
+  "name": "Utsa Das | SEO & GEO Strategist",
+  "short_name": "Utsa Das",
+  "description": "Bangladesh-based SEO & GEO Strategist helping brands get found in Google and AI search engines.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0d1a",
+  "theme_color": "#6366f1",
+  "icons": [
+    {
+      "src": "/assets/favicons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/favicons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
