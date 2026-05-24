@@ -39,6 +39,64 @@
     <meta name="twitter:description" content="Founder-led growth marketing for e-commerce and B2B brands. Utsa Das builds unified systems across paid ads, SEO, GEO, and CRO — focused on measurable revenue growth." />
     <meta name="twitter:image" content="https://utsadas.com/opengraph.jpg" />
 
+    <!-- Structured Data: Organization + WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://utsadas.com/#person",
+          "name": "Utsa Das",
+          "alternateName": "Utsa Chandra Das",
+          "url": "https://utsadas.com/",
+          "image": "https://utsadas.com/assets/avatars/utsa-das-avatar.png",
+          "jobTitle": "Growth Marketing Strategist",
+          "description": "Founder-led growth marketing strategist in Bangladesh specializing in paid ads, SEO, GEO, and CRO since 2022.",
+          "address": { "@type": "PostalAddress", "addressCountry": "BD" },
+          "sameAs": [
+            "https://www.linkedin.com/in/utsadas",
+            "https://twitter.com/utsadas"
+          ]
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://utsadas.com/#organization",
+          "name": "Utsa Das | Growth Marketing Strategist",
+          "url": "https://utsadas.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://utsadas.com/assets/favicons/apple-touch-icon.png",
+            "width": 180,
+            "height": 180
+          },
+          "founder": { "@id": "https://utsadas.com/#person" },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "availableLanguage": "English",
+            "url": "https://utsadas.com/contact"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://utsadas.com/#website",
+          "url": "https://utsadas.com/",
+          "name": "Utsa Das | Growth Marketing Strategist",
+          "publisher": { "@id": "https://utsadas.com/#organization" },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://utsadas.com/?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- Async font loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
