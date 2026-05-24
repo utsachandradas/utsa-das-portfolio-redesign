@@ -97,6 +97,14 @@ export default function Projects() {
             "description": p.description
           }))
         })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://utsadas.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://utsadas.com/projects" }
+          ]
+        })}</script>
       </Helmet>
 
       <section className="py-24 pt-32 relative">
