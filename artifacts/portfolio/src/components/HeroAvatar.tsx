@@ -38,7 +38,7 @@ export default function HeroAvatar() {
             <picture>
               <source srcSet="/assets/avatars/utsa-das-avatar.webp" type="image/webp" />
               <motion.img
-                src="/assets/avatars/utsa-das-avatar.png"
+                src="/assets/avatars/utsa-das-avatar.webp"
                 alt="Utsa Das — Founder & Growth Marketing Strategist"
                 width={400}
                 height={480}

@@ -107,12 +107,17 @@ export default function About() {
                     style={{ background: "linear-gradient(160deg, oklch(0.16 0.04 265), oklch(0.11 0.02 255))" }}
                   >
                     <div className="absolute top-0 left-0 w-28 h-28 bg-gradient-to-br from-primary/20 to-transparent pointer-events-none" />
-                    <img
-                      src="/assets/avatars/utsa-das-avatar.png"
-                      alt="Utsa Das — Founder & Growth Marketing Strategist"
-                      className="w-full block"
-                      style={{ aspectRatio: "4/5", objectFit: "cover", objectPosition: "center top" }}
-                    />
+                    <picture>
+                      <source srcSet="/assets/avatars/utsa-das-avatar.webp" type="image/webp" />
+                      <img
+                        src="/assets/avatars/utsa-das-avatar.png"
+                        alt="Utsa Das — Founder & Growth Marketing Strategist"
+                        className="w-full block"
+                        loading="lazy"
+                        decoding="async"
+                        style={{ aspectRatio: "4/5", objectFit: "cover", objectPosition: "center top" }}
+                      />
+                    </picture>
                     <div
                       className="absolute bottom-0 left-0 right-0 px-5 py-4"
                       style={{ background: "linear-gradient(to top, oklch(0.08 0.02 255 / 0.97) 55%, transparent)" }}
