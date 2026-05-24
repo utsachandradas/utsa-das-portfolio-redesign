@@ -2,6 +2,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Route, Switch, Router as WouterRouter } from "wouter";
 import { lazy, Suspense } from "react";
+import { LazyMotion, domAnimation } from "framer-motion";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { ScrollProvider } from "./contexts/ScrollContext";
@@ -69,16 +70,18 @@ function Router() {
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider defaultTheme="dark">
-        <ScrollProvider>
-          <TooltipProvider>
-            <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-              <Toaster />
-              <Router />
-            </WouterRouter>
-          </TooltipProvider>
-        </ScrollProvider>
-      </ThemeProvider>
+      <LazyMotion features={domAnimation} strict>
+        <ThemeProvider defaultTheme="dark">
+          <ScrollProvider>
+            <TooltipProvider>
+              <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+                <Toaster />
+                <Router />
+              </WouterRouter>
+            </TooltipProvider>
+          </ScrollProvider>
+        </ThemeProvider>
+      </LazyMotion>
     </ErrorBoundary>
   );
 }
