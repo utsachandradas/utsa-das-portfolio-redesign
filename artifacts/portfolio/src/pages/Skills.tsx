@@ -7,61 +7,81 @@ const WHATSAPP_LINK = "https://wa.me/8801861393416?text=Hi%20Utsa%2C%20I%27d%20l
 
 const skillGroups = [
   {
-    heading: "Search & GEO Strategy",
+    heading: "Paid Advertising & Performance Marketing",
     skills: [
-      { name: "Technical SEO", desc: "Crawl architecture, indexation, rendering, log file analysis" },
-      { name: "GEO Optimization", desc: "AI citation structure, entity optimization, generative engine strategy" },
-      { name: "AI Search Visibility", desc: "ChatGPT, Perplexity, Gemini, and Google AI Overviews positioning" },
-      { name: "Keyword Research", desc: "Search intent mapping, gap analysis, cluster planning" },
-      { name: "SEO Strategy", desc: "Roadmap development, competitive analysis, long-term planning" },
+      { name: "Meta Ads (Facebook & Instagram)", desc: "Full-funnel campaign architecture, creative testing, and ROAS optimization" },
+      { name: "Google Ads", desc: "Search, Display, Performance Max — keyword strategy, bidding, and conversion optimization" },
+      { name: "TikTok Ads", desc: "Top-of-funnel scaling strategy for e-commerce and brand awareness campaigns" },
+      { name: "Funnel Design & A/B Testing", desc: "Structured multi-stage funnels with systematic creative and copy testing" },
+      { name: "Meta Pixel & CAPI Tracking", desc: "Conversion API setup, event tracking, and data quality optimization" },
+      { name: "Google Tag Manager (GTM)", desc: "Tag management, event firing, and cross-channel tracking implementation" },
     ],
   },
   {
-    heading: "Content & On-Page",
+    heading: "SEO & GEO (Generative Engine Optimization)",
     skills: [
-      { name: "Content Strategy", desc: "Topic clusters, topical authority, editorial planning" },
-      { name: "Schema Markup", desc: "Article, Product, FAQ, Organization, and Entity schema" },
-      { name: "Entity SEO", desc: "Brand entity definition, knowledge panel optimization" },
-      { name: "On-Page Optimization", desc: "Title tags, meta descriptions, heading hierarchy, internal links" },
-      { name: "E-E-A-T Signals", desc: "Author authority, trust indicators, citation building" },
+      { name: "Technical SEO", desc: "Crawl architecture, indexation, rendering, Core Web Vitals, and site structure" },
+      { name: "GEO Optimization", desc: "AI citation structure, entity optimization, and generative engine strategy for ChatGPT, Perplexity, Google AI Overviews" },
+      { name: "On-Page SEO", desc: "Keyword research, search intent mapping, heading hierarchy, and meta optimization" },
+      { name: "Entity-Based SEO Architecture", desc: "Semantic web structure, knowledge graph optimization, and brand entity definition" },
+      { name: "LLM Visibility Optimization", desc: "Content frameworks engineered specifically for AI citation and ranking" },
+      { name: "Schema Markup", desc: "Article, Product, FAQ, Organization, and Person schema implementation" },
     ],
   },
   {
-    heading: "Specialist Areas",
+    heading: "E-Commerce & Web Development",
     skills: [
-      { name: "Ecommerce SEO", desc: "Category architecture, product schema, shopping feeds" },
-      { name: "Core Web Vitals", desc: "LCP, CLS, INP optimization and performance auditing" },
-      { name: "JavaScript SEO", desc: "Rendering diagnostics, hydration issues, SPA crawlability" },
-      { name: "Local SEO", desc: "Google Business Profile, local citations, geo-targeting" },
-      { name: "Migration Strategy", desc: "Site migrations, redirect mapping, indexation recovery" },
+      { name: "Shopify", desc: "Store setup, theme optimization, conversion-focused UX, and app integration" },
+      { name: "WordPress & WooCommerce", desc: "Full site development, plugin management, and e-commerce configuration" },
+      { name: "High-Conversion Landing Pages", desc: "CRO-focused design and copy architecture built to convert paid traffic" },
+      { name: "Page Speed Optimization", desc: "Core Web Vitals, image optimization, caching, and performance auditing" },
+      { name: "CRO-Focused UX", desc: "Conversion rate optimization through user experience structure and testing" },
+    ],
+  },
+  {
+    heading: "Growth Strategy & Analytics",
+    skills: [
+      { name: "Full-Funnel Growth Architecture", desc: "Paid and organic integration into one unified acquisition-to-retention system" },
+      { name: "Conversion Rate Optimization (CRO)", desc: "Systematic testing and optimization of conversion touchpoints across the funnel" },
+      { name: "Retention & Lifecycle Marketing", desc: "Post-purchase strategy, email flows, and customer LTV optimization" },
+      { name: "Performance Scaling Frameworks", desc: "Data-driven systems for scaling profitable acquisition across channels" },
+      { name: "Analytics & Attribution", desc: "GA4 setup, conversion tracking, and cross-channel attribution modeling" },
     ],
   },
 ];
 
 const tools = [
+  "Meta Ads Manager",
+  "Google Ads",
+  "Google Tag Manager",
+  "Meta Pixel & CAPI",
+  "TikTok Ads Manager",
   "Google Search Console",
   "Google Analytics 4",
-  "Google Tag Manager",
   "Ahrefs",
   "SEMrush",
   "Screaming Frog",
   "Lighthouse",
-  "Log File Analyser",
   "ChatGPT",
   "Google Gemini",
   "Perplexity AI",
   "Claude",
-  "WordPress",
   "Shopify",
-  "Google SGE / AI Overviews",
+  "WordPress",
+  "WooCommerce",
+  "Google AI Overviews",
 ];
 
 export default function Skills() {
   return (
     <Layout>
       <Helmet>
-        <title>SEO & GEO Skills | Technical Expertise | Utsa Das</title>
-        <meta name="description" content="Explore the technical SEO, GEO optimization, content strategy, and AI search expertise of Utsa Das — including tools like Ahrefs, Screaming Frog, Google Search Console, and AI platforms." />
+        <title>Growth Marketing Skills & Expertise | Utsa Das | Paid Ads, SEO, GEO, CRO</title>
+        <meta
+          name="description"
+          content="Explore the growth marketing expertise of Utsa Das (Utsa Chandra Das) — including paid advertising (Meta, Google, TikTok), SEO, GEO optimization, e-commerce development, and full-funnel growth strategy built since 2022."
+        />
+        <meta name="keywords" content="Utsa Das skills, Utsa Chandra Das expertise, growth marketing skills Bangladesh, paid ads expertise, SEO GEO skills Bangladesh" />
       </Helmet>
 
       <section className="py-24 pt-32 relative">
@@ -74,11 +94,11 @@ export default function Skills() {
             className="text-center mb-20"
           >
             <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-panel text-primary text-xs font-semibold border border-primary/25 mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary" /> Built Over 4+ Years of Practice
+              <span className="w-1.5 h-1.5 rounded-full bg-primary" /> Built Over 4+ Years of Real Execution
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Skills & Expertise</h1>
             <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto">
-              A detailed breakdown of the SEO, GEO, and AI search skills I've developed since 2022 — and the tools I use to put them into practice.
+              A comprehensive breakdown of the growth marketing skills Utsa Das has built since 2022 — across paid advertising, SEO, GEO, e-commerce, and full-funnel growth strategy.
             </p>
           </motion.div>
 
@@ -133,15 +153,15 @@ export default function Skills() {
           <div className="text-center bg-secondary/30 rounded-3xl p-6 sm:p-12 border border-border">
             <h2 className="text-3xl font-bold mb-4">Want to put this expertise to work?</h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              Tell me what you're trying to build — whether it's traditional search rankings, AI search visibility, or both. I'll be direct about where I can add the most value.
+              Tell Utsa Das what you're trying to build — whether it's paid acquisition, organic search visibility, AI discovery, or conversion optimization. He'll be direct about where he can add the most value.
             </p>
-            <a 
+            <a
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noreferrer"
               className="inline-flex px-8 py-4 bg-primary text-primary-foreground rounded-lg font-bold items-center gap-2 hover:bg-primary/90 transition-all shadow-[0_0_20px_rgba(var(--primary),0.3)]"
             >
-              Discuss Your Project <ArrowRight className="w-5 h-5" />
+              Discuss Your Growth Project <ArrowRight className="w-5 h-5" />
             </a>
           </div>
         </div>

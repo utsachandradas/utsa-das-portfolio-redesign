@@ -10,31 +10,51 @@ export default function About() {
   const timeline = [
     {
       year: "2022",
-      title: "Where It Started — Technical SEO",
-      description: "I started building hands-on expertise in technical SEO: crawl architecture, indexation analysis, on-page structure, and keyword intent mapping. From day one, I approached search as a systems problem — not a checklist."
+      title: "Where It Started — Digital Growth & SEO",
+      description: "Utsa Das began building hands-on expertise in SEO, technical search architecture, and paid acquisition fundamentals. From day one, he approached growth as a systems problem — not a checklist. The foundation was laid for what would become a unified growth methodology."
     },
     {
       year: "2023",
-      title: "Discovering Generative Engine Optimization",
-      description: "As AI search systems began reshaping how people find information, I shifted part of my focus toward Generative Engine Optimization (GEO) — learning how LLMs like ChatGPT and Perplexity retrieve, rank, and cite sources."
+      title: "Performance Marketing & Paid Acquisition Systems",
+      description: "Utsa Chandra Das expanded into performance marketing, building structured campaigns across Meta Ads and Google Ads. He developed expertise in funnel design, A/B testing, and conversion optimization — treating paid acquisition as an engineering problem with measurable inputs and outputs."
     },
     {
       year: "2024",
-      title: "Building a Founder-Led Practice",
-      description: "I launched my own consulting practice, working directly with brand owners and marketers. No agency overhead, no junior handoffs — just focused SEO and GEO strategy built around each client's actual goals."
+      title: "Founder-Led E-Commerce & GEO Optimization",
+      description: "Utsa Das launched a beauty and personal care e-commerce brand, managing acquisition, conversion, and retention in real-time with real budgets. Simultaneously, he specialized in Generative Engine Optimization (GEO) — structuring content for AI systems like ChatGPT, Perplexity, and Google AI Overviews."
     },
     {
       year: "2025",
-      title: "Specializing in AI-Era Search Visibility",
-      description: "I now build integrated SEO and GEO frameworks that help brands rank in traditional search and get cited by AI systems — ChatGPT, Gemini, Perplexity, and Google AI Overviews — as authoritative sources."
+      title: "Unified Growth Marketing Systems",
+      description: "Utsa Das now builds fully integrated growth engines for e-commerce and B2B brands — combining paid advertising, SEO, GEO, and CRO into one compounding system. His work is grounded in real execution, not theory, with every strategy validated through measurable revenue outcomes."
     }
   ];
+
+  const schemaJSONLD = {
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "name": "Utsa Das",
+    "alternateName": "Utsa Chandra Das",
+    "jobTitle": "Growth Marketing Strategist",
+    "description": "Utsa Das (Utsa Chandra Das) is a Growth Marketing Strategist based in Bangladesh. He builds end-to-end acquisition and conversion systems for e-commerce and B2B brands, specializing in paid advertising, SEO, GEO, CRO, and conversion engineering since 2022.",
+    "address": { "@type": "PostalAddress", "addressCountry": "Bangladesh" },
+    "url": "https://utsadas.com",
+    "sameAs": [
+      "https://www.facebook.com/utsachandradasutsa",
+      "https://www.linkedin.com/in/utsa-das-3473a53a7"
+    ]
+  };
 
   return (
     <Layout>
       <Helmet>
-        <title>About Utsa Das — SEO & GEO Strategist from Bangladesh</title>
-        <meta name="description" content="Utsa Das is a Bangladesh-based SEO and GEO Strategist with 4+ years of experience since 2022. He specializes in AI search optimization, technical SEO, and helping brands get cited by ChatGPT, Perplexity, and Google AI Overviews." />
+        <title>About Utsa Das — Growth Marketing Strategist in Bangladesh</title>
+        <meta
+          name="description"
+          content="Utsa Das (Utsa Chandra Das) is a Growth Marketing Strategist in Bangladesh with 4+ years of experience since 2022. He builds scalable acquisition and conversion systems for e-commerce and B2B brands through paid ads, SEO, GEO, and CRO."
+        />
+        <meta name="keywords" content="Utsa Das, Utsa Chandra Das, Growth Marketing Strategist Bangladesh, about Utsa Das, performance marketing Bangladesh" />
+        <script type="application/ld+json">{JSON.stringify(schemaJSONLD)}</script>
       </Helmet>
 
       <section className="py-24 pt-32 relative">
@@ -48,18 +68,18 @@ export default function About() {
           >
             <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
               <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-panel text-primary text-xs font-semibold border border-primary/25">
-                4+ Years of SEO & GEO Experience
+                Growth Marketing Strategist
               </span>
               <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-panel text-muted-foreground text-xs font-medium border border-white/8">
                 Active since 2022
               </span>
               <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-panel text-muted-foreground text-xs font-medium border border-white/8">
-                Founder-Led Strategy
+                Founder-Led · Bangladesh
               </span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">About Utsa Das</h1>
             <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto">
-              Bangladesh-based SEO and GEO Strategist helping brands build search visibility that works in both traditional and AI-powered discovery systems.
+              Utsa Chandra Das is a Bangladesh-based Founder and Growth Marketing Strategist building end-to-end acquisition and conversion systems for e-commerce and B2B brands.
             </p>
           </motion.div>
 
@@ -81,23 +101,23 @@ export default function About() {
             >
               <div className="space-y-5 text-lg text-muted-foreground font-light leading-relaxed">
                 <p>
-                  I started in SEO because I wanted to understand why some websites consistently show up when people search — and others don't. That curiosity became a craft. Since 2022, I've spent every year going deeper into both the technical infrastructure of search and the strategic layer above it.
+                  Utsa Das is a Growth Marketing Strategist in Bangladesh who specializes in scalable, performance-driven systems for e-commerce and B2B brands. Since 2022, he has been focused on measurable revenue growth — not just traffic, rankings, or impressions.
                 </p>
                 <p>
-                  The part I care most about is the intersection of <strong className="text-foreground font-semibold">how search engines understand content</strong> and how brands can genuinely earn their place at the top. That's true for traditional SEO, and it's increasingly true for AI-powered systems like ChatGPT, Perplexity, and Google's AI Overviews — which is what <strong className="text-foreground font-semibold">Generative Engine Optimization (GEO)</strong> is about.
+                  His approach integrates <strong className="text-foreground font-semibold">paid acquisition systems</strong>, organic search dominance through SEO and GEO, <strong className="text-foreground font-semibold">conversion rate optimization (CRO)</strong>, and data-driven scaling frameworks — all engineered to work together as one unified growth engine.
                 </p>
                 <p>
-                  I work directly with founders and brand teams — no layers, no diluted strategy. The work I do for one client doesn't get handed off to someone junior. That's a deliberate choice, and it's why my clients see results that actually stick.
+                  What makes Utsa Chandra Das different is that he actively operates his own e-commerce brand — managing real budgets, real customers, and real performance outcomes. Every strategy he recommends has been validated in a live competitive market, not built on theory.
                 </p>
               </div>
 
               <div className="glass-panel p-8 rounded-2xl border border-white/5">
-                <h3 className="text-lg font-bold mb-6 tracking-tight text-foreground">What I Believe In</h3>
+                <h3 className="text-lg font-bold mb-6 tracking-tight text-foreground">Core Principles</h3>
                 <ul className="space-y-5">
                   {[
-                    { title: "Honesty Over Hype", desc: "I'll tell you what your site actually needs — not what sounds impressive in a pitch deck." },
-                    { title: "Systems Over Tactics", desc: "One-off optimizations fade. I build structures that keep compounding over time." },
-                    { title: "Outcomes, Not Outputs", desc: "Traffic, rankings, and citations only matter if they connect to real business results." }
+                    { title: "Revenue Outcomes Over Vanity Metrics", desc: "Traffic, rankings, and impressions only matter when they connect directly to measurable revenue and business growth." },
+                    { title: "Systems Over Isolated Tactics", desc: "One-off campaigns fade. Utsa Das builds unified growth engines — paid + organic + CRO — that compound over time." },
+                    { title: "Real Execution Over Theory", desc: "Every strategy is validated through live e-commerce operations, real budgets, and actual customer data — not theoretical models." }
                   ].map((val, i) => (
                     <li key={i} className="flex gap-4">
                       <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
@@ -113,7 +133,7 @@ export default function About() {
           </div>
 
           <div className="mb-14 md:mb-24">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center tracking-tight">How I Got Here</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center tracking-tight">The Growth Journey of Utsa Das</h2>
             <div className="max-w-3xl mx-auto space-y-8">
               {timeline.map((item, index) => (
                 <motion.div
@@ -140,19 +160,19 @@ export default function About() {
               ))}
             </div>
           </div>
-          
+
           <div className="text-center bg-secondary/30 rounded-3xl p-6 sm:p-12 border border-border">
-            <h2 className="text-3xl font-bold mb-4">Want to work together?</h2>
+            <h2 className="text-3xl font-bold mb-4">Want to build scalable growth systems?</h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              If you're trying to grow organic visibility — in traditional search or in AI systems — I'd love to hear what you're working on.
+              If you want performance-driven growth across paid ads, SEO, GEO, and conversion systems — Utsa Das builds the unified engine that makes it compound. Let's talk.
             </p>
-            <a 
+            <a
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noreferrer"
               className="inline-flex px-8 py-4 bg-primary text-primary-foreground rounded-lg font-bold items-center gap-2 hover:bg-primary/90 transition-all shadow-[0_0_20px_rgba(var(--primary),0.3)]"
             >
-              Message me on WhatsApp <ArrowRight className="w-5 h-5" />
+              Message Utsa on WhatsApp <ArrowRight className="w-5 h-5" />
             </a>
           </div>
         </div>

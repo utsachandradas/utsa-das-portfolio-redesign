@@ -66,8 +66,9 @@ export default function Projects() {
   return (
     <Layout>
       <Helmet>
-        <title>SEO & GEO Projects | Real Results by Utsa Das</title>
-        <meta name="description" content="Featured SEO and GEO project work by Utsa Das — including enterprise technical SEO, ecommerce organic growth, AI citation programs, and local SEO wins with measurable outcomes." />
+        <title>Growth Marketing Projects | Real Results by Utsa Das | Paid Ads, SEO, GEO, CRO</title>
+        <meta name="description" content="Featured growth marketing project work by Utsa Das (Utsa Chandra Das) — including paid advertising, e-commerce organic growth, AI citation programs, SEO, and CRO wins with measurable revenue outcomes." />
+        <meta name="keywords" content="Utsa Das projects, Utsa Chandra Das portfolio, growth marketing results Bangladesh, SEO GEO projects Bangladesh" />
       </Helmet>
 
       <section className="py-24 pt-32 relative">
@@ -82,9 +83,9 @@ export default function Projects() {
             <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-panel text-primary text-xs font-semibold border border-primary/25 mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-primary" /> Measurable Results
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Selected Projects</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Selected Projects by Utsa Das</h1>
             <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto">
-              Six projects across technical SEO, ecommerce growth, GEO optimization, and AI search visibility — each with a clear problem, a clear strategy, and a measurable outcome.
+              Growth marketing projects across paid advertising, e-commerce SEO, GEO optimization, and AI search visibility — each with a clear problem, a clear system, and a measurable revenue outcome.
             </p>
           </motion.div>
 
@@ -130,7 +131,7 @@ export default function Projects() {
           <div className="text-center bg-secondary/30 rounded-3xl p-6 sm:p-12 border border-border">
             <h2 className="text-3xl font-bold mb-4">Working on something similar?</h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              Every project starts with a conversation. Tell me what you're trying to fix or build — and I'll tell you what's actually possible.
+              Every growth system starts with a conversation. Tell Utsa Das what you're trying to fix or build — and he'll tell you what's actually possible and what will drive the most impact.
             </p>
             <a 
               href={WHATSAPP_LINK}

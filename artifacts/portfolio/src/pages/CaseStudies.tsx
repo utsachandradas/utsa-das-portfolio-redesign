@@ -56,11 +56,12 @@ export default function CaseStudies() {
   return (
     <Layout>
       <Helmet>
-        <title>SEO & GEO Case Studies | Bytebd & Beauty Monk | Utsa Das</title>
+        <title>Growth Marketing Case Studies | Bytebd & Beauty Monk | Utsa Das</title>
         <meta
           name="description"
-          content="Real SEO results for Bangladesh brands. Case studies covering Bytebd (business blog) and Beauty Monk (beauty ecommerce) — from Utsa Das, SEO & GEO Strategist."
+          content="Real growth marketing results for Bangladesh brands. Case studies covering Bytebd (business blog SEO) and Beauty Monk (beauty e-commerce growth) — by Utsa Das (Utsa Chandra Das), Growth Marketing Strategist."
         />
+        <meta name="keywords" content="Utsa Das case studies, Utsa Chandra Das results, growth marketing Bangladesh, Beauty Monk SEO, Bytebd SEO" />
       </Helmet>
 
       <section className="py-20 pt-28 md:pt-32 relative">

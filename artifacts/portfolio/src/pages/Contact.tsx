@@ -13,28 +13,28 @@ const WHATSAPP_LINK = "https://wa.me/8801861393416?text=Hi%20Utsa%2C%20I%27d%20l
 
 const faqs = [
   {
-    q: "What does the first step look like?",
-    a: "It starts with a conversation on WhatsApp or by email. I'll ask about your website, your goals, and where you're struggling. From there, I usually recommend starting with a focused audit so we both have a clear picture of what's actually holding you back.",
+    q: "What does the first step look like when working with Utsa Das?",
+    a: "It starts with a conversation on WhatsApp or by email. Utsa Das will ask about your brand, your current channels, your goals, and where growth is stalling. From there, he recommends a focused strategy session so both sides have a clear picture of the highest-impact growth levers to pull first.",
   },
   {
-    q: "How long does SEO take to show results?",
-    a: "Honestly, it depends on where you're starting from. Technical fixes and crawl improvements can show results within weeks. Content and authority-building compounds over months. Most clients see meaningful movement within 3–4 months, and substantial results within 6–12 months.",
+    q: "What growth marketing services does Utsa Das provide?",
+    a: "Utsa Chandra Das provides four integrated growth marketing services: paid advertising (Meta Ads, Google Ads, TikTok Ads), SEO and GEO optimization for traditional and AI search engines, e-commerce and web development (Shopify, WordPress, WooCommerce), and full-funnel growth strategy and analytics. These work as one unified system — not isolated tactics.",
   },
   {
-    q: "What is GEO and do I need it?",
-    a: "Generative Engine Optimization (GEO) is about making your brand the source AI systems like ChatGPT, Perplexity, and Google AI Overviews cite when answering questions in your industry. If your audience uses AI tools to research, buy, or decide — yes, GEO matters for you.",
+    q: "How long does it take to see results from growth marketing?",
+    a: "It depends on the channel. Paid advertising campaigns can show results within days. Technical SEO and CRO improvements often show meaningful movement within 4–8 weeks. Content and GEO optimization compounds over months. Most clients see substantial multi-channel results within 3–6 months of consistent system-level execution.",
   },
   {
-    q: "Do you work with clients outside Bangladesh?",
-    a: "Yes. I work with brands globally. Most client communication happens over WhatsApp or email, and the work I do — technical SEO, content strategy, GEO optimization — applies to any website regardless of geography.",
+    q: "What is GEO and why does it matter for my brand?",
+    a: "Generative Engine Optimization (GEO) is the practice of structuring your content and brand entities so AI systems like ChatGPT, Perplexity, and Google AI Overviews cite your brand when answering relevant questions. As more people use AI tools to research and buy, brands not optimized for GEO are invisible to a fast-growing audience segment. Utsa Das builds content frameworks engineered specifically for AI citation.",
   },
   {
-    q: "Do you offer ongoing support or just one-off projects?",
-    a: "Both. Some clients need a one-time audit or strategy session. Others prefer a monthly retainer where I handle ongoing optimization, content planning, and performance tracking. I'm flexible depending on what stage your brand is at.",
+    q: "Does Utsa Das work with clients outside Bangladesh?",
+    a: "Yes. Utsa Chandra Das works with e-commerce and B2B brands globally. Most collaboration happens remotely via WhatsApp and email. The growth systems he builds — paid acquisition, SEO, GEO, CRO — apply to any digital brand regardless of geography, while his Bangladesh market expertise adds additional depth for brands operating locally.",
   },
   {
-    q: "How is working with you different from hiring an agency?",
-    a: "With an agency, your work gets distributed across account managers, juniors, and specialists you never talk to. With me, you work directly with the person doing the strategy and implementation. That means faster communication, more consistent thinking, and no diluted output.",
+    q: "How is working with Utsa Das different from hiring a marketing agency?",
+    a: "With an agency, your work gets distributed across account managers, junior specialists, and handoffs you never see. With Utsa Das, you work directly with the person doing the strategy and execution. No diluted output, no account manager middlemen. Faster communication, more consistent thinking, and strategies validated through his own live e-commerce operations — not theory.",
   },
 ];
 
@@ -57,7 +57,7 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     setTimeout(() => {
-      toast.success("Message sent! I'll get back to you within 24 hours.");
+      toast.success("Message sent! Utsa will get back to you within 24 hours.");
       setFormData({ name: "", email: "", subject: "", message: "" });
       setIsSubmitting(false);
     }, 1500);
@@ -66,11 +66,14 @@ export default function Contact() {
   return (
     <Layout>
       <Helmet>
-        <title>Contact Utsa Das | SEO & GEO Strategy Consultation</title>
-        <meta name="description" content="Get in touch with Utsa Das for SEO and GEO consulting. Available via WhatsApp or email for brands in Bangladesh and globally. Founder-led strategy — no agency overhead." />
+        <title>Contact Utsa Das | Growth Marketing Strategy Consultation | Bangladesh</title>
+        <meta
+          name="description"
+          content="Get in touch with Utsa Das (Utsa Chandra Das) for growth marketing consulting — paid ads, SEO, GEO, and conversion optimization. Available via WhatsApp or email for brands in Bangladesh and globally. Founder-led, no agency overhead."
+        />
+        <meta name="keywords" content="contact Utsa Das, Utsa Chandra Das contact, growth marketing consultation Bangladesh, hire growth strategist Bangladesh" />
       </Helmet>
 
-      {/* Hero */}
       <section className="py-24 pt-32 relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(var(--primary),0.05)_0,transparent_50%)] pointer-events-none" />
         <div className="container max-w-5xl mx-auto relative z-10">
@@ -83,9 +86,9 @@ export default function Contact() {
             <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-panel text-primary text-xs font-semibold border border-primary/25 mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" /> Usually responds within a few hours
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Get in Touch</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Let's Build Scalable Growth</h1>
             <p className="text-xl text-muted-foreground font-light max-w-xl mx-auto">
-              Whether you have a specific project in mind or just want to ask a question — I'm available and responsive.
+              Whether you have a specific project in mind or want to explore how Utsa Das can build a unified growth system for your brand — reach out directly.
             </p>
           </motion.div>
 
@@ -95,7 +98,7 @@ export default function Contact() {
               {
                 Icon: SiWhatsapp,
                 title: "WhatsApp",
-                desc: "The fastest way to reach me. Most clients start here.",
+                desc: "The fastest way to reach Utsa Das. Most client conversations start here.",
                 link: WHATSAPP_LINK,
                 label: "Chat now",
                 color: "text-[#25D366]",
@@ -103,7 +106,7 @@ export default function Contact() {
               {
                 Icon: Mail,
                 title: "Email",
-                desc: "Good for detailed project briefs or formal inquiries.",
+                desc: "Good for detailed project briefs or formal growth marketing inquiries.",
                 link: "mailto:hello@utsadas.com",
                 label: "hello@utsadas.com",
                 color: "text-primary",
@@ -111,7 +114,7 @@ export default function Contact() {
               {
                 Icon: MapPin,
                 title: "Location",
-                desc: "Based in Bangladesh. Available globally for remote work.",
+                desc: "Based in Bangladesh. Available globally for remote growth strategy work.",
                 link: null,
                 label: "Dhaka, Bangladesh",
                 color: "text-muted-foreground",
@@ -147,9 +150,9 @@ export default function Contact() {
             className="glass-panel rounded-2xl p-7 md:p-10 border border-[#25D366]/20 bg-[#25D366]/3 mb-16 text-center"
           >
             <SiWhatsapp className="w-8 h-8 text-[#25D366] mx-auto mb-4" />
-            <h2 className="text-2xl font-bold mb-3">WhatsApp is the fastest way</h2>
+            <h2 className="text-2xl font-bold mb-3">WhatsApp is the fastest way to start</h2>
             <p className="text-muted-foreground text-sm max-w-md mx-auto mb-6">
-              Most project conversations start with a quick WhatsApp message. I respond fast and we can move from conversation to strategy without the back-and-forth of email threads.
+              Most growth strategy conversations start with a quick WhatsApp message. Utsa Das responds fast — and we can move from conversation to action without lengthy email back-and-forth.
             </p>
             <a
               href={WHATSAPP_LINK}
@@ -159,7 +162,7 @@ export default function Contact() {
               style={{ background: "#25D366" }}
             >
               <SiWhatsapp className="w-5 h-5" />
-              Start a WhatsApp Chat
+              Start a WhatsApp Chat with Utsa
             </a>
           </motion.div>
 
@@ -168,20 +171,20 @@ export default function Contact() {
             <div>
               <h2 className="text-3xl font-bold mb-4 tracking-tight">Send a Message</h2>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Prefer email or have a detailed brief to share? Fill out the form and I'll reply within 24 hours.
+                Have a detailed brief or prefer email? Fill out the form and Utsa Das will reply within 24 hours with honest initial thoughts and recommended next steps.
               </p>
               <div className="space-y-4 text-sm text-muted-foreground">
                 <div className="flex items-start gap-3">
                   <MessageSquare className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Tell me about your website, your goals, and what's not working</span>
+                  <span>Tell Utsa about your brand, your growth channels, and where you're stuck</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <MessageSquare className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span>I'll respond with honest initial thoughts and next steps</span>
+                  <span>He'll respond with honest initial thoughts and a recommended approach</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <MessageSquare className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span>No sales pitch — just a straight conversation about what you need</span>
+                  <span>No sales pitch — just a direct conversation about what your brand needs</span>
                 </div>
               </div>
             </div>
@@ -206,11 +209,11 @@ export default function Contact() {
               </div>
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">Subject</label>
-                <Input type="text" name="subject" value={formData.subject} onChange={handleChange} placeholder="e.g. Technical SEO audit for ecommerce site" required className="bg-secondary border-border" />
+                <Input type="text" name="subject" value={formData.subject} onChange={handleChange} placeholder="e.g. Growth marketing strategy for e-commerce brand" required className="bg-secondary border-border" />
               </div>
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">Message</label>
-                <Textarea name="message" value={formData.message} onChange={handleChange} placeholder="Tell me about your site, what you're trying to achieve, and where things are going wrong..." required rows={5} className="bg-secondary border-border resize-none" />
+                <Textarea name="message" value={formData.message} onChange={handleChange} placeholder="Tell Utsa about your brand, your current marketing channels, revenue goals, and where growth is stalling..." required rows={5} className="bg-secondary border-border resize-none" />
               </div>
               <Button type="submit" disabled={isSubmitting} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
                 {isSubmitting ? "Sending..." : "Send Message"}
@@ -221,7 +224,7 @@ export default function Contact() {
           {/* FAQ */}
           <div>
             <h2 className="text-3xl font-bold mb-3 tracking-tight text-center">Common Questions</h2>
-            <p className="text-muted-foreground text-center mb-10 text-sm">Straight answers to what most people ask before reaching out.</p>
+            <p className="text-muted-foreground text-center mb-10 text-sm">Straight answers to what most people ask before working with Utsa Das.</p>
             <div className="max-w-3xl mx-auto space-y-3">
               {faqs.map((faq, i) => (
                 <motion.div

@@ -1,0 +1,177 @@
+‎MASTER PROMPT — REPLACE WEBSITE CONTENT (SEO + GEO PORTFOLIO UPDATE)
+‎
+‎Update my personal portfolio website by completely removing all existing content and replacing it with new, high-performance SEO + GEO optimized content.
+‎
+‎INPUT CONTENT TO USE (REPLACE EVERYTHING WITH THIS):
+‎
+‎Use the following structured content as the only source of truth for the website:
+‎[H1: Utsa Das — Growth Marketing Strategist in Bangladesh
+‎
+‎Founder & Growth Marketing Strategist specializing in scalable, performance-driven systems for e-commerce and B2B brands. Focused on measurable revenue growth through paid ads, SEO, GEO, CRO, and conversion engineering.
+‎
+‎H2: Growth Marketing Strategist in Bangladesh — Performance-First Positioning
+‎
+‎Utsa Das is a Growth Marketing Strategist in Bangladesh who builds end-to-end acquisition and conversion systems designed for modern digital ecosystems.
+‎
+‎His approach integrates:
+‎
+‎Paid acquisition systems
+‎
+‎Organic search dominance (SEO + GEO)
+‎
+‎Conversion rate optimization (CRO)
+‎
+‎Data-driven scaling frameworks
+‎
+‎He does not rely on isolated marketing tactics. Instead, he builds unified growth engines that connect traffic → conversion → retention → revenue.
+‎
+‎Since 2022, he has delivered 10+ digital growth projects focused on scalable acquisition and sustainable performance improvement.
+‎
+‎H2: Founder Advantage — Real Market Execution, Not Theory
+‎
+‎Utsa Das actively operates a beauty & personal care e-commerce brand where he manages acquisition, conversion, and retention in real-time.
+‎
+‎This ensures all strategies are validated through real budgets, real customers, and measurable performance outcomes rather than theory. His approach is grounded in what actually drives revenue in competitive markets.
+‎
+‎H2: Core Expertise of a Growth Marketing Strategist
+‎
+‎H3: 1. Paid Advertising (Performance Marketing)
+‎
+‎Scaling customer acquisition through structured, data-driven advertising systems.
+‎
+‎Core Channels:
+‎
+‎Meta Ads (Facebook & Instagram)
+‎
+‎Google Ads (Search, Display, Performance Max)
+‎
+‎TikTok Ads scaling strategy
+‎
+‎Funnel design, A/B testing, conversion optimization
+‎
+‎Tools & Platforms:
+‎
+‎Ads Manager
+‎
+‎Ads
+‎
+‎(GTM)
+‎
+‎Meta Pixel & CAPI tracking systems
+‎
+‎Ads Manager
+‎
+‎H3: 2. SEO & GEO (Generative Engine Optimization)
+‎
+‎Advanced search visibility systems for both traditional search engines and AI-driven discovery platforms.
+‎
+‎Core Capabilities:
+‎
+‎Keyword research & search intent mapping
+‎
+‎On-page SEO & technical SEO optimization
+‎
+‎Entity-based SEO architecture (semantic web structure)
+‎
+‎LLM visibility optimization (AI search readiness)
+‎
+‎Structured content systems for generative engines (ChatGPT, Perplexity, Google AI Overviews)
+‎
+‎Content frameworks engineered for AI citation & ranking
+‎
+‎SEO & GEO Tool Stack:
+‎
+‎AI SEO workflows powered by advanced prompt systems and LLM-assisted content engineering
+‎
+‎H3: 3. E-Commerce & Web Development
+‎
+‎Building high-performance digital storefronts optimized for conversion and speed.
+‎
+‎Capabilities:
+‎
+‎Shopify store setup & optimization
+‎
+‎WordPress & WooCommerce development
+‎
+‎High-conversion landing page design
+‎
+‎CRO-focused UX structure
+‎
+‎Page speed & performance optimization
+‎
+‎Platforms:
+‎
+‎WooCommerce ecosystem
+‎
+‎Conversion-first UI systems
+‎
+‎H3: 4. Growth Strategy & Analytics
+‎
+‎Full-funnel systems that connect acquisition, behavior, and revenue performance.
+‎
+‎Core Focus:
+‎
+‎Full-funnel growth architecture (Paid + Organic integration)
+‎
+‎Conversion Rate Optimization (CRO) systems
+‎
+‎Retention & lifecycle marketing strategy
+‎
+‎Performance scaling frameworks
+‎
+‎Data-driven decision systems
+‎
+‎Tools:
+‎
+‎H2: What Makes This Growth Approach Different
+‎
+‎Built on real e-commerce execution, not theoretical marketing models
+‎
+‎Combines SEO, GEO, ads, and CRO into one unified system
+‎
+‎Focused on revenue outcomes, not vanity metrics
+‎
+‎Designed for both human search engines and AI discovery systems
+‎
+‎Structured for scalable long-term digital asset growth
+‎
+‎H2: Work Philosophy
+‎
+‎Marketing is treated as a system, not a campaign.
+‎
+‎Every channel is engineered to:
+‎
+‎Capture demand (SEO + Ads)
+‎
+‎Convert intent (CRO systems)
+‎
+‎Retain customers (lifecycle strategy)
+‎
+‎Scale profitably (data-driven optimization)
+‎
+‎H2: Let’s Build Scalable Growth Systems
+‎
+‎If you want performance-driven growth across ads, SEO, GEO, and conversion systems, let’s work together.
+‎
+‎]
+‎
+‎REQUIREMENTS
+‎Delete all old website copy, sections, and messaging
+‎Replace everything with the new content only
+‎Maintain full structure with proper HTML hierarchy (H1–H6)
+‎Ensure SEO optimization with natural keyword placement
+‎Ensure GEO optimization for AI search engines (ChatGPT, Perplexity, Google AI Overviews)
+‎Keep content human-written, premium, and founder-level
+‎Maintain conversion-focused tone (not generic or filler content)
+‎STRUCTURE RULES
+‎One clear H1 only (main positioning statement)
+‎Logical section flow: Introduction → Advantage → Expertise → Tools → CTA
+‎Each section must be scannable and structured
+‎No duplicate or outdated content from previous version
+‎Keep formatting clean and modern
+‎FINAL OUTPUT
+‎Fully rewritten website content
+‎Clean SEO + GEO optimized structure
+‎Ready to directly paste into a portfolio website (WordPress / Shopify / custom site)
+‎No explanations, no extra commentary
+‎
