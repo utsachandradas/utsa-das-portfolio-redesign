@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Linkedin } from "lucide-react";
-import { SiWhatsapp, SiFacebook } from "react-icons/si";
+import { SiWhatsapp, SiFacebook } from "@/components/BrandIcons";
 
 const WHATSAPP_LINK = "https://wa.me/8801861393416?text=Hi%20Utsa%2C%20I%27d%20like%20to%20discuss%20a%20project";
 const FACEBOOK_URL  = "https://www.facebook.com/utsachandradasutsa";
