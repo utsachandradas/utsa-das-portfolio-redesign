@@ -1,13 +1,13 @@
 import Layout from "@/components/Layout";
 import { Helmet } from "react-helmet-async";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Mail, MessageSquare, MapPin, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { toast } from "sonner";
-import { SiWhatsapp } from "react-icons/si";
+import { SiWhatsapp } from "@/components/BrandIcons";
 
 const WHATSAPP_LINK = "https://wa.me/8801861393416?text=Hi%20Utsa%2C%20I%27d%20like%20to%20discuss%20a%20project";
 
@@ -109,7 +109,7 @@ export default function Contact() {
       <section className="py-24 pt-32 relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(var(--primary),0.05)_0,transparent_50%)] pointer-events-none" />
         <div className="container max-w-5xl mx-auto relative z-10">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -122,7 +122,7 @@ export default function Contact() {
             <p className="text-xl text-muted-foreground font-light max-w-xl mx-auto">
               Whether you have a specific project in mind or want to explore how Utsa Das can build a unified growth system for your brand — reach out directly.
             </p>
-          </motion.div>
+          </m.div>
 
           {/* Contact Methods */}
           <div className="grid sm:grid-cols-3 gap-5 mb-16">
@@ -152,7 +152,7 @@ export default function Contact() {
                 color: "text-muted-foreground",
               },
             ].map(({ Icon, title, desc, link, label, color }, i) => (
-              <motion.div
+              <m.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -170,12 +170,12 @@ export default function Contact() {
                 ) : (
                   <span className="text-sm font-semibold text-muted-foreground">{label}</span>
                 )}
-              </motion.div>
+              </m.div>
             ))}
           </div>
 
           {/* WhatsApp CTA */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -196,7 +196,7 @@ export default function Contact() {
               <SiWhatsapp className="w-5 h-5" />
               Start a WhatsApp Chat with Utsa
             </a>
-          </motion.div>
+          </m.div>
 
           {/* Contact Form */}
           <div className="grid md:grid-cols-2 gap-10 mb-20" id="contact-form">
@@ -221,7 +221,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <motion.form
+            <m.form
               onSubmit={handleSubmit}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -250,7 +250,7 @@ export default function Contact() {
               <Button type="submit" disabled={isSubmitting} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
                 {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
-            </motion.form>
+            </m.form>
           </div>
 
           {/* FAQ */}
@@ -259,7 +259,7 @@ export default function Contact() {
             <p className="text-muted-foreground text-center mb-10 text-sm">Straight answers to what most people ask before working with Utsa Das.</p>
             <div className="max-w-3xl mx-auto space-y-3">
               {faqs.map((faq, i) => (
-                <motion.div
+                <m.div
                   key={i}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -279,7 +279,7 @@ export default function Contact() {
                       {faq.a}
                     </div>
                   )}
-                </motion.div>
+                </m.div>
               ))}
             </div>
           </div>
