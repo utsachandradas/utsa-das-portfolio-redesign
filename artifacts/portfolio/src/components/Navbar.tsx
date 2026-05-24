@@ -43,91 +43,93 @@ const Navbar = () => {
         transition={{ duration: 0.5, ease: "easeOut" }}
         style={{ willChange: isScrolled || isOpen ? "background-color, border-color" : "auto" }}
       >
-        <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+        <div className="w-full h-16 flex items-center px-3 sm:px-4 md:px-6 lg:px-8 overflow-hidden">
+          <div className="w-full max-w-7xl mx-auto flex items-center justify-between h-full">
 
-          {/* Logo — "Utsa Das" text brand */}
-          <Link href="/">
-            <div className="flex items-center gap-2.5 cursor-pointer group flex-shrink-0" data-testid="nav-logo">
-              {/* Wordmark */}
-              <div className="flex flex-col leading-none">
-                <span
-                  className="font-bold tracking-tight text-foreground group-hover:text-primary transition-colors duration-200"
-                  style={{
-                    fontSize: "clamp(1rem, 2.5vw, 1.5rem)",
-                    fontFamily: "'Space Grotesk', system-ui, -apple-system, sans-serif",
-                    letterSpacing: "-0.03em",
-                    lineHeight: 1,
-                  }}
-                >
-                  Utsa Das
-                </span>
-                <span
-                  className="font-medium tracking-widest uppercase hidden sm:block"
-                  style={{
-                    fontSize: "0.5rem",
-                    color: "oklch(0.68 0.22 272)",
-                    letterSpacing: "0.2em",
-                    lineHeight: 1.4,
-                    marginTop: "0.2rem",
-                  }}
-                >
-                  SEO · GEO
-                </span>
+            {/* Logo — "Utsa Das" text brand */}
+            <Link href="/">
+              <div className="flex items-center gap-2.5 cursor-pointer group flex-shrink-0 min-w-0" data-testid="nav-logo">
+                {/* Wordmark */}
+                <div className="flex flex-col leading-none min-w-0">
+                  <span
+                    className="font-bold tracking-tight text-foreground group-hover:text-primary transition-colors duration-200 truncate"
+                    style={{
+                      fontSize: "clamp(0.9rem, 2.5vw, 1.5rem)",
+                      fontFamily: "'Space Grotesk', system-ui, -apple-system, sans-serif",
+                      letterSpacing: "-0.03em",
+                      lineHeight: 1,
+                    }}
+                  >
+                    Utsa Das
+                  </span>
+                  <span
+                    className="font-medium tracking-widest uppercase hidden sm:block text-nowrap"
+                    style={{
+                      fontSize: "0.45rem",
+                      color: "oklch(0.68 0.22 272)",
+                      letterSpacing: "0.2em",
+                      lineHeight: 1.4,
+                      marginTop: "0.2rem",
+                    }}
+                  >
+                    SEO · GEO
+                  </span>
+                </div>
+
+                {/* Separator dot accent */}
+                <div
+                  className="hidden sm:block w-1 h-1 rounded-full opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0"
+                  style={{ background: "oklch(0.70 0.24 272)" }}
+                />
               </div>
+            </Link>
 
-              {/* Separator dot accent */}
-              <div
-                className="hidden sm:block w-1 h-1 rounded-full opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0"
-                style={{ background: "oklch(0.70 0.24 272)" }}
-              />
+            {/* Desktop nav */}
+            <div className="hidden lg:flex items-center gap-0.5 flex-1 justify-center px-4">
+              {navItems.map((item) => (
+                <Link key={item.href} href={item.href}>
+                  <span
+                    className={`px-3 py-2 text-sm font-medium rounded-lg transition-all cursor-pointer whitespace-nowrap ${
+                      isActive(item.href)
+                        ? "text-primary bg-primary/8"
+                        : "text-muted-foreground hover:text-foreground hover:bg-white/6"
+                    }`}
+                    data-testid={`nav-link-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
+                  >
+                    {item.label}
+                  </span>
+                </Link>
+              ))}
             </div>
-          </Link>
 
-          {/* Desktop nav */}
-          <div className="hidden lg:flex items-center gap-0.5">
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href}>
-                <span
-                  className={`px-3 py-2 text-sm font-medium rounded-lg transition-all cursor-pointer whitespace-nowrap ${
-                    isActive(item.href)
-                      ? "text-primary bg-primary/8"
-                      : "text-muted-foreground hover:text-foreground hover:bg-white/6"
-                  }`}
-                  data-testid={`nav-link-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
-                >
-                  {item.label}
-                </span>
-              </Link>
-            ))}
-          </div>
+            {/* Right: CTA + hamburger */}
+            <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0 ml-auto">
+              <a
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noreferrer"
+                data-testid="nav-whatsapp-btn"
+                className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-all shadow-md shadow-primary/20 flex-shrink-0"
+              >
+                <MessageCircle className="w-4 h-4 flex-shrink-0" />
+                <span className="hidden md:inline">Let's Chat</span>
+              </a>
 
-          {/* Right: CTA + hamburger */}
-          <div className="flex items-center gap-2 flex-shrink-0">
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noreferrer"
-              data-testid="nav-whatsapp-btn"
-              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-all shadow-md shadow-primary/20"
-            >
-              <MessageCircle className="w-4 h-4 flex-shrink-0" />
-              <span className="hidden md:inline">Let's Chat</span>
-            </a>
-
-            <button
-              onClick={() => setIsOpen(v => !v)}
-              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-xl text-foreground hover:bg-white/8 transition-colors border border-white/10 flex-shrink-0"
-              aria-label={isOpen ? "Close menu" : "Open menu"}
-              aria-expanded={isOpen}
-              data-testid="nav-mobile-toggle"
-            >
-              <AnimatePresence mode="wait" initial={false}>
-                {isOpen
-                  ? <motion.span key="x" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.15 }}><X size={20} /></motion.span>
-                  : <motion.span key="menu" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.15 }}><Menu size={20} /></motion.span>
-                }
-              </AnimatePresence>
-            </button>
+              <button
+                onClick={() => setIsOpen(v => !v)}
+                className="lg:hidden flex items-center justify-center w-10 h-10 rounded-xl text-foreground hover:bg-white/8 transition-colors border border-white/10 flex-shrink-0"
+                aria-label={isOpen ? "Close menu" : "Open menu"}
+                aria-expanded={isOpen}
+                data-testid="nav-mobile-toggle"
+              >
+                <AnimatePresence mode="wait" initial={false}>
+                  {isOpen
+                    ? <motion.span key="x" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.15 }}><X size={20} /></motion.span>
+                    : <motion.span key="menu" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.15 }}><Menu size={20} /></motion.span>
+                  }
+                </AnimatePresence>
+              </button>
+            </div>
           </div>
         </div>
       </motion.nav>
