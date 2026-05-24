@@ -71,7 +71,31 @@ export default function Contact() {
           name="description"
           content="Get in touch with Utsa Das (Utsa Chandra Das) for growth marketing consulting — paid ads, SEO, GEO, and conversion optimization. Available via WhatsApp or email for brands in Bangladesh and globally. Founder-led, no agency overhead."
         />
+        <link rel="canonical" href="https://utsadas.com/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Utsa Das | Growth Marketing Strategist" />
+        <meta property="og:title" content="Contact Utsa Das | Growth Marketing Strategy Consultation" />
+        <meta property="og:description" content="Get in touch with Utsa Das for growth marketing consulting — paid ads, SEO, GEO, and conversion optimization. Available via WhatsApp or email. Founder-led, no agency overhead." />
+        <meta property="og:url" content="https://utsadas.com/contact" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content="https://utsadas.com/opengraph.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@utsadas" />
+        <meta name="twitter:title" content="Contact Utsa Das | Growth Marketing Consultation" />
+        <meta name="twitter:description" content="Reach Utsa Das via WhatsApp or email for paid ads, SEO, GEO, and CRO consulting. Founder-led, no agency overhead." />
+        <meta name="twitter:image" content="https://utsadas.com/opengraph.jpg" />
         <meta name="keywords" content="contact Utsa Das, Utsa Chandra Das contact, growth marketing consultation Bangladesh, hire growth strategist Bangladesh" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+          }))
+        })}</script>
       </Helmet>
 
       <section className="py-24 pt-32 relative">
