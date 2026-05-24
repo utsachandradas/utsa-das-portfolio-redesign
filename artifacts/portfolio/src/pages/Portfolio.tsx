@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import SectionHeader from "@/components/SectionHeader";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowUpRight, TrendingUp } from "lucide-react";
 
 const Portfolio = () => {
@@ -97,7 +97,7 @@ const Portfolio = () => {
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-accent/5">
         <div className="container relative z-10 max-w-4xl text-center">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -109,7 +109,7 @@ const Portfolio = () => {
             <p className="text-xl text-foreground/60 max-w-2xl mx-auto">
               Real results from real projects. See how I've helped businesses achieve their growth goals.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
@@ -118,7 +118,7 @@ const Portfolio = () => {
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <motion.div
+              <m.div
                 key={index}
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -130,7 +130,7 @@ const Portfolio = () => {
                   {stat.value}
                 </div>
                 <p className="text-sm text-foreground/60">{stat.label}</p>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -147,7 +147,7 @@ const Portfolio = () => {
 
           <div className="grid md:grid-cols-2 gap-8 mt-12">
             {projects.map((project, index) => (
-              <motion.div
+              <m.div
                 key={project.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -201,7 +201,7 @@ const Portfolio = () => {
                     <ArrowUpRight className="w-4 h-4" />
                   </button>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -229,7 +229,7 @@ const Portfolio = () => {
                 role: "Marketing Director, SaaS Company",
               },
             ].map((testimonial, index) => (
-              <motion.div
+              <m.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -247,7 +247,7 @@ const Portfolio = () => {
                   <p className="font-semibold">{testimonial.author}</p>
                   <p className="text-sm text-foreground/60">{testimonial.role}</p>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -256,7 +256,7 @@ const Portfolio = () => {
       {/* CTA Section */}
       <section className="py-20 md:py-32">
         <div className="container max-w-4xl text-center">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -270,7 +270,7 @@ const Portfolio = () => {
             <button className="inline-block px-8 py-3 bg-accent hover:bg-accent/90 text-white font-semibold rounded-lg transition-colors">
               Start Your Project
             </button>
-          </motion.div>
+          </m.div>
         </div>
       </section>
     </Layout>
