@@ -159,12 +159,24 @@ export default function Home() {
           name="description"
           content="Utsa Das (Utsa Chandra Das) is a Growth Marketing Strategist in Bangladesh building scalable acquisition and conversion systems for e-commerce and B2B brands. Specializing in Meta Ads, Google Ads, SEO, GEO, and CRO since 2022."
         />
-        <meta property="og:title" content="Utsa Das — Growth Marketing Strategist in Bangladesh" />
+        <link rel="canonical" href="https://utsadas.com/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Utsa Das | Growth Marketing Strategist" />
+        <meta property="og:title" content="Utsa Das — Growth Marketing Strategist in Bangladesh | Paid Ads, SEO, GEO, CRO" />
         <meta
           property="og:description"
-          content="Founder-led growth marketing for e-commerce and B2B brands. Utsa Chandra Das builds unified systems across paid ads, SEO, GEO, and conversion optimization — focused on measurable revenue growth."
+          content="Founder-led growth marketing for e-commerce and B2B brands. Utsa Das builds unified systems across paid ads, SEO, GEO, and CRO — focused on measurable revenue growth."
         />
-        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://utsadas.com/" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content="https://utsadas.com/opengraph.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@utsadas" />
+        <meta name="twitter:title" content="Utsa Das — Growth Marketing Strategist in Bangladesh | Paid Ads, SEO, GEO, CRO" />
+        <meta name="twitter:description" content="Founder-led growth marketing for e-commerce and B2B brands. Utsa Das builds unified systems across paid ads, SEO, GEO, and CRO — focused on measurable revenue growth." />
+        <meta name="twitter:image" content="https://utsadas.com/opengraph.jpg" />
         <meta name="keywords" content="Utsa Das, Utsa Chandra Das, Growth Marketing Strategist Bangladesh, Performance Marketing Bangladesh, SEO GEO Bangladesh, Meta Ads Bangladesh, Google Ads Bangladesh, CRO Bangladesh" />
         <script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</script>
       </Helmet>
