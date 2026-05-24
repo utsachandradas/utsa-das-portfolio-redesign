@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 /**
@@ -24,7 +24,7 @@ const SectionHeader = ({
   align = "center",
 }: SectionHeaderProps) => {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
@@ -49,7 +49,7 @@ const SectionHeader = ({
           {description}
         </p>
       )}
-    </motion.div>
+    </m.div>
   );
 };
 
