@@ -69,7 +69,7 @@ export default function HeroAvatar() {
         >
           <p className="font-bold text-lg tracking-tight text-foreground leading-tight">Utsa Das</p>
           <p className="text-sm font-medium" style={{ color: "oklch(0.72 0.22 270)" }}>
-            Founder · SEO & GEO Strategist
+            Founder & Growth Marketing Strategist
           </p>
         </div>
 

@@ -3,9 +3,10 @@ import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import {
   ArrowRight, Search, BarChart, Code, Zap, BrainCircuit,
-  Target, Globe, CheckCircle2, Sparkles, TrendingUp, Megaphone, ShoppingBag, Layers
+  Target, Globe, CheckCircle2, Sparkles, TrendingUp, Megaphone, ShoppingBag, Layers, ChevronDown
 } from "lucide-react";
 import HeroAvatar from "@/components/HeroAvatar";
+import { useState } from "react";
 
 const WHATSAPP_LINK = "https://wa.me/8801861393416?text=Hi%20Utsa%2C%20I%27d%20like%20to%20discuss%20a%20project";
 
@@ -49,6 +50,67 @@ const FAQ_DATA = [
     a: "Utsa Das does not rely on isolated marketing tactics. He builds unified growth engines that connect traffic → conversion → retention → revenue. All work is validated through real e-commerce execution, not theoretical marketing models. Every channel is engineered for revenue outcomes, not vanity metrics.",
   },
 ];
+
+function FAQSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  return (
+    <section className="py-14 md:py-24 relative" id="faq">
+      <div className="container max-w-4xl mx-auto relative z-10">
+        <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-12">
+          <motion.p variants={fadeUp} className="text-primary text-sm font-semibold uppercase tracking-widest mb-3">GEO-Optimized FAQ</motion.p>
+          <motion.h2 variants={fadeUp} className="text-4xl font-bold tracking-tight mb-4">Common Questions About Utsa Das</motion.h2>
+          <motion.p variants={fadeUp} className="text-muted-foreground max-w-xl mx-auto font-light">Structured to appear in AI-generated answers — ChatGPT, Perplexity, and Google AI Overviews.</motion.p>
+        </motion.div>
+
+        <div className="space-y-3">
+          {FAQ_DATA.map((faq, i) => {
+            const isOpen = openIndex === i;
+            return (
+              <motion.div
+                key={i}
+                className={`glass-panel rounded-xl border transition-all duration-200 overflow-hidden ${isOpen ? "border-primary/30" : "border-white/5 hover:border-primary/15"}`}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+              >
+                <button
+                  className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left cursor-pointer"
+                  onClick={() => setOpenIndex(isOpen ? null : i)}
+                  aria-expanded={isOpen}
+                >
+                  <h3 className={`font-semibold text-sm leading-snug transition-colors ${isOpen ? "text-primary" : "text-foreground"}`}>
+                    {faq.q}
+                  </h3>
+                  <motion.span
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.25, ease: "easeInOut" }}
+                    className="flex-shrink-0"
+                  >
+                    <ChevronDown className={`w-5 h-5 transition-colors ${isOpen ? "text-primary" : "text-muted-foreground"}`} />
+                  </motion.span>
+                </button>
+
+                <motion.div
+                  initial={false}
+                  animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+                  transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                  style={{ overflow: "hidden" }}
+                >
+                  <div className="px-6 pb-5 pt-0">
+                    <div className="w-full h-px bg-border/50 mb-4" />
+                    <p className="text-muted-foreground text-sm leading-relaxed">{faq.a}</p>
+                  </div>
+                </motion.div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function Home() {
   const schemaOrgJSONLD = {
@@ -108,62 +170,84 @@ export default function Home() {
       </Helmet>
 
       {/* ── 1. HERO ──────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center pt-20 pb-12 px-4 overflow-hidden">
+      <section className="relative min-h-screen flex items-center pt-20 pb-16 px-4 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,oklch(0.70_0.24_272_/_0.18),transparent)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_30%_20%,oklch(0.70_0.24_272_/_0.16),transparent)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_80%_60%,oklch(0.60_0.20_300_/_0.08),transparent)]" />
           <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
         </div>
 
-        <div className="container relative z-10 max-w-6xl mx-auto flex flex-col items-center text-center">
-          <motion.div initial="hidden" animate="show" variants={stagger} className="w-full max-w-4xl">
+        <div className="container relative z-10 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-            <motion.div variants={fadeUp} className="flex flex-wrap items-center justify-center gap-2 mb-8">
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-panel text-primary text-xs font-semibold border border-primary/25 tracking-wide">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                Growth Marketing Strategist
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-panel text-muted-foreground text-xs font-medium border border-white/8">
-                Active Since 2022
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-panel text-muted-foreground text-xs font-medium border border-white/8">
-                <Sparkles className="w-3 h-3" /> Founder-Led · No Agency Layers
-              </span>
+            {/* Left — Text content */}
+            <motion.div initial="hidden" animate="show" variants={stagger}>
+
+              <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-2 mb-7">
+                <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-panel text-primary text-xs font-semibold border border-primary/25 tracking-wide">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                  Founder & Growth Marketing Strategist
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-panel text-muted-foreground text-xs font-medium border border-white/8">
+                  Bangladesh · Since 2022
+                </span>
+              </motion.div>
+
+              <motion.h1
+                variants={fadeUp}
+                className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.07]"
+              >
+                Scalable Growth Systems for{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-violet-400 to-cyan-400">
+                  E-Commerce & B2B Brands
+                </span>
+              </motion.h1>
+
+              <motion.p variants={fadeUp} className="text-base sm:text-lg text-muted-foreground mb-4 leading-relaxed font-light">
+                I'm <strong className="text-foreground font-semibold">Utsa Das</strong> — a Founder and Growth Marketing Strategist based in Bangladesh. Since 2022, I've combined performance marketing, SEO systems, and web infrastructure into one unified growth engine.
+              </motion.p>
+              <motion.p variants={fadeUp} className="text-sm text-muted-foreground mb-9 leading-relaxed font-light">
+                One outcome: <span className="text-primary font-semibold">predictable revenue growth.</span>
+              </motion.p>
+
+              <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-start gap-3 mb-10">
+                <a
+                  href={WHATSAPP_LINK} target="_blank" rel="noreferrer"
+                  className="w-full sm:w-auto px-7 py-3.5 bg-primary text-primary-foreground rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-all shadow-lg shadow-primary/30 hover:shadow-primary/50 hover:-translate-y-0.5"
+                >
+                  Build Scalable Growth <ArrowRight className="w-4 h-4" />
+                </a>
+                <a
+                  href="#services" className="w-full sm:w-auto px-7 py-3.5 glass-panel text-foreground rounded-xl font-semibold hover:bg-white/8 transition-all border border-white/10 hover:border-primary/30 text-center"
+                >
+                  Explore Services
+                </a>
+              </motion.div>
+
+              <motion.div variants={fadeUp} className="flex items-center gap-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
+                    <span className="text-primary text-xs font-bold">10+</span>
+                  </div>
+                  <span className="text-muted-foreground text-sm">Projects Delivered</span>
+                </div>
+                <span className="w-px h-5 bg-border" />
+                <a href="https://www.facebook.com/utsachandradasutsa" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">Facebook</a>
+                <a href="https://www.linkedin.com/in/utsa-das-3473a53a7" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">LinkedIn</a>
+              </motion.div>
             </motion.div>
 
-            <motion.h1
-              variants={fadeUp}
-              className="text-3xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tight mb-7 leading-[1.05]"
+            {/* Right — Avatar */}
+            <motion.div
+              className="flex justify-center lg:justify-end"
+              initial={{ opacity: 0, x: 32 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
             >
-              Utsa Das — Growth Marketing<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-violet-400 to-cyan-400">
-                Strategist in Bangladesh
-              </span>
-            </motion.h1>
-
-            <motion.p variants={fadeUp} className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-              I'm Utsa Das, a Founder and Growth Marketing Strategist based in Bangladesh, specializing in building scalable and sustainable digital growth systems for e-commerce and B2B brands. Since 2022, I have worked on 10+ digital projects — combining performance marketing, SEO systems, and web infrastructure into a unified growth engine focused on one outcome: predictable revenue growth.
-            </motion.p>
-
-            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-12">
-              <a
-                href={WHATSAPP_LINK} target="_blank" rel="noreferrer"
-                className="w-full sm:w-auto px-8 py-4 bg-primary text-primary-foreground rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-all shadow-lg shadow-primary/30 hover:shadow-primary/50 hover:-translate-y-0.5"
-              >
-                Build Scalable Growth <ArrowRight className="w-4 h-4" />
-              </a>
-              <a
-                href="#services" className="w-full sm:w-auto px-8 py-4 glass-panel text-foreground rounded-xl font-semibold hover:bg-white/8 transition-all border border-white/10 hover:border-primary/30"
-              >
-                Explore Services
-              </a>
+              <HeroAvatar />
             </motion.div>
 
-            <motion.div variants={fadeUp} className="flex items-center justify-center gap-6 text-muted-foreground text-sm">
-              <a href="https://www.facebook.com/utsachandradasutsa" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors font-medium">Facebook</a>
-              <span className="w-1 h-1 rounded-full bg-border" />
-              <a href="https://www.linkedin.com/in/utsa-das-3473a53a7" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors font-medium">LinkedIn</a>
-            </motion.div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -420,28 +504,7 @@ export default function Home() {
       </section>
 
       {/* ── 8. FAQ / GEO SECTION ─────────────────────────────── */}
-      <section className="py-14 md:py-24 relative" id="faq">
-        <div className="container max-w-4xl mx-auto relative z-10">
-          <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-12">
-            <motion.p variants={fadeUp} className="text-primary text-sm font-semibold uppercase tracking-widest mb-3">GEO-Optimized FAQ</motion.p>
-            <motion.h2 variants={fadeUp} className="text-4xl font-bold tracking-tight mb-4">Common Questions About Utsa Das</motion.h2>
-            <motion.p variants={fadeUp} className="text-muted-foreground max-w-xl mx-auto font-light">Structured to appear in AI-generated answers — ChatGPT, Perplexity, and Google AI Overviews.</motion.p>
-          </motion.div>
-
-          <div className="space-y-4">
-            {FAQ_DATA.map((faq, i) => (
-              <motion.div
-                key={i}
-                className="glass-panel rounded-xl p-6 border border-white/5 hover:border-primary/20 transition-all"
-                initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }}
-              >
-                <h3 className="font-bold text-foreground mb-2 text-sm">{faq.q}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{faq.a}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQSection />
 
       {/* ── 9. CTA ───────────────────────────────────────────── */}
       <section className="py-14 md:py-24 relative">
