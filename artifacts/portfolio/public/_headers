@@ -1,0 +1,31 @@
+# Hashed JS / CSS / image assets — cache forever (content-addressed)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Favicons — 1 week with stale-while-revalidate
+/assets/favicons/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+# Fonts cached alongside assets
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+# OG image — 1 week
+/opengraph.jpg
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+# robots.txt and sitemap — 1 day
+/robots.txt
+  Cache-Control: public, max-age=86400
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+
+# HTML — always revalidate (SPA index.html must never be stale)
+/*
+  Cache-Control: no-cache, no-store, must-revalidate
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
