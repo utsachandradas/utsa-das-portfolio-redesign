@@ -57,7 +57,7 @@ const Navbar = () => {
                 <span
                   className="font-bold tracking-tight text-foreground group-hover:text-primary transition-colors duration-200"
                   style={{
-                    fontSize: "clamp(1.05rem, 2vw, 1.25rem)",
+                    fontSize: "clamp(1.25rem, 2.5vw, 1.5rem)",
                     fontFamily: "'Space Grotesk', system-ui, -apple-system, sans-serif",
                     letterSpacing: "-0.03em",
                     lineHeight: 1,
@@ -68,11 +68,11 @@ const Navbar = () => {
                 <span
                   className="font-medium tracking-widest uppercase"
                   style={{
-                    fontSize: "0.52rem",
+                    fontSize: "0.6rem",
                     color: "oklch(0.68 0.22 272)",
-                    letterSpacing: "0.18em",
+                    letterSpacing: "0.2em",
                     lineHeight: 1.4,
-                    marginTop: "0.15rem",
+                    marginTop: "0.2rem",
                   }}
                 >
                   SEO · GEO Strategist

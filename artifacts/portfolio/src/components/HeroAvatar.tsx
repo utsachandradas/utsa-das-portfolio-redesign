@@ -4,17 +4,21 @@ export default function HeroAvatar() {
   return (
     <div className="relative w-full max-w-[340px] mx-auto select-none">
       {/* Outer ambient glow */}
-      <div className="absolute inset-[-16px] rounded-[2.5rem] bg-gradient-to-br from-primary/30 via-violet-500/10 to-cyan-500/10 blur-2xl opacity-70 pointer-events-none animate-pulse" style={{ animationDuration: "4s" }} />
-      <div className="absolute inset-[-4px] rounded-[2rem] bg-gradient-to-br from-primary/20 via-transparent to-primary/10 blur-lg opacity-60 pointer-events-none" />
+      <div className="absolute inset-[-20px] rounded-[3rem] bg-gradient-to-br from-primary/40 via-violet-500/20 to-cyan-500/20 blur-3xl opacity-80 pointer-events-none animate-pulse" style={{ animationDuration: "5s" }} />
+      <div className="absolute inset-[-8px] rounded-[2.5rem] bg-gradient-to-br from-primary/30 via-transparent to-primary/20 blur-xl opacity-70 pointer-events-none" />
 
       {/* Card wrapper */}
       <motion.div
-        className="relative rounded-[2rem] overflow-hidden border border-primary/20 shadow-2xl shadow-primary/20"
-        style={{ background: "linear-gradient(145deg, oklch(0.14 0.03 265), oklch(0.09 0.018 255))" }}
+        className="relative rounded-[2.5rem] overflow-hidden border border-primary/30 shadow-[0_0_50px_rgba(var(--primary),0.2)]"
+        style={{ background: "linear-gradient(145deg, oklch(0.16 0.04 265), oklch(0.11 0.02 255))" }}
         initial={{ opacity: 0, scale: 0.92, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        whileHover={{ y: -4, transition: { duration: 0.3 } }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        whileHover={{ 
+          y: -8, 
+          scale: 1.02,
+          transition: { duration: 0.4, ease: "easeOut" } 
+        }}
       >
         {/* Subtle floating animation wrapper */}
         <motion.div
@@ -29,8 +33,8 @@ export default function HeroAvatar() {
             height={500}
             loading="eager"
             decoding="async"
-            className="w-full block"
-            style={{ aspectRatio: "4/5", objectFit: "cover" }}
+            className="w-full block transition-transform duration-700 hover:scale-110"
+            style={{ aspectRatio: "4/5", objectFit: "cover", filter: "drop-shadow(0 0 15px rgba(var(--primary), 0.3))" }}
           />
         </motion.div>
 
