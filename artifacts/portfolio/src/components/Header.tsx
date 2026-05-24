@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +20,7 @@ export default function Header() {
       <div className="container flex items-center justify-between h-16">
         {/* Logo */}
         <Link href="/">
-          <motion.div
+          <m.div
             className="flex items-center gap-2 cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -29,19 +29,19 @@ export default function Header() {
               <span className="text-white font-bold text-sm">UD</span>
             </div>
             <span className="font-bold text-lg hidden sm:inline">Utsa Das</span>
-          </motion.div>
+          </m.div>
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
             <Link key={item.href} href={item.href}>
-              <motion.a
+              <m.a
                 className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
                 whileHover={{ color: "#06B6D4" }}
               >
                 {item.label}
-              </motion.a>
+              </m.a>
             </Link>
           ))}
         </nav>
@@ -73,7 +73,7 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
@@ -100,7 +100,7 @@ export default function Header() {
               </a>
             </Button>
           </nav>
-        </motion.div>
+        </m.div>
       )}
     </header>
   );
