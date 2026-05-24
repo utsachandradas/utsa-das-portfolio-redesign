@@ -81,6 +81,21 @@ export default function Skills() {
           name="description"
           content="Explore the growth marketing expertise of Utsa Das (Utsa Chandra Das) — including paid advertising (Meta, Google, TikTok), SEO, GEO optimization, e-commerce development, and full-funnel growth strategy built since 2022."
         />
+        <link rel="canonical" href="https://utsadas.com/skills" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Utsa Das | Growth Marketing Strategist" />
+        <meta property="og:title" content="Growth Marketing Skills & Expertise | Utsa Das | Paid Ads, SEO, GEO, CRO" />
+        <meta property="og:description" content="Growth marketing expertise of Utsa Das — paid advertising (Meta, Google, TikTok), SEO, GEO, e-commerce development, and full-funnel growth strategy. Built over 4+ years of real execution since 2022." />
+        <meta property="og:url" content="https://utsadas.com/skills" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content="https://utsadas.com/opengraph.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@utsadas" />
+        <meta name="twitter:title" content="Growth Marketing Skills & Expertise | Utsa Das" />
+        <meta name="twitter:description" content="Paid ads, SEO, GEO, e-commerce, and full-funnel growth strategy skills by Utsa Das. Built over 4+ years of real execution since 2022." />
+        <meta name="twitter:image" content="https://utsadas.com/opengraph.jpg" />
         <meta name="keywords" content="Utsa Das skills, Utsa Chandra Das expertise, growth marketing skills Bangladesh, paid ads expertise, SEO GEO skills Bangladesh" />
       </Helmet>
 
