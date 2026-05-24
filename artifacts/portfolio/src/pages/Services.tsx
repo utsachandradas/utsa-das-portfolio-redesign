@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import { Helmet } from "react-helmet-async";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Megaphone, BrainCircuit, Code, BarChart, CheckCircle2, ArrowRight, Wrench } from "lucide-react";
 
 const WHATSAPP_LINK = "https://wa.me/8801861393416?text=Hi%20Utsa%2C%20I%27d%20like%20to%20discuss%20a%20project";
@@ -140,7 +140,7 @@ export default function Services() {
       <section className="py-24 pt-32 relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(var(--primary),0.05)_0,transparent_50%)] pointer-events-none" />
         <div className="container max-w-6xl mx-auto relative z-10">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -153,13 +153,13 @@ export default function Services() {
             <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto">
               Four integrated service areas built by Utsa Das — designed to work as a unified growth system, not isolated tactics. Every channel is engineered for revenue outcomes.
             </p>
-          </motion.div>
+          </m.div>
 
           <div className="space-y-6 mb-14 md:mb-24">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <motion.div
+                <m.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -198,13 +198,13 @@ export default function Services() {
                       </ul>
                     </div>
                   </div>
-                </motion.div>
+                </m.div>
               );
             })}
           </div>
 
           {/* What Makes This Different */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="glass-panel rounded-2xl p-8 md:p-12 border border-primary/15 mb-14 md:mb-24"
           >
@@ -224,7 +224,7 @@ export default function Services() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </m.div>
 
           <div className="text-center bg-secondary/30 rounded-3xl p-6 sm:p-12 border border-border">
             <h2 className="text-3xl font-bold mb-4">Ready to build a scalable growth system?</h2>
