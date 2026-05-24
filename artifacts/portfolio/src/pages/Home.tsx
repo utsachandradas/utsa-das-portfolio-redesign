@@ -170,7 +170,7 @@ export default function Home() {
       </Helmet>
 
       {/* ── 1. HERO ──────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center pt-20 pb-16 px-4 overflow-hidden">
+      <section className="relative min-h-[calc(100vh-4rem)] flex items-center pt-8 pb-16 px-4 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_30%_20%,oklch(0.70_0.24_272_/_0.16),transparent)]" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_80%_60%,oklch(0.60_0.20_300_/_0.08),transparent)]" />
@@ -206,9 +206,27 @@ export default function Home() {
               <motion.p variants={fadeUp} className="text-base sm:text-lg text-muted-foreground mb-4 leading-relaxed font-light">
                 I'm <strong className="text-foreground font-semibold">Utsa Das</strong> — a Founder and Growth Marketing Strategist based in Bangladesh. Since 2022, I've combined performance marketing, SEO systems, and web infrastructure into one unified growth engine.
               </motion.p>
-              <motion.p variants={fadeUp} className="text-sm text-muted-foreground mb-9 leading-relaxed font-light">
+              <motion.p variants={fadeUp} className="text-sm text-muted-foreground mb-6 leading-relaxed font-light">
                 One outcome: <span className="text-primary font-semibold">predictable revenue growth.</span>
               </motion.p>
+
+              {/* Trust micro-signals */}
+              <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-8 text-xs text-muted-foreground">
+                <span className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-400 flex-shrink-0" />
+                  10+ Projects Delivered
+                </span>
+                <span className="w-px h-3.5 bg-border hidden sm:block" />
+                <span className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                  Meta · Google · TikTok
+                </span>
+                <span className="w-px h-3.5 bg-border hidden sm:block" />
+                <span className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" />
+                  GEO · SEO · CRO · Paid Ads
+                </span>
+              </motion.div>
 
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-start gap-3 mb-10">
                 <a

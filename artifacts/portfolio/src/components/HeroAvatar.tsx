@@ -34,22 +34,32 @@ export default function HeroAvatar() {
           <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-violet-500/10 to-transparent pointer-events-none" />
 
           {/* Photo */}
-          <motion.img
-            src="/assets/avatars/utsa-das-avatar.png"
-            alt="Utsa Das — Founder & Growth Marketing Strategist"
-            width={400}
-            height={480}
-            loading="eager"
-            decoding="async"
-            className="w-full block"
-            style={{
-              aspectRatio: "5/6",
-              objectFit: "cover",
-              objectPosition: "center top",
-            }}
-            animate={{ y: [0, -5, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          />
+          <div className="relative w-full">
+            <motion.img
+              src="/assets/avatars/utsa-das-avatar.png"
+              alt="Utsa Das — Founder & Growth Marketing Strategist"
+              width={400}
+              height={480}
+              loading="eager"
+              decoding="async"
+              className="w-full block"
+              style={{
+                aspectRatio: "5/6",
+                objectFit: "cover",
+                objectPosition: "center top",
+              }}
+              animate={{ y: [0, -5, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            />
+            {/* Warm color tint overlay — adds subtle indigo-violet warmth to the B&W photo */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background: "linear-gradient(160deg, oklch(0.70 0.24 272 / 0.12) 0%, oklch(0.60 0.20 300 / 0.08) 100%)",
+                mixBlendMode: "screen",
+              }}
+            />
+          </div>
 
           {/* Name overlay */}
           <div
