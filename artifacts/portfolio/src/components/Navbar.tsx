@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useScroll } from "@/contexts/ScrollContext";
 
 const WHATSAPP_LINK = "https://wa.me/8801861393416?text=Hi%20Utsa%2C%20I%27d%20like%20to%20discuss%20a%20project";
 
@@ -16,14 +17,8 @@ const navItems = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [location] = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const { isScrolled } = useScroll();
 
   useEffect(() => { setIsOpen(false); }, [location]);
 
@@ -46,18 +41,19 @@ const Navbar = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
+        style={{ willChange: isScrolled || isOpen ? "background-color, border-color" : "auto" }}
       >
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+        <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between h-16">
 
           {/* Logo — "Utsa Das" text brand */}
           <Link href="/">
-            <div className="flex items-center gap-2.5 cursor-pointer group" data-testid="nav-logo">
+            <div className="flex items-center gap-2.5 cursor-pointer group flex-shrink-0" data-testid="nav-logo">
               {/* Wordmark */}
               <div className="flex flex-col leading-none">
                 <span
                   className="font-bold tracking-tight text-foreground group-hover:text-primary transition-colors duration-200"
                   style={{
-                    fontSize: "clamp(1.25rem, 2.5vw, 1.5rem)",
+                    fontSize: "clamp(1rem, 2.5vw, 1.5rem)",
                     fontFamily: "'Space Grotesk', system-ui, -apple-system, sans-serif",
                     letterSpacing: "-0.03em",
                     lineHeight: 1,
@@ -66,22 +62,22 @@ const Navbar = () => {
                   Utsa Das
                 </span>
                 <span
-                  className="font-medium tracking-widest uppercase"
+                  className="font-medium tracking-widest uppercase hidden sm:block"
                   style={{
-                    fontSize: "0.6rem",
+                    fontSize: "0.5rem",
                     color: "oklch(0.68 0.22 272)",
                     letterSpacing: "0.2em",
                     lineHeight: 1.4,
                     marginTop: "0.2rem",
                   }}
                 >
-                  SEO · GEO Strategist
+                  SEO · GEO
                 </span>
               </div>
 
               {/* Separator dot accent */}
               <div
-                className="hidden sm:block w-1 h-1 rounded-full opacity-60 group-hover:opacity-100 transition-opacity"
+                className="hidden sm:block w-1 h-1 rounded-full opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0"
                 style={{ background: "oklch(0.70 0.24 272)" }}
               />
             </div>
@@ -106,7 +102,7 @@ const Navbar = () => {
           </div>
 
           {/* Right: CTA + hamburger */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-shrink-0">
             <a
               href={WHATSAPP_LINK}
               target="_blank"
@@ -114,13 +110,13 @@ const Navbar = () => {
               data-testid="nav-whatsapp-btn"
               className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-all shadow-md shadow-primary/20"
             >
-              <MessageCircle className="w-4 h-4" />
+              <MessageCircle className="w-4 h-4 flex-shrink-0" />
               <span className="hidden md:inline">Let's Chat</span>
             </a>
 
             <button
               onClick={() => setIsOpen(v => !v)}
-              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-xl text-foreground hover:bg-white/8 transition-colors border border-white/10"
+              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-xl text-foreground hover:bg-white/8 transition-colors border border-white/10 flex-shrink-0"
               aria-label={isOpen ? "Close menu" : "Open menu"}
               aria-expanded={isOpen}
               data-testid="nav-mobile-toggle"
@@ -146,6 +142,7 @@ const Navbar = () => {
               background: "oklch(0.09 0.018 258 / 0.98)",
               WebkitBackdropFilter: "blur(24px)",
               backdropFilter: "blur(24px)",
+              willChange: "transform",
             }}
             initial={{ opacity: 0, y: -6 }}
             animate={{ opacity: 1, y: 0 }}
@@ -154,7 +151,7 @@ const Navbar = () => {
           >
             <div className="border-t border-white/8" />
             <nav className="flex-1 overflow-y-auto">
-              <div className="px-4 py-4 space-y-1">
+              <div className="px-3 py-3 space-y-1">
                 {navItems.map((item, i) => {
                   const active = isActive(item.href);
                   return (
@@ -166,7 +163,7 @@ const Navbar = () => {
                     >
                       <Link href={item.href}>
                         <div
-                          className={`flex items-center justify-between px-4 py-3.5 rounded-xl text-base font-medium transition-colors cursor-pointer ${
+                          className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-colors cursor-pointer touch-target ${
                             active
                               ? "bg-primary/10 text-primary border border-primary/20"
                               : "text-foreground/90 hover:bg-white/6 hover:text-foreground"
@@ -174,7 +171,7 @@ const Navbar = () => {
                           onClick={() => setIsOpen(false)}
                         >
                           {item.label}
-                          {active && <span className="w-1.5 h-1.5 rounded-full bg-primary" />}
+                          {active && <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />}
                         </div>
                       </Link>
                     </motion.div>
@@ -182,7 +179,7 @@ const Navbar = () => {
                 })}
               </div>
 
-              <div className="px-4 pb-8 pt-2 border-t border-white/8 mt-2">
+              <div className="px-3 pb-6 pt-2 border-t border-white/8 mt-2">
                 <motion.a
                   href={WHATSAPP_LINK}
                   target="_blank"
@@ -191,9 +188,9 @@ const Navbar = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: navItems.length * 0.04 + 0.05 }}
-                  className="flex items-center justify-center gap-3 w-full py-4 rounded-xl bg-primary text-primary-foreground font-bold text-base shadow-lg shadow-primary/25 hover:bg-primary/90 transition-colors"
+                  className="flex items-center justify-center gap-3 w-full py-3.5 rounded-xl bg-primary text-primary-foreground font-bold text-base shadow-lg shadow-primary/25 hover:bg-primary/90 transition-colors touch-target"
                 >
-                  <MessageCircle className="w-5 h-5" />
+                  <MessageCircle className="w-5 h-5 flex-shrink-0" />
                   Chat on WhatsApp
                 </motion.a>
               </div>

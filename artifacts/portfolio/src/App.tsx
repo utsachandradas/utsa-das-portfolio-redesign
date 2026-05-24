@@ -4,6 +4,7 @@ import { Route, Switch, Router as WouterRouter } from "wouter";
 import { lazy, Suspense } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { ScrollProvider } from "./contexts/ScrollContext";
 import { HomeSkeleton } from "./components/skeletons/HomeSkeleton";
 import { BlogSkeleton } from "./components/skeletons/BlogSkeleton";
 import { BlogPostSkeleton } from "./components/skeletons/BlogPostSkeleton";
@@ -69,12 +70,14 @@ function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="dark">
-        <TooltipProvider>
-          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-            <Toaster />
-            <Router />
-          </WouterRouter>
-        </TooltipProvider>
+        <ScrollProvider>
+          <TooltipProvider>
+            <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+              <Toaster />
+              <Router />
+            </WouterRouter>
+          </TooltipProvider>
+        </ScrollProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );

@@ -207,3 +207,8 @@
   background-size: 200% 100%;
   animation: shimmer 2.5s infinite;
 }
+
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}

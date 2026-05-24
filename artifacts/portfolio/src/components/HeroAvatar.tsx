@@ -1,29 +1,48 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function HeroAvatar() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <div className="relative w-full max-w-[340px] mx-auto select-none">
-      {/* Outer ambient glow */}
-      <div className="absolute inset-[-20px] rounded-[3rem] bg-gradient-to-br from-primary/40 via-violet-500/20 to-cyan-500/20 blur-3xl opacity-80 pointer-events-none animate-pulse" style={{ animationDuration: "5s" }} />
-      <div className="absolute inset-[-8px] rounded-[2.5rem] bg-gradient-to-br from-primary/30 via-transparent to-primary/20 blur-xl opacity-70 pointer-events-none" />
+      {/* Outer ambient glow - reduced on mobile */}
+      <div 
+        className="absolute inset-[-20px] rounded-[3rem] bg-gradient-to-br from-primary/40 via-violet-500/20 to-cyan-500/20 opacity-60 pointer-events-none"
+        style={{ 
+          filter: isMobile ? "blur(20px)" : "blur(48px)",
+          animationDuration: "5s",
+        }}
+      />
+      <div 
+        className="absolute inset-[-8px] rounded-[2.5rem] bg-gradient-to-br from-primary/30 via-transparent to-primary/20 opacity-50 pointer-events-none"
+        style={{ filter: isMobile ? "blur(8px)" : "blur(16px)" }}
+      />
 
       {/* Card wrapper */}
       <motion.div
         className="relative rounded-[2.5rem] overflow-hidden border border-primary/30 shadow-[0_0_50px_rgba(var(--primary),0.2)]"
-        style={{ background: "linear-gradient(145deg, oklch(0.16 0.04 265), oklch(0.11 0.02 255))" }}
+        style={{ background: "linear-gradient(145deg, oklch(0.16 0.04 265), oklch(0.11 0.02 255))", willChange: "transform" }}
         initial={{ opacity: 0, scale: 0.92, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        whileHover={{ 
+        whileHover={!isMobile ? { 
           y: -8, 
           scale: 1.02,
           transition: { duration: 0.4, ease: "easeOut" } 
-        }}
+        } : undefined}
       >
-        {/* Subtle floating animation wrapper */}
+        {/* Subtle floating animation wrapper - disabled on mobile for performance */}
         <motion.div
-          animate={{ y: [0, -6, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+          animate={!isMobile ? { y: [0, -6, 0] } : undefined}
+          transition={!isMobile ? { duration: 5, repeat: Infinity, ease: "easeInOut" } : undefined}
         >
           {/* PNG Avatar image */}
           <img
@@ -34,7 +53,12 @@ export default function HeroAvatar() {
             loading="eager"
             decoding="async"
             className="w-full block transition-transform duration-700 hover:scale-110"
-            style={{ aspectRatio: "4/5", objectFit: "cover", filter: "drop-shadow(0 0 15px rgba(var(--primary), 0.3))" }}
+            style={{ 
+              aspectRatio: "4/5", 
+              objectFit: "cover", 
+              filter: "drop-shadow(0 0 15px rgba(var(--primary), 0.3))",
+              willChange: "transform"
+            }}
           />
         </motion.div>
 
@@ -53,9 +77,10 @@ export default function HeroAvatar() {
         <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/15 to-transparent pointer-events-none" />
       </motion.div>
 
-      {/* Floating stat badges */}
+      {/* Floating stat badges - reduced blur on mobile */}
       <motion.div
-        className="absolute right-0 sm:-right-5 top-10 glass-panel px-4 py-3 rounded-2xl border border-primary/30 shadow-xl shadow-primary/10 backdrop-blur-xl"
+        className="absolute right-0 sm:-right-5 top-10 glass-panel px-4 py-3 rounded-2xl border border-primary/30 shadow-xl shadow-primary/10"
+        style={{ backdropFilter: isMobile ? "blur(8px)" : "blur(16px)", willChange: "transform, opacity" }}
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.4, duration: 0.5 }}
@@ -66,7 +91,8 @@ export default function HeroAvatar() {
       </motion.div>
 
       <motion.div
-        className="absolute left-0 sm:-left-5 bottom-20 glass-panel px-4 py-3 rounded-2xl border border-primary/30 shadow-xl shadow-primary/10 backdrop-blur-xl"
+        className="absolute left-0 sm:-left-5 bottom-20 glass-panel px-4 py-3 rounded-2xl border border-primary/30 shadow-xl shadow-primary/10"
+        style={{ backdropFilter: isMobile ? "blur(8px)" : "blur(16px)", willChange: "transform, opacity" }}
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.55, duration: 0.5 }}
@@ -77,7 +103,8 @@ export default function HeroAvatar() {
       </motion.div>
 
       <motion.div
-        className="absolute right-0 sm:-right-5 bottom-28 glass-panel px-4 py-3 rounded-2xl border border-primary/30 shadow-xl shadow-primary/10 backdrop-blur-xl"
+        className="absolute right-0 sm:-right-5 bottom-28 glass-panel px-4 py-3 rounded-2xl border border-primary/30 shadow-xl shadow-primary/10"
+        style={{ backdropFilter: isMobile ? "blur(8px)" : "blur(16px)", willChange: "transform, opacity" }}
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.7, duration: 0.5 }}
