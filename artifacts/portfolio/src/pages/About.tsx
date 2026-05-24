@@ -84,87 +84,98 @@ export default function About() {
           </motion.div>
 
           <div className="mb-14 md:mb-24">
-            {/* Top — Avatar card full-width with designation */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="relative rounded-3xl overflow-hidden border border-primary/20 mb-10"
-              style={{ background: "linear-gradient(135deg, oklch(0.13 0.03 260), oklch(0.10 0.02 255))" }}
-            >
-              {/* Background glow */}
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_80%_at_70%_50%,oklch(0.70_0.24_272_/_0.10),transparent)] pointer-events-none" />
-              <div className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-bl from-primary/8 to-transparent pointer-events-none" />
+            <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-start">
 
-              <div className="grid md:grid-cols-5 gap-0 items-stretch">
-                {/* Avatar column */}
-                <div className="md:col-span-2 relative flex items-end justify-center pt-8 px-8 pb-0 md:pb-0">
-                  <div className="relative w-full max-w-[260px] mx-auto">
-                    <div className="absolute inset-[-16px] rounded-3xl bg-gradient-to-br from-primary/30 via-violet-500/15 to-cyan-500/15 opacity-60 pointer-events-none" style={{ filter: "blur(32px)" }} />
+              {/* Left — Photo card */}
+              <motion.div
+                initial={{ opacity: 0, x: -24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                className="flex flex-col items-center"
+              >
+                {/* Gradient ring frame */}
+                <div
+                  className="w-full max-w-[320px] p-[3px] rounded-[2rem] mx-auto"
+                  style={{
+                    background: "linear-gradient(135deg, oklch(0.70 0.24 272), oklch(0.65 0.22 295), oklch(0.72 0.18 200), oklch(0.70 0.24 272))",
+                    boxShadow: "0 0 60px oklch(0.70 0.24 272 / 0.25)",
+                  }}
+                >
+                  <div
+                    className="relative rounded-[1.75rem] overflow-hidden"
+                    style={{ background: "linear-gradient(160deg, oklch(0.16 0.04 265), oklch(0.11 0.02 255))" }}
+                  >
+                    <div className="absolute top-0 left-0 w-28 h-28 bg-gradient-to-br from-primary/20 to-transparent pointer-events-none" />
                     <img
                       src="/assets/avatars/utsa-das-avatar.png"
                       alt="Utsa Das — Founder & Growth Marketing Strategist"
-                      className="relative w-full block rounded-2xl"
-                      style={{ aspectRatio: "4/5", objectFit: "cover", filter: "drop-shadow(0 0 20px oklch(0.70 0.24 272 / 0.25))" }}
+                      className="w-full block"
+                      style={{ aspectRatio: "4/5", objectFit: "cover", objectPosition: "center top" }}
                     />
+                    <div
+                      className="absolute bottom-0 left-0 right-0 px-5 py-4"
+                      style={{ background: "linear-gradient(to top, oklch(0.08 0.02 255 / 0.97) 55%, transparent)" }}
+                    >
+                      <p className="font-bold text-base text-white leading-tight">Utsa Das</p>
+                      <p className="text-xs font-medium mt-0.5" style={{ color: "oklch(0.75 0.20 272)" }}>
+                        Founder &amp; Growth Marketing Strategist
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                {/* Info column */}
-                <div className="md:col-span-3 flex flex-col justify-center p-8 md:p-12">
-                  {/* Designation badge */}
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-panel text-primary text-xs font-semibold border border-primary/25 mb-6 w-fit">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                    Founder & Growth Marketing Strategist
-                  </div>
+                {/* Stats below photo */}
+                <div className="grid grid-cols-3 gap-3 mt-5 w-full max-w-[320px]">
+                  {[
+                    { value: "4+", label: "Years", sub: "Since 2022" },
+                    { value: "10+", label: "Projects", sub: "E-com & B2B" },
+                    { value: "3", label: "Channels", sub: "Meta·Google·TikTok" },
+                  ].map((s) => (
+                    <div key={s.label} className="glass-panel rounded-xl px-3 py-3 border border-white/8 text-center">
+                      <div className="text-xl font-bold text-primary leading-none">{s.value}</div>
+                      <div className="text-[10px] font-semibold text-foreground mt-1">{s.label}</div>
+                      <div className="text-[9px] text-muted-foreground mt-0.5 leading-tight">{s.sub}</div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
 
-                  <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-foreground">Utsa Das</h2>
-                  <p className="text-muted-foreground leading-relaxed font-light mb-6">
-                    I'm a Founder and Growth Marketing Strategist based in Bangladesh, specializing in building scalable and sustainable digital growth systems for e-commerce and B2B brands.
+              {/* Right — Bio & Core Principles */}
+              <motion.div
+                initial={{ opacity: 0, x: 24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+                className="space-y-6 pt-2"
+              >
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-panel text-primary text-xs font-semibold border border-primary/25">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                  Founder &amp; Growth Marketing Strategist
+                </div>
+
+                <div className="space-y-4 text-muted-foreground leading-relaxed font-light">
+                  <p>
+                    I'm Utsa Das, a Founder and Growth Marketing Strategist based in Bangladesh, specializing in building scalable and sustainable digital growth systems for e-commerce and B2B brands.
                   </p>
-                  <p className="text-muted-foreground leading-relaxed font-light mb-8">
+                  <p>
                     Since 2022, I have worked on 10+ digital projects — combining <strong className="text-foreground font-medium">performance marketing, SEO systems, and web infrastructure</strong> into a unified growth engine focused on one outcome: <span className="text-primary font-semibold">predictable revenue growth.</span>
                   </p>
-
-                  {/* Stats row */}
-                  <div className="grid grid-cols-3 gap-4">
-                    {[
-                      { value: "4+", label: "Years Active", sub: "Since 2022" },
-                      { value: "10+", label: "Projects", sub: "E-com & B2B" },
-                      { value: "3", label: "Ad Channels", sub: "Meta · Google · TikTok" },
-                    ].map((s) => (
-                      <div key={s.label} className="glass-panel rounded-xl p-4 border border-white/5 text-center">
-                        <div className="text-2xl font-bold text-primary">{s.value}</div>
-                        <div className="text-xs font-semibold text-foreground mt-1">{s.label}</div>
-                        <div className="text-[10px] text-muted-foreground mt-0.5 leading-tight">{s.sub}</div>
-                      </div>
-                    ))}
-                  </div>
+                  <p>
+                    I don't treat marketing channels separately. I design integrated systems where paid ads, organic search, and conversion optimization work together to maximize ROI.
+                  </p>
                 </div>
-              </div>
-            </motion.div>
 
-            {/* Bottom — Core Principles */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.15 }}
-            >
-              <p className="text-muted-foreground leading-relaxed font-light mb-6 text-lg">
-                I don't treat marketing channels separately. I design integrated systems where paid ads, organic search, and conversion optimization work together to maximize ROI — every strategy tested against real budgets, real customers, and real conversion data.
-              </p>
-              <div className="glass-panel p-8 rounded-2xl border border-white/5">
-                <h3 className="text-lg font-bold mb-6 tracking-tight text-foreground">Core Principles</h3>
-                <ul className="space-y-5">
-                  {[
-                    { title: "Revenue Outcomes Over Vanity Metrics", desc: "Traffic, rankings, and impressions only matter when they connect directly to measurable revenue and business growth." },
-                    { title: "Systems Over Isolated Tactics", desc: "One-off campaigns fade. Integrated growth engines — paid + organic + CRO — compound over time." },
-                    { title: "Real Execution Over Theory", desc: "Every strategy is validated through live e-commerce operations, real budgets, and actual customer data — not theoretical models." }
-                  ].map((val, i) => (
-                    <li key={i} className="flex gap-4">
-                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                <div className="glass-panel p-6 rounded-2xl border border-white/5">
+                  <h3 className="text-sm font-bold mb-5 tracking-tight text-foreground uppercase tracking-widest">Core Principles</h3>
+                  <ul className="space-y-4">
+                    {[
+                      { title: "Revenue Outcomes Over Vanity Metrics", desc: "Traffic, rankings, and impressions only matter when they connect directly to measurable revenue and business growth." },
+                      { title: "Systems Over Isolated Tactics", desc: "One-off campaigns fade. Integrated growth engines — paid + organic + CRO — compound over time." },
+                      { title: "Real Execution Over Theory", desc: "Every strategy is validated through live e-commerce operations, real budgets, and actual customer data." }
+                    ].map((val, i) => (
+                      <li key={i} className="flex gap-3">
+                        <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                       <div>
                         <h4 className="font-semibold text-foreground mb-0.5">{val.title}</h4>
                         <p className="text-sm text-muted-foreground">{val.desc}</p>
@@ -174,7 +185,8 @@ export default function About() {
                 </ul>
               </div>
             </motion.div>
-          </div>
+            </div>{/* end grid */}
+          </div>{/* end mb-14 */}
 
           <div className="mb-14 md:mb-24">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center tracking-tight">The Growth Journey of Utsa Das</h2>
