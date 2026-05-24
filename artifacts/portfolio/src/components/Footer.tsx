@@ -17,13 +17,14 @@ const navLinks = [
 ];
 
 const specializations = [
-  "Technical SEO",
-  "GEO Optimization",
+  "Performance Marketing",
+  "Meta, Google & TikTok Ads",
+  "SEO & GEO Optimization",
   "AI Search Visibility",
-  "Ecommerce SEO",
-  "Content Strategy",
-  "Schema Markup",
-  "Core Web Vitals",
+  "E-Commerce Development",
+  "Shopify & WooCommerce",
+  "Growth Strategy & Analytics",
+  "Conversion Rate Optimization",
 ];
 
 const Footer = () => {
@@ -48,12 +49,12 @@ const Footer = () => {
                   background: "oklch(0.70 0.24 272 / 0.08)",
                 }}
               >
-                SEO · GEO
+                Founder · Strategist
               </div>
             </div>
 
             <p className="text-muted-foreground leading-relaxed text-sm max-w-sm">
-              Bangladesh-based Founder & SEO · GEO Strategist with 4+ years of experience since 2022. Specializing in AI search optimization, technical SEO, ecommerce growth, and generative engine optimization (GEO) for brands building AI-era search visibility.
+              Founder & Growth Marketing Strategist based in Bangladesh, specializing in building scalable and sustainable digital growth systems for e-commerce and B2B brands. Since 2022, combining performance marketing, SEO systems, and web infrastructure into a unified growth engine focused on predictable revenue growth.
             </p>
 
             {/* Social links */}
@@ -120,13 +121,13 @@ const Footer = () => {
         {/* SEO paragraph */}
         <div className="border-t border-border/40 pt-8 mb-6">
           <p className="text-xs text-muted-foreground leading-relaxed max-w-3xl">
-            Utsa Das is a Bangladesh-based SEO strategist and GEO (Generative Engine Optimization) expert helping brands achieve top visibility in both traditional search engines and AI-powered discovery systems including ChatGPT, Perplexity, and Google AI Overviews. Available for international projects via WhatsApp.
+            Utsa Das is a Founder & Growth Marketing Strategist based in Bangladesh building scalable digital growth systems for e-commerce and B2B brands. He designs integrated systems where paid ads (Meta, Google, TikTok), organic search (SEO/GEO), and conversion optimization work together to drive predictable revenue growth. Available for international projects via WhatsApp.
           </p>
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
           <p>© {year} Utsa Das. All rights reserved.</p>
-          <p>Bangladesh · SEO & GEO Strategist · AI Search Expert</p>
+          <p>Bangladesh · Founder & Growth Marketing Strategist</p>
         </div>
       </div>
     </footer>

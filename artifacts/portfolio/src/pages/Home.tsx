@@ -141,7 +141,7 @@ export default function Home() {
             </motion.h1>
 
             <motion.p variants={fadeUp} className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-              Founder &amp; Growth Marketing Strategist specializing in scalable, performance-driven systems for e-commerce and B2B brands. Focused on measurable revenue growth through paid ads, SEO, GEO, CRO, and conversion engineering.
+              I'm Utsa Das, a Founder and Growth Marketing Strategist based in Bangladesh, specializing in building scalable and sustainable digital growth systems for e-commerce and B2B brands. Since 2022, I have worked on 10+ digital projects — combining performance marketing, SEO systems, and web infrastructure into a unified growth engine focused on one outcome: predictable revenue growth.
             </motion.p>
 
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-12">

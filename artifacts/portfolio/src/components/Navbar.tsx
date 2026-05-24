@@ -71,7 +71,7 @@ const Navbar = () => {
                     marginTop: "0.2rem",
                   }}
                 >
-                  SEO · GEO
+                  Founder · Strategist
                 </span>
               </div>
 

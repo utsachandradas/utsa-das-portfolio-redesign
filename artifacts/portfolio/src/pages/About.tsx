@@ -101,13 +101,13 @@ export default function About() {
             >
               <div className="space-y-5 text-lg text-muted-foreground font-light leading-relaxed">
                 <p>
-                  Utsa Das is a Growth Marketing Strategist in Bangladesh who specializes in scalable, performance-driven systems for e-commerce and B2B brands. Since 2022, he has been focused on measurable revenue growth — not just traffic, rankings, or impressions.
+                  I'm Utsa Das, a Founder and Growth Marketing Strategist based in Bangladesh, specializing in building scalable and sustainable digital growth systems for e-commerce and B2B brands.
                 </p>
                 <p>
-                  His approach integrates <strong className="text-foreground font-semibold">paid acquisition systems</strong>, organic search dominance through SEO and GEO, <strong className="text-foreground font-semibold">conversion rate optimization (CRO)</strong>, and data-driven scaling frameworks — all engineered to work together as one unified growth engine.
+                  Since 2022, I have worked on 10+ digital projects, combining <strong className="text-foreground font-semibold">performance marketing, SEO systems, and web infrastructure</strong> into a unified growth engine focused on one outcome: predictable revenue growth.
                 </p>
                 <p>
-                  What makes Utsa Chandra Das different is that he actively operates his own e-commerce brand — managing real budgets, real customers, and real performance outcomes. Every strategy he recommends has been validated in a live competitive market, not built on theory.
+                  I don't treat marketing channels separately. I design integrated systems where paid ads, organic search, and conversion optimization work together to maximize ROI — and every strategy I use is tested against real budgets, real customers, and real conversion data.
                 </p>
               </div>
 

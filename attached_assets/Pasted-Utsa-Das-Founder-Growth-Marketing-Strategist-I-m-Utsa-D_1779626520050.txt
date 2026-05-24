@@ -1,0 +1,67 @@
+Utsa Das | Founder & Growth Marketing Strategist
+I’m Utsa Das, a Founder and Growth Marketing Strategist based in Bangladesh, specializing in building scalable and sustainable digital growth systems for e-commerce and B2B brands.
+Since 2022, I have worked on 10+ digital projects, combining performance marketing, SEO systems, and web infrastructure into a unified growth engine focused on one outcome: predictable revenue growth.
+I don’t treat marketing channels separately. I design integrated systems where paid ads, organic search, and conversion optimization work together to maximize ROI.
+🛠️ Core Expertise & Technical Stack
+1. Paid Advertising (Performance Marketing)
+What I do:
+I design, manage, and scale high-performance campaigns across Meta, Google, and TikTok with a strong focus on conversion efficiency and ROI.
+Core capabilities:
+Meta Ads strategy, setup, scaling & A/B testing
+Google Ads (Search, Display, Performance Max) optimization
+TikTok Ads creative testing & performance scaling
+Funnel-based campaign structuring and optimization
+Tools & Platforms:
+Meta Business Suite & Ads Manager
+Facebook Pixel & Meta Conversion API (CAPI)
+Google Ads Manager & Keyword Planner
+Google Tag Manager (GTM)
+TikTok Ads Manager & Business Center
+2. SEO & GEO (Generative Engine Optimization)
+What I do:
+I build search visibility systems combining traditional SEO with Generative Engine Optimization (GEO), focusing on AI-search readiness and entity-based content structuring.
+Core capabilities:
+Keyword research & search intent mapping
+On-page SEO & technical SEO fundamentals
+AI search optimization (GEO strategy)
+Entity-based content architecture for LLM visibility
+Content systems for long-term organic growth
+Tools & Platforms:
+Google Search Console & Google Analytics 4 (GA4)
+Ahrefs, SEMrush & Ubersuggest
+Surfer SEO & Screaming Frog SEO Spider
+Google Trends & AnswerThePublic
+AI SEO tools (ChatGPT-based workflows included)
+3. E-Commerce Platforms & Web Development
+What I do:
+I build, optimize, and scale conversion-focused e-commerce stores and business websites.
+Core capabilities:
+Shopify store setup & conversion optimization
+WordPress development & WooCommerce setup
+Landing page design for paid traffic
+Speed, UX, and CRO optimization
+Funnel-ready website structure
+Tools & Platforms:
+Shopify (Online Store 2.0)
+WordPress CMS & WooCommerce
+Elementor & Gutenberg
+Shopify Apps ecosystem
+Payment gateway integrations
+4. Growth Strategy & Data Analytics
+What I do:
+I build full-funnel growth systems using data, experimentation, and performance tracking.
+Core capabilities:
+Multi-channel growth strategy (Paid + Organic)
+Funnel design & conversion rate optimization (CRO)
+Marketing analytics & performance tracking
+Data-driven decision-making systems
+Scaling frameworks for sustainable growth
+Tools & Platforms:
+Google Sheets & Excel
+Notion (systems & documentation)
+GA4 dashboards & reporting structures
+💡 Founder’s Advantage: Real-World Execution
+I don’t operate as a purely theoretical consultant. I actively run and scale my own e-commerce brand in the beauty and personal care industry.
+This means every strategy I use is tested against real budgets, real customers, and real conversion data. I continuously refine my approach based on what actually works in competitive markets—not just what looks good in theory.
+🚀 Ready to Scale?
+If you’re looking to build a serious growth system—combining paid ads, SEO/GEO, and conversion optimization into one cohesive engine—I can help you structure and scale it with a founder’s mindset and performance-first execution.
