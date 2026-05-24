@@ -97,6 +97,14 @@ export default function Skills() {
         <meta name="twitter:description" content="Paid ads, SEO, GEO, e-commerce, and full-funnel growth strategy skills by Utsa Das. Built over 4+ years of real execution since 2022." />
         <meta name="twitter:image" content="https://utsadas.com/opengraph.jpg" />
         <meta name="keywords" content="Utsa Das skills, Utsa Chandra Das expertise, growth marketing skills Bangladesh, paid ads expertise, SEO GEO skills Bangladesh" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://utsadas.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Skills", "item": "https://utsadas.com/skills" }
+          ]
+        })}</script>
       </Helmet>
 
       <section className="py-24 pt-32 relative">
