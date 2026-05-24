@@ -37,18 +37,35 @@ export default defineConfig({
     dedupe: ["react", "react-dom"],
   },
   root: path.resolve(import.meta.dirname),
+  optimizeDeps: {
+    include: [
+      "react",
+      "react-dom",
+      "framer-motion",
+      "wouter",
+      "react-helmet-async",
+      "lucide-react",
+    ],
+  },
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
     sourcemap: false,
     cssCodeSplit: true,
+    target: "es2020",
+    assetsInlineLimit: 4096,
+    chunkSizeWarningLimit: 700,
+    reportCompressedSize: false,
     rollupOptions: {
+      treeshake: {
+        moduleSideEffects: false,
+      },
       output: {
         manualChunks: {
-          "vendor-react":   ["react", "react-dom"],
-          "vendor-motion":  ["framer-motion"],
-          "vendor-icons":   ["lucide-react", "react-icons"],
-          "vendor-ui":      [
+          "vendor-react":  ["react", "react-dom"],
+          "vendor-motion": ["framer-motion"],
+          "vendor-icons":  ["lucide-react"],
+          "vendor-ui": [
             "@radix-ui/react-tooltip",
             "@radix-ui/react-dialog",
             "@radix-ui/react-dropdown-menu",
@@ -57,8 +74,8 @@ export default defineConfig({
             "@radix-ui/react-toast",
             "@radix-ui/react-accordion",
           ],
-          "vendor-router":  ["wouter"],
-          "vendor-helmet":  ["react-helmet-async"],
+          "vendor-router": ["wouter"],
+          "vendor-helmet": ["react-helmet-async"],
         },
       },
     },
