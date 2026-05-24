@@ -68,7 +68,35 @@ export default function Projects() {
       <Helmet>
         <title>Growth Marketing Projects | Real Results by Utsa Das | Paid Ads, SEO, GEO, CRO</title>
         <meta name="description" content="Featured growth marketing project work by Utsa Das (Utsa Chandra Das) — including paid advertising, e-commerce organic growth, AI citation programs, SEO, and CRO wins with measurable revenue outcomes." />
+        <link rel="canonical" href="https://utsadas.com/projects" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Utsa Das | Growth Marketing Strategist" />
+        <meta property="og:title" content="Growth Marketing Projects | Real Results by Utsa Das" />
+        <meta property="og:description" content="Featured growth marketing projects by Utsa Das — e-commerce organic growth (+82% revenue), AI citation programs, enterprise technical SEO, SaaS lead gen (+380%), and more. Measurable outcomes only." />
+        <meta property="og:url" content="https://utsadas.com/projects" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content="https://utsadas.com/opengraph.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@utsadas" />
+        <meta name="twitter:title" content="Growth Marketing Projects | Real Results by Utsa Das" />
+        <meta name="twitter:description" content="Real growth marketing results by Utsa Das — SEO, GEO, paid ads, and CRO projects with measurable revenue outcomes." />
+        <meta name="twitter:image" content="https://utsadas.com/opengraph.jpg" />
         <meta name="keywords" content="Utsa Das projects, Utsa Chandra Das portfolio, growth marketing results Bangladesh, SEO GEO projects Bangladesh" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Growth Marketing Projects by Utsa Das",
+          "url": "https://utsadas.com/projects",
+          "numberOfItems": projects.length,
+          "itemListElement": projects.map((p, i) => ({
+            "@type": "ListItem",
+            "position": i + 1,
+            "name": p.title,
+            "description": p.description
+          }))
+        })}</script>
       </Helmet>
 
       <section className="py-24 pt-32 relative">
