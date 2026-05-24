@@ -5,9 +5,9 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Utsa Das | SEO & GEO Strategist</title>
-    <meta name="description" content="Utsa Das is a professional SEO and GEO strategist helping businesses optimize for both traditional search engines and modern AI systems like ChatGPT and Perplexity." />
+      content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+    <title>Utsa Das | Growth Marketing Strategist in Bangladesh</title>
+    <meta name="description" content="Utsa Das is a Founder and Growth Marketing Strategist in Bangladesh building scalable acquisition and conversion systems for e-commerce and B2B brands. Expert in Meta Ads, Google Ads, SEO, GEO, and CRO since 2022." />
 
     <!-- Favicon system -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -20,29 +20,34 @@
 
     <!-- SEO / Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Utsa Das | SEO &amp; GEO Strategist" />
-    <meta property="og:image" content="/__manus__opengraph.jpg" />
+    <meta property="og:site_name" content="Utsa Das | Growth Marketing Strategist" />
+    <meta property="og:image" content="/opengraph.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="/__manus__opengraph.jpg" />
+    <meta name="twitter:image" content="/opengraph.jpg" />
 
+    <!-- DNS prefetch for external connections -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://wa.me" />
+
+    <!-- Preconnect for fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Preload critical hero image (WebP first, PNG fallback) -->
+    <link rel="preload" as="image" href="/assets/avatars/utsa-das-avatar.webp" type="image/webp" fetchpriority="high" />
+
+    <!-- Google Font — load non-render-blocking -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    </noscript>
   </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <!-- Analytics script - only loaded if environment variables are set -->
-    <script>
-      if (typeof import.meta !== 'undefined' && import.meta.env.VITE_ANALYTICS_ENDPOINT) {
-        const script = document.createElement('script');
-        script.defer = true;
-        script.src = import.meta.env.VITE_ANALYTICS_ENDPOINT + '/umami';
-        script.dataset.websiteId = import.meta.env.VITE_ANALYTICS_WEBSITE_ID;
-        document.body.appendChild(script);
-      }
-    </script>
   </body>
 
 </html>

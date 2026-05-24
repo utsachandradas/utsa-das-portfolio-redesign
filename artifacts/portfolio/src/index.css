@@ -216,3 +216,27 @@
   min-height: 44px;
   min-width: 44px;
 }
+
+/* ─────────────────────────────────────────
+   Performance
+───────────────────────────────────────── */
+.below-fold {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent layout shift from icon fonts */
+.lucide {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Reduce paint area for fixed elements */
+.glass-panel {
+  transform: translateZ(0);
+}

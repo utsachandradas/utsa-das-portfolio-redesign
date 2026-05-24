@@ -270,7 +270,7 @@ export default function Home() {
       </section>
 
       {/* ── 2. STATS STRIP ───────────────────────────────────── */}
-      <section className="py-6 border-y border-border/40 bg-secondary/20 relative overflow-hidden">
+      <section className="below-fold py-6 border-y border-border/40 bg-secondary/20 relative overflow-hidden">
         <div className="absolute inset-0 shimmer-bg opacity-40 pointer-events-none" />
         <div className="container max-w-5xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
@@ -291,7 +291,7 @@ export default function Home() {
       </section>
 
       {/* ── 3. POSITIONING — PERFORMANCE-FIRST ───────────────── */}
-      <section className="py-14 md:py-28 relative" id="about">
+      <section className="below-fold py-14 md:py-28 relative" id="about">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_100%_50%,oklch(0.70_0.24_272_/_0.06),transparent)] pointer-events-none" />
         <div className="container max-w-6xl mx-auto">
             <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}>
@@ -331,7 +331,7 @@ export default function Home() {
       </section>
 
       {/* ── 4. FOUNDER ADVANTAGE ─────────────────────────────── */}
-      <section className="py-14 md:py-20 relative">
+      <section className="below-fold py-14 md:py-20 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 via-transparent to-transparent pointer-events-none" />
         <div className="container max-w-6xl mx-auto relative z-10">
           <motion.div
@@ -377,7 +377,7 @@ export default function Home() {
       </section>
 
       {/* ── 5. CORE EXPERTISE ────────────────────────────────── */}
-      <section className="py-14 md:py-28 relative" id="services">
+      <section className="below-fold py-14 md:py-28 relative" id="services">
         <div className="container relative z-10 max-w-7xl mx-auto">
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
             <motion.p variants={fadeUp} className="text-primary text-sm font-semibold uppercase tracking-widest mb-3">Core Expertise</motion.p>

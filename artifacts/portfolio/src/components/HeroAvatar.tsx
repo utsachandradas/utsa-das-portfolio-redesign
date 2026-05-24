@@ -35,22 +35,26 @@ export default function HeroAvatar() {
 
           {/* Photo */}
           <div className="relative w-full">
-            <motion.img
-              src="/assets/avatars/utsa-das-avatar.png"
-              alt="Utsa Das — Founder & Growth Marketing Strategist"
-              width={400}
-              height={480}
-              loading="eager"
-              decoding="async"
-              className="w-full block"
-              style={{
-                aspectRatio: "5/6",
-                objectFit: "cover",
-                objectPosition: "center top",
-              }}
-              animate={{ y: [0, -5, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            />
+            <picture>
+              <source srcSet="/assets/avatars/utsa-das-avatar.webp" type="image/webp" />
+              <motion.img
+                src="/assets/avatars/utsa-das-avatar.png"
+                alt="Utsa Das — Founder & Growth Marketing Strategist"
+                width={400}
+                height={480}
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                className="w-full block"
+                style={{
+                  aspectRatio: "5/6",
+                  objectFit: "cover",
+                  objectPosition: "center top",
+                }}
+                animate={{ y: [0, -5, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              />
+            </picture>
             {/* Warm color tint overlay — adds subtle indigo-violet warmth to the B&W photo */}
             <div
               className="absolute inset-0 pointer-events-none"
