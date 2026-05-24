@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export default function HeroAvatar() {
   return (
@@ -14,7 +14,7 @@ export default function HeroAvatar() {
       />
 
       {/* Gradient ring border */}
-      <motion.div
+      <m.div
         className="relative p-[3px] rounded-[2rem]"
         style={{
           background: "linear-gradient(135deg, oklch(0.70 0.24 272), oklch(0.65 0.22 295), oklch(0.72 0.18 200), oklch(0.70 0.24 272))",
@@ -34,7 +34,7 @@ export default function HeroAvatar() {
           <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-violet-500/10 to-transparent pointer-events-none" />
 
           {/* Photo */}
-          <motion.img
+          <m.img
             src="/assets/avatars/utsa-das-avatar.png"
             alt="Utsa Das — Founder & Growth Marketing Strategist"
             width={400}
@@ -62,10 +62,10 @@ export default function HeroAvatar() {
             </p>
           </div>
         </div>
-      </motion.div>
+      </m.div>
 
       {/* Stats row — below the card, always visible */}
-      <motion.div
+      <m.div
         className="grid grid-cols-3 gap-3 mt-4"
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
@@ -85,7 +85,7 @@ export default function HeroAvatar() {
             <div className="text-[9px] text-muted-foreground mt-0.5 leading-tight">{s.sub}</div>
           </div>
         ))}
-      </motion.div>
+      </m.div>
 
     </div>
   );
