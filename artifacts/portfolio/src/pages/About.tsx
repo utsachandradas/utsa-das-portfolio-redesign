@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import { Helmet } from "react-helmet-async";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import HeroAvatar from "@/components/HeroAvatar";
 
@@ -83,7 +83,7 @@ export default function About() {
       <section className="py-24 pt-32 relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(var(--primary),0.05)_0,transparent_50%)] pointer-events-none" />
         <div className="container max-w-5xl mx-auto relative z-10">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -104,13 +104,13 @@ export default function About() {
             <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto">
               Utsa Chandra Das is a Bangladesh-based Founder and Growth Marketing Strategist building end-to-end acquisition and conversion systems for e-commerce and B2B brands.
             </p>
-          </motion.div>
+          </m.div>
 
           <div className="mb-14 md:mb-24">
             <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-start">
 
               {/* Left — Photo card */}
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, x: -24 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -162,10 +162,10 @@ export default function About() {
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </m.div>
 
               {/* Right — Bio & Core Principles */}
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, x: 24 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -207,7 +207,7 @@ export default function About() {
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </m.div>
             </div>{/* end grid */}
           </div>{/* end mb-14 */}
 
@@ -215,7 +215,7 @@ export default function About() {
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center tracking-tight">The Growth Journey of Utsa Das</h2>
             <div className="max-w-3xl mx-auto space-y-8">
               {timeline.map((item, index) => (
-                <motion.div
+                <m.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -235,7 +235,7 @@ export default function About() {
                     <h3 className="text-2xl font-bold text-foreground mb-2">{item.title}</h3>
                     <p className="text-muted-foreground font-light">{item.description}</p>
                   </div>
-                </motion.div>
+                </m.div>
               ))}
             </div>
           </div>
