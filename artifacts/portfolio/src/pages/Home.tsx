@@ -276,7 +276,6 @@ export default function Home() {
       <section className="py-14 md:py-28 relative" id="about">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_100%_50%,oklch(0.70_0.24_272_/_0.06),transparent)] pointer-events-none" />
         <div className="container max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-panel text-primary text-xs font-semibold mb-6 border border-primary/20">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" /> Growth Marketing Strategist in Bangladesh — Performance-First Positioning
@@ -310,17 +309,6 @@ export default function Home() {
                 ))}
               </div>
             </motion.div>
-
-            <motion.div
-              className="relative flex justify-center"
-              initial={{ opacity: 0, x: 24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <HeroAvatar />
-            </motion.div>
-          </div>
         </div>
       </section>
 
