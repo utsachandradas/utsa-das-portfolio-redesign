@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { ArrowUp } from "lucide-react";
 import { useScroll } from "@/contexts/ScrollContext";
 
@@ -10,7 +10,7 @@ export default function ScrollToTop() {
   return (
     <AnimatePresence>
       {showScrollToTop && (
-        <motion.button
+        <m.button
           onClick={scrollUp}
           aria-label="Scroll to top"
           className="fixed bottom-24 right-4 z-50 sm:hidden w-11 h-11 rounded-full glass-panel border border-white/15 flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/40 transition-colors shadow-lg"
@@ -22,7 +22,7 @@ export default function ScrollToTop() {
           style={{ willChange: "transform, opacity" }}
         >
           <ArrowUp className="w-4 h-4" />
-        </motion.button>
+        </m.button>
       )}
     </AnimatePresence>
   );
