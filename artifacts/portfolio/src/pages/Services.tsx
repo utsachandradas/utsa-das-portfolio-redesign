@@ -127,6 +127,14 @@ export default function Services() {
         <meta name="twitter:image" content="https://utsadas.com/opengraph.jpg" />
         <meta name="keywords" content="Utsa Das services, Utsa Chandra Das growth marketing, paid advertising Bangladesh, SEO GEO services Bangladesh, e-commerce growth Bangladesh, CRO Bangladesh" />
         <script type="application/ld+json">{JSON.stringify(schemaJSONLD)}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://utsadas.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://utsadas.com/services" }
+          ]
+        })}</script>
       </Helmet>
 
       <section className="py-24 pt-32 relative">
