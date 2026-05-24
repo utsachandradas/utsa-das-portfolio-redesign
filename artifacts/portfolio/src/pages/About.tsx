@@ -53,6 +53,21 @@ export default function About() {
           name="description"
           content="Utsa Das (Utsa Chandra Das) is a Growth Marketing Strategist in Bangladesh with 4+ years of experience since 2022. He builds scalable acquisition and conversion systems for e-commerce and B2B brands through paid ads, SEO, GEO, and CRO."
         />
+        <link rel="canonical" href="https://utsadas.com/about" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Utsa Das | Growth Marketing Strategist" />
+        <meta property="og:title" content="About Utsa Das — Growth Marketing Strategist in Bangladesh" />
+        <meta property="og:description" content="Utsa Das (Utsa Chandra Das) is a Growth Marketing Strategist in Bangladesh with 4+ years of experience since 2022. He builds scalable acquisition and conversion systems for e-commerce and B2B brands through paid ads, SEO, GEO, and CRO." />
+        <meta property="og:url" content="https://utsadas.com/about" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content="https://utsadas.com/opengraph.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@utsadas" />
+        <meta name="twitter:title" content="About Utsa Das — Growth Marketing Strategist in Bangladesh" />
+        <meta name="twitter:description" content="Utsa Das is a Founder and Growth Marketing Strategist in Bangladesh. 4+ years building scalable paid ads, SEO, GEO, and CRO systems for e-commerce and B2B brands." />
+        <meta name="twitter:image" content="https://utsadas.com/opengraph.jpg" />
         <meta name="keywords" content="Utsa Das, Utsa Chandra Das, Growth Marketing Strategist Bangladesh, about Utsa Das, performance marketing Bangladesh" />
         <script type="application/ld+json">{JSON.stringify(schemaJSONLD)}</script>
       </Helmet>
