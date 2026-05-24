@@ -150,7 +150,7 @@ export default function BlogPost() {
               </div>
               <div>
                 <p className="text-sm font-semibold text-foreground">Utsa Das</p>
-                <p className="text-xs text-muted-foreground">SEO & GEO Strategist · Since 2022</p>
+                <p className="text-xs text-muted-foreground">Growth Marketing Strategist · Since 2022</p>
               </div>
               <div className="ml-auto flex flex-wrap gap-1.5">
                 {post.tags.slice(0, 3).map(t => (
