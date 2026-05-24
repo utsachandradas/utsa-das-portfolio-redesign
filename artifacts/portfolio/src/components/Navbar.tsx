@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, MessageCircle } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { useScroll } from "@/contexts/ScrollContext";
 
 const WHATSAPP_LINK = "https://wa.me/8801861393416?text=Hi%20Utsa%2C%20I%27d%20like%20to%20discuss%20a%20project";
@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
     <>
-      <motion.nav
+      <m.nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled || isOpen
             ? "bg-[oklch(0.09_0.018_258_/_0.97)] backdrop-blur-xl border-b border-border/60"
@@ -123,19 +123,19 @@ const Navbar = () => {
             >
               <AnimatePresence mode="wait" initial={false}>
                 {isOpen
-                  ? <motion.span key="x" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.15 }}><X size={20} /></motion.span>
-                  : <motion.span key="menu" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.15 }}><Menu size={20} /></motion.span>
+                  ? <m.span key="x" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.15 }}><X size={20} /></m.span>
+                  : <m.span key="menu" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.15 }}><Menu size={20} /></m.span>
                 }
               </AnimatePresence>
             </button>
           </div>
         </div>
-      </motion.nav>
+      </m.nav>
 
       {/* Mobile menu overlay */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <m.div
             className="fixed inset-x-0 bottom-0 z-40 lg:hidden flex flex-col"
             style={{
               top: "64px",
@@ -155,7 +155,7 @@ const Navbar = () => {
                 {navItems.map((item, i) => {
                   const active = isActive(item.href);
                   return (
-                    <motion.div
+                    <m.div
                       key={item.href}
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -174,13 +174,13 @@ const Navbar = () => {
                           {active && <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />}
                         </div>
                       </Link>
-                    </motion.div>
+                    </m.div>
                   );
                 })}
               </div>
 
               <div className="px-4 pb-6 pt-2 border-t border-white/8 mt-2">
-                <motion.a
+                <m.a
                   href={WHATSAPP_LINK}
                   target="_blank"
                   rel="noreferrer"
@@ -192,10 +192,10 @@ const Navbar = () => {
                 >
                   <MessageCircle className="w-5 h-5 flex-shrink-0" />
                   Chat on WhatsApp
-                </motion.a>
+                </m.a>
               </div>
             </nav>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
 
