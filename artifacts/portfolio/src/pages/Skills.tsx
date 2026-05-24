@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import { Helmet } from "react-helmet-async";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 const WHATSAPP_LINK = "https://wa.me/8801861393416?text=Hi%20Utsa%2C%20I%27d%20like%20to%20discuss%20a%20project";
@@ -110,7 +110,7 @@ export default function Skills() {
       <section className="py-24 pt-32 relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(var(--primary),0.05)_0,transparent_50%)] pointer-events-none" />
         <div className="container max-w-5xl mx-auto relative z-10">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -123,11 +123,11 @@ export default function Skills() {
             <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto">
               A comprehensive breakdown of the growth marketing skills Utsa Das has built since 2022 — across paid advertising, SEO, GEO, e-commerce, and full-funnel growth strategy.
             </p>
-          </motion.div>
+          </m.div>
 
           <div className="space-y-12 mb-14 md:mb-24">
             {skillGroups.map((group, gi) => (
-              <motion.div
+              <m.div
                 key={gi}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -137,7 +137,7 @@ export default function Skills() {
                 <h2 className="text-xl font-bold mb-6 text-foreground tracking-tight">{group.heading}</h2>
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
                   {group.skills.map((skill, si) => (
-                    <motion.div
+                    <m.div
                       key={si}
                       initial={{ opacity: 0, scale: 0.96 }}
                       whileInView={{ opacity: 1, scale: 1 }}
@@ -147,14 +147,14 @@ export default function Skills() {
                     >
                       <p className="font-semibold text-foreground mb-1 text-sm">{skill.name}</p>
                       <p className="text-xs text-muted-foreground leading-relaxed">{skill.desc}</p>
-                    </motion.div>
+                    </m.div>
                   ))}
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -171,7 +171,7 @@ export default function Skills() {
                 </span>
               ))}
             </div>
-          </motion.div>
+          </m.div>
 
           <div className="text-center bg-secondary/30 rounded-3xl p-6 sm:p-12 border border-border">
             <h2 className="text-3xl font-bold mb-4">Want to put this expertise to work?</h2>
