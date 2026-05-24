@@ -179,6 +179,13 @@ export default function Home() {
         <meta name="twitter:image" content="https://utsadas.com/opengraph.jpg" />
         <meta name="keywords" content="Utsa Das, Utsa Chandra Das, Growth Marketing Strategist Bangladesh, Performance Marketing Bangladesh, SEO GEO Bangladesh, Meta Ads Bangladesh, Google Ads Bangladesh, CRO Bangladesh" />
         <script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://utsadas.com/" }
+          ]
+        })}</script>
       </Helmet>
 
       {/* ── 1. HERO ──────────────────────────────────────────── */}
