@@ -133,6 +133,7 @@ export default function Home() {
         "sameAs": [
           "https://www.facebook.com/utsachandradasutsa",
           "https://www.linkedin.com/in/utsa-das-3473a53a7",
+          "https://medium.com/@utsadas_growth_marketer"
         ],
       },
       {
@@ -253,6 +254,7 @@ export default function Home() {
                 <span className="w-px h-5 bg-border" />
                 <a href="https://www.facebook.com/utsachandradasutsa" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">Facebook</a>
                 <a href="https://www.linkedin.com/in/utsa-das-3473a53a7" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">LinkedIn</a>
+                <a href="https://medium.com/@utsadas_growth_marketer" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">Medium</a>
               </m.div>
             </m.div>
 

@@ -41,7 +41,8 @@ export default function About() {
     "url": "https://utsadas.com",
     "sameAs": [
       "https://www.facebook.com/utsachandradasutsa",
-      "https://www.linkedin.com/in/utsa-das-3473a53a7"
+      "https://www.linkedin.com/in/utsa-das-3473a53a7",
+      "https://medium.com/@utsadas_growth_marketer"
     ]
   };
 

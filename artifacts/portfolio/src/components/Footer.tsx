@@ -1,10 +1,11 @@
 import { Link } from "wouter";
 import { Linkedin } from "lucide-react";
-import { SiWhatsapp, SiFacebook } from "@/components/BrandIcons";
+import { SiWhatsapp, SiFacebook, SiMedium } from "@/components/BrandIcons";
 
 const WHATSAPP_LINK = "https://wa.me/8801861393416?text=Hi%20Utsa%2C%20I%27d%20like%20to%20discuss%20a%20project";
 const FACEBOOK_URL  = "https://www.facebook.com/utsachandradasutsa";
 const LINKEDIN_URL  = "https://www.linkedin.com/in/utsa-das-3473a53a7";
+const MEDIUM_URL    = "https://medium.com/@utsadas_growth_marketer";
 
 const navLinks = [
   { label: "Home",         href: "/" },
@@ -85,6 +86,15 @@ const Footer = () => {
                 className="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-muted-foreground hover:text-[#0A66C2] hover:border-[#0A66C2]/30 transition-all"
               >
                 <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href={MEDIUM_URL}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Medium"
+                className="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-muted-foreground hover:text-[#00AB6C] hover:border-[#00AB6C]/30 transition-all"
+              >
+                <SiMedium className="w-5 h-5" />
               </a>
             </div>
           </div>
