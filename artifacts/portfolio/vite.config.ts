@@ -44,6 +44,16 @@ export default defineConfig({
     dedupe: ["react", "react-dom"],
   },
   root: path.resolve(import.meta.dirname),
+  optimizeDeps: {
+    include: [
+      "react",
+      "react-dom",
+      "framer-motion",
+      "wouter",
+      "react-helmet-async",
+      "lucide-react",
+    ],
+  },
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
@@ -60,7 +70,13 @@ export default defineConfig({
       },
       mangle: { toplevel: true },
     },
+    assetsInlineLimit: 4096,
+    chunkSizeWarningLimit: 700,
+    reportCompressedSize: false,
     rollupOptions: {
+      treeshake: {
+        moduleSideEffects: false,
+      },
       output: {
         manualChunks(id) {
           if (id.includes("node_modules")) {

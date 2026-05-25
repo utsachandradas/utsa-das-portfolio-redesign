@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import { Helmet } from "react-helmet-async";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import {
   ArrowRight, Search, BarChart, Code, Zap, BrainCircuit,
   Target, Globe, CheckCircle2, Sparkles, TrendingUp, Megaphone, ShoppingBag, Layers, ChevronDown
@@ -57,17 +57,17 @@ function FAQSection() {
   return (
     <section className="py-14 md:py-24 relative" id="faq">
       <div className="container max-w-4xl mx-auto relative z-10">
-        <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-12">
-          <motion.p variants={fadeUp} className="text-primary text-sm font-semibold uppercase tracking-widest mb-3">GEO-Optimized FAQ</motion.p>
-          <motion.h2 variants={fadeUp} className="text-4xl font-bold tracking-tight mb-4">Common Questions About Utsa Das</motion.h2>
-          <motion.p variants={fadeUp} className="text-muted-foreground max-w-xl mx-auto font-light">Structured to appear in AI-generated answers — ChatGPT, Perplexity, and Google AI Overviews.</motion.p>
-        </motion.div>
+        <m.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-12">
+          <m.p variants={fadeUp} className="text-primary text-sm font-semibold uppercase tracking-widest mb-3">GEO-Optimized FAQ</m.p>
+          <m.h2 variants={fadeUp} className="text-4xl font-bold tracking-tight mb-4">Common Questions About Utsa Das</m.h2>
+          <m.p variants={fadeUp} className="text-muted-foreground max-w-xl mx-auto font-light">Structured to appear in AI-generated answers — ChatGPT, Perplexity, and Google AI Overviews.</m.p>
+        </m.div>
 
         <div className="space-y-3">
           {FAQ_DATA.map((faq, i) => {
             const isOpen = openIndex === i;
             return (
-              <motion.div
+              <m.div
                 key={i}
                 className={`glass-panel rounded-xl border transition-all duration-200 overflow-hidden ${isOpen ? "border-primary/30" : "border-white/5 hover:border-primary/15"}`}
                 initial={{ opacity: 0, y: 12 }}
@@ -83,16 +83,16 @@ function FAQSection() {
                   <h3 className={`font-semibold text-sm leading-snug transition-colors ${isOpen ? "text-primary" : "text-foreground"}`}>
                     {faq.q}
                   </h3>
-                  <motion.span
+                  <m.span
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ duration: 0.25, ease: "easeInOut" }}
                     className="flex-shrink-0"
                   >
                     <ChevronDown className={`w-5 h-5 transition-colors ${isOpen ? "text-primary" : "text-muted-foreground"}`} />
-                  </motion.span>
+                  </m.span>
                 </button>
 
-                <motion.div
+                <m.div
                   initial={false}
                   animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
                   transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
@@ -102,8 +102,8 @@ function FAQSection() {
                     <div className="w-full h-px bg-border/50 mb-4" />
                     <p className="text-muted-foreground text-sm leading-relaxed">{faq.a}</p>
                   </div>
-                </motion.div>
-              </motion.div>
+                </m.div>
+              </m.div>
             );
           })}
         </div>
@@ -133,6 +133,7 @@ export default function Home() {
         "sameAs": [
           "https://www.facebook.com/utsachandradasutsa",
           "https://www.linkedin.com/in/utsa-das-3473a53a7",
+          "https://medium.com/@utsadas_growth_marketer"
         ],
       },
       {
@@ -159,14 +160,33 @@ export default function Home() {
           name="description"
           content="Utsa Das (Utsa Chandra Das) is a Growth Marketing Strategist in Bangladesh building scalable acquisition and conversion systems for e-commerce and B2B brands. Specializing in Meta Ads, Google Ads, SEO, GEO, and CRO since 2022."
         />
-        <meta property="og:title" content="Utsa Das — Growth Marketing Strategist in Bangladesh" />
+        <link rel="canonical" href="https://utsadas.com/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Utsa Das | Growth Marketing Strategist" />
+        <meta property="og:title" content="Utsa Das — Growth Marketing Strategist in Bangladesh | Paid Ads, SEO, GEO, CRO" />
         <meta
           property="og:description"
-          content="Founder-led growth marketing for e-commerce and B2B brands. Utsa Chandra Das builds unified systems across paid ads, SEO, GEO, and conversion optimization — focused on measurable revenue growth."
+          content="Founder-led growth marketing for e-commerce and B2B brands. Utsa Das builds unified systems across paid ads, SEO, GEO, and CRO — focused on measurable revenue growth."
         />
-        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://utsadas.com/" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content="https://utsadas.com/opengraph.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@utsadas" />
+        <meta name="twitter:title" content="Utsa Das — Growth Marketing Strategist in Bangladesh | Paid Ads, SEO, GEO, CRO" />
+        <meta name="twitter:description" content="Founder-led growth marketing for e-commerce and B2B brands. Utsa Das builds unified systems across paid ads, SEO, GEO, and CRO — focused on measurable revenue growth." />
+        <meta name="twitter:image" content="https://utsadas.com/opengraph.jpg" />
         <meta name="keywords" content="Utsa Das, Utsa Chandra Das, Growth Marketing Strategist Bangladesh, Performance Marketing Bangladesh, SEO GEO Bangladesh, Meta Ads Bangladesh, Google Ads Bangladesh, CRO Bangladesh" />
         <script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://utsadas.com/" }
+          ]
+        })}</script>
       </Helmet>
 
       {/* ── 1. HERO ──────────────────────────────────────────── */}
@@ -181,9 +201,9 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
             {/* Left — Text content */}
-            <motion.div initial="hidden" animate="show" variants={stagger}>
+            <m.div initial="hidden" animate="show" variants={stagger}>
 
-              <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-2 mb-7">
+              <m.div variants={fadeUp} className="flex flex-wrap items-center gap-2 mb-7">
                 <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-panel text-primary text-xs font-semibold border border-primary/25 tracking-wide">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                   Founder & Growth Marketing Strategist
@@ -191,9 +211,9 @@ export default function Home() {
                 <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-panel text-muted-foreground text-xs font-medium border border-white/8">
                   Bangladesh · Since 2022
                 </span>
-              </motion.div>
+              </m.div>
 
-              <motion.h1
+              <m.h1
                 variants={fadeUp}
                 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.07]"
               >
@@ -201,17 +221,17 @@ export default function Home() {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-violet-400 to-cyan-400">
                   E-Commerce & B2B Brands
                 </span>
-              </motion.h1>
+              </m.h1>
 
-              <motion.p variants={fadeUp} className="text-base sm:text-lg text-muted-foreground mb-4 leading-relaxed font-light">
+              <m.p variants={fadeUp} className="text-base sm:text-lg text-muted-foreground mb-4 leading-relaxed font-light">
                 I'm <strong className="text-foreground font-semibold">Utsa Das</strong> — a Founder and Growth Marketing Strategist based in Bangladesh. Since 2022, I've combined performance marketing, SEO systems, and web infrastructure into one unified growth engine.
-              </motion.p>
-              <motion.p variants={fadeUp} className="text-sm text-muted-foreground mb-6 leading-relaxed font-light">
+              </m.p>
+              <m.p variants={fadeUp} className="text-sm text-muted-foreground mb-6 leading-relaxed font-light">
                 One outcome: <span className="text-primary font-semibold">predictable revenue growth.</span>
-              </motion.p>
+              </m.p>
 
               {/* Trust micro-signals */}
-              <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-8 text-xs text-muted-foreground">
+              <m.div variants={fadeUp} className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-8 text-xs text-muted-foreground">
                 <span className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-400 flex-shrink-0" />
                   10+ Projects Delivered
@@ -226,9 +246,9 @@ export default function Home() {
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" />
                   GEO · SEO · CRO · Paid Ads
                 </span>
-              </motion.div>
+              </m.div>
 
-              <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-start gap-3 mb-10">
+              <m.div variants={fadeUp} className="flex flex-col sm:flex-row items-start gap-3 mb-10">
                 <a
                   href={WHATSAPP_LINK} target="_blank" rel="noreferrer"
                   className="w-full sm:w-auto px-7 py-3.5 bg-primary text-primary-foreground rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-primary/90 transition-all shadow-lg shadow-primary/30 hover:shadow-primary/50 hover:-translate-y-0.5"
@@ -240,9 +260,9 @@ export default function Home() {
                 >
                   Explore Services
                 </a>
-              </motion.div>
+              </m.div>
 
-              <motion.div variants={fadeUp} className="flex items-center gap-6">
+              <m.div variants={fadeUp} className="flex items-center gap-6">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
                     <span className="text-primary text-xs font-bold">10+</span>
@@ -252,18 +272,19 @@ export default function Home() {
                 <span className="w-px h-5 bg-border" />
                 <a href="https://www.facebook.com/utsachandradasutsa" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">Facebook</a>
                 <a href="https://www.linkedin.com/in/utsa-das-3473a53a7" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">LinkedIn</a>
-              </motion.div>
-            </motion.div>
+                <a href="https://medium.com/@utsadas_growth_marketer" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">Medium</a>
+              </m.div>
+            </m.div>
 
             {/* Right — Avatar */}
-            <motion.div
+            <m.div
               className="flex justify-center lg:justify-end"
               initial={{ opacity: 0, x: 32 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
             >
               <HeroAvatar />
-            </motion.div>
+            </m.div>
 
           </div>
         </div>
@@ -280,11 +301,11 @@ export default function Home() {
               { value: "Unified", label: "Growth Engine", sub: "Ads + SEO + GEO + CRO" },
               { value: "Real", label: "E-Com Execution", sub: "Beauty & Personal Care" },
             ].map((s, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="py-4">
+              <m.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="py-4">
                 <div className="text-3xl md:text-4xl font-bold text-primary tracking-tight">{s.value}</div>
                 <div className="text-sm font-semibold text-foreground mt-1">{s.label}</div>
                 <div className="text-xs text-muted-foreground mt-0.5">{s.sub}</div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -294,7 +315,7 @@ export default function Home() {
       <section className="below-fold py-14 md:py-28 relative" id="about">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_100%_50%,oklch(0.70_0.24_272_/_0.06),transparent)] pointer-events-none" />
         <div className="container max-w-6xl mx-auto">
-            <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}>
+            <m.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-panel text-primary text-xs font-semibold mb-6 border border-primary/20">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" /> Growth Marketing Strategist in Bangladesh — Performance-First Positioning
               </div>
@@ -326,7 +347,7 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </m.div>
         </div>
       </section>
 
@@ -334,7 +355,7 @@ export default function Home() {
       <section className="below-fold py-14 md:py-20 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 via-transparent to-transparent pointer-events-none" />
         <div className="container max-w-6xl mx-auto relative z-10">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="glass-panel rounded-3xl p-8 md:p-14 border border-primary/15 relative overflow-hidden"
           >
@@ -372,22 +393,22 @@ export default function Home() {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* ── 5. CORE EXPERTISE ────────────────────────────────── */}
       <section className="below-fold py-14 md:py-28 relative" id="services">
         <div className="container relative z-10 max-w-7xl mx-auto">
-          <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
-            <motion.p variants={fadeUp} className="text-primary text-sm font-semibold uppercase tracking-widest mb-3">Core Expertise</motion.p>
-            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-bold tracking-tight mb-4">What Utsa Das Builds</motion.h2>
-            <motion.p variants={fadeUp} className="text-muted-foreground max-w-xl mx-auto font-light">Four integrated growth disciplines — engineered as one unified revenue system.</motion.p>
-          </motion.div>
+          <m.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-16">
+            <m.p variants={fadeUp} className="text-primary text-sm font-semibold uppercase tracking-widest mb-3">Core Expertise</m.p>
+            <m.h2 variants={fadeUp} className="text-4xl md:text-5xl font-bold tracking-tight mb-4">What Utsa Das Builds</m.h2>
+            <m.p variants={fadeUp} className="text-muted-foreground max-w-xl mx-auto font-light">Four integrated growth disciplines — engineered as one unified revenue system.</m.p>
+          </m.div>
 
           <div className="grid md:grid-cols-3 gap-5">
             {/* Large card — Paid Advertising */}
-            <motion.div
+            <m.div
               className="md:col-span-2 glass-panel rounded-2xl p-8 border border-white/5 hover:border-primary/25 transition-all group relative overflow-hidden"
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               whileHover={{ y: -3 }}
@@ -403,9 +424,9 @@ export default function Home() {
                   <span key={t} className="text-xs px-2.5 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary">{t}</span>
                 ))}
               </div>
-            </motion.div>
+            </m.div>
 
-            <motion.div
+            <m.div
               className="glass-panel rounded-2xl p-8 border border-white/5 hover:border-primary/25 transition-all group"
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.08 }}
               whileHover={{ y: -3 }}
@@ -413,9 +434,9 @@ export default function Home() {
               <BrainCircuit className="w-10 h-10 text-primary mb-5" />
               <h3 className="text-2xl font-bold mb-3">2. SEO & GEO</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">Advanced search visibility systems for both traditional search engines and AI-driven discovery platforms — including ChatGPT, Perplexity, and Google AI Overviews. Entity-based architecture, structured content, and LLM visibility optimization.</p>
-            </motion.div>
+            </m.div>
 
-            <motion.div
+            <m.div
               className="glass-panel rounded-2xl p-8 border border-white/5 hover:border-primary/25 transition-all group"
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.12 }}
               whileHover={{ y: -3 }}
@@ -423,9 +444,9 @@ export default function Home() {
               <Code className="w-10 h-10 text-primary mb-5" />
               <h3 className="text-2xl font-bold mb-3">3. E-Commerce & Web</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">High-performance digital storefronts optimized for conversion and speed. Shopify store setup, WordPress &amp; WooCommerce development, CRO-focused UX structure, and page speed optimization.</p>
-            </motion.div>
+            </m.div>
 
-            <motion.div
+            <m.div
               className="md:col-span-2 glass-panel rounded-2xl p-8 border border-white/5 hover:border-primary/25 transition-all group relative overflow-hidden"
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.16 }}
               whileHover={{ y: -3 }}
@@ -441,7 +462,7 @@ export default function Home() {
                   <span key={t} className="text-xs px-2.5 py-1 rounded-full border border-white/10 text-muted-foreground">{t}</span>
                 ))}
               </div>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </section>
@@ -450,10 +471,10 @@ export default function Home() {
       <section className="py-14 md:py-24 relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_30%_50%,oklch(0.70_0.24_272_/_0.07),transparent)] pointer-events-none" />
         <div className="container max-w-6xl mx-auto relative z-10">
-          <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-12">
-            <motion.p variants={fadeUp} className="text-primary text-sm font-semibold uppercase tracking-widest mb-3">Differentiation</motion.p>
-            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-bold tracking-tight mb-4">What Makes This Growth Approach Different</motion.h2>
-          </motion.div>
+          <m.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger} className="text-center mb-12">
+            <m.p variants={fadeUp} className="text-primary text-sm font-semibold uppercase tracking-widest mb-3">Differentiation</m.p>
+            <m.h2 variants={fadeUp} className="text-4xl md:text-5xl font-bold tracking-tight mb-4">What Makes This Growth Approach Different</m.h2>
+          </m.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
@@ -464,7 +485,7 @@ export default function Home() {
               { icon: Target, title: "Structured for Scalable Long-Term Growth", desc: "Every system is built as a digital asset — compounding in value over time, not dependent on short-term ad spend alone." },
               { icon: Zap, title: "Founder-Led, No Diluted Output", desc: "Utsa Das handles strategy and execution directly. No account managers, no junior handoffs, no diluted results." },
             ].map(({ icon: Icon, title, desc }, i) => (
-              <motion.div
+              <m.div
                 key={title}
                 className="glass-panel rounded-2xl p-7 border border-white/5 hover:border-primary/25 transition-all group"
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
@@ -473,7 +494,7 @@ export default function Home() {
                 <Icon className="w-8 h-8 text-primary mb-4" />
                 <h3 className="text-lg font-bold mb-2 tracking-tight">{title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{desc}</p>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -482,7 +503,7 @@ export default function Home() {
       {/* ── 7. WORK PHILOSOPHY ───────────────────────────────── */}
       <section className="py-14 md:py-20 relative">
         <div className="container max-w-5xl mx-auto relative z-10">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="glass-panel rounded-3xl p-8 md:p-14 border border-white/5 text-center"
           >
@@ -505,7 +526,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
@@ -515,7 +536,7 @@ export default function Home() {
       {/* ── 9. CTA ───────────────────────────────────────────── */}
       <section className="py-14 md:py-24 relative">
         <div className="container max-w-4xl mx-auto relative z-10">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="text-center glass-panel rounded-3xl p-8 md:p-16 border border-primary/15 relative overflow-hidden"
           >
@@ -541,7 +562,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </section>
     </Layout>

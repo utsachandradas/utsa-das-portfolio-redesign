@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
@@ -73,51 +73,51 @@ const Hero = ({
       <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
 
       {/* Floating Decorative Elements */}
-      <motion.div
+      <m.div
         className="absolute top-20 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl"
         animate={{ y: [0, 30, 0], x: [0, 20, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
-      <motion.div
+      <m.div
         className="absolute bottom-20 right-10 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl"
         animate={{ y: [0, -30, 0], x: [0, -20, 0] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       />
 
       {/* Content */}
-      <motion.div
+      <m.div
         className="container relative z-10 max-w-4xl text-center"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         {/* Badge */}
-        <motion.div
+        <m.div
           variants={itemVariants}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-accent/30 bg-accent/5 mb-6"
         >
           <div className="w-2 h-2 rounded-full bg-accent" />
           <span className="text-sm font-medium text-accent">{badge}</span>
-        </motion.div>
+        </m.div>
 
         {/* Headline */}
-        <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl font-bold font-['Space_Grotesk'] text-foreground mb-6 leading-tight">
+        <m.h1 variants={itemVariants} className="text-5xl md:text-7xl font-bold font-['Space_Grotesk'] text-foreground mb-6 leading-tight">
           {headline}
           <span className="block bg-gradient-to-r from-accent via-cyan-500 to-accent bg-clip-text text-transparent mt-2">
             {subheadline}
           </span>
-        </motion.h1>
+        </m.h1>
 
         {/* Description */}
-        <motion.p
+        <m.p
           variants={itemVariants}
           className="text-xl text-foreground/60 max-w-2xl mx-auto mb-8 leading-relaxed"
         >
           Helping founders and businesses achieve exceptional visibility and sustainable growth through strategic SEO, GEO optimization, and AI search expertise.
-        </motion.p>
+        </m.p>
 
         {/* CTA Buttons */}
-        <motion.div
+        <m.div
           variants={itemVariants}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
         >
@@ -139,10 +139,10 @@ const Hero = ({
               {secondaryCtaText}
             </Button>
           </Link>
-        </motion.div>
+        </m.div>
 
         {/* Trust Indicators */}
-        <motion.div
+        <m.div
           variants={itemVariants}
           className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-foreground/60 mb-12"
         >
@@ -152,17 +152,17 @@ const Hero = ({
               {indicator}
             </div>
           ))}
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
 
       {/* Scroll Indicator */}
-      <motion.div
+      <m.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
         <ChevronDown className="w-6 h-6 text-foreground/40" />
-      </motion.div>
+      </m.div>
     </section>
   );
 };

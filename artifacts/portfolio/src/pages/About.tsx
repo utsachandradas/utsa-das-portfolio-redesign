@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import { Helmet } from "react-helmet-async";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import HeroAvatar from "@/components/HeroAvatar";
 
@@ -41,7 +41,8 @@ export default function About() {
     "url": "https://utsadas.com",
     "sameAs": [
       "https://www.facebook.com/utsachandradasutsa",
-      "https://www.linkedin.com/in/utsa-das-3473a53a7"
+      "https://www.linkedin.com/in/utsa-das-3473a53a7",
+      "https://medium.com/@utsadas_growth_marketer"
     ]
   };
 
@@ -53,14 +54,37 @@ export default function About() {
           name="description"
           content="Utsa Das (Utsa Chandra Das) is a Growth Marketing Strategist in Bangladesh with 4+ years of experience since 2022. He builds scalable acquisition and conversion systems for e-commerce and B2B brands through paid ads, SEO, GEO, and CRO."
         />
+        <link rel="canonical" href="https://utsadas.com/about" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Utsa Das | Growth Marketing Strategist" />
+        <meta property="og:title" content="About Utsa Das — Growth Marketing Strategist in Bangladesh" />
+        <meta property="og:description" content="Utsa Das (Utsa Chandra Das) is a Growth Marketing Strategist in Bangladesh with 4+ years of experience since 2022. He builds scalable acquisition and conversion systems for e-commerce and B2B brands through paid ads, SEO, GEO, and CRO." />
+        <meta property="og:url" content="https://utsadas.com/about" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content="https://utsadas.com/opengraph.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@utsadas" />
+        <meta name="twitter:title" content="About Utsa Das — Growth Marketing Strategist in Bangladesh" />
+        <meta name="twitter:description" content="Utsa Das is a Founder and Growth Marketing Strategist in Bangladesh. 4+ years building scalable paid ads, SEO, GEO, and CRO systems for e-commerce and B2B brands." />
+        <meta name="twitter:image" content="https://utsadas.com/opengraph.jpg" />
         <meta name="keywords" content="Utsa Das, Utsa Chandra Das, Growth Marketing Strategist Bangladesh, about Utsa Das, performance marketing Bangladesh" />
         <script type="application/ld+json">{JSON.stringify(schemaJSONLD)}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://utsadas.com/" },
+            { "@type": "ListItem", "position": 2, "name": "About", "item": "https://utsadas.com/about" }
+          ]
+        })}</script>
       </Helmet>
 
       <section className="py-24 pt-32 relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(var(--primary),0.05)_0,transparent_50%)] pointer-events-none" />
         <div className="container max-w-5xl mx-auto relative z-10">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -81,13 +105,13 @@ export default function About() {
             <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto">
               Utsa Chandra Das is a Bangladesh-based Founder and Growth Marketing Strategist building end-to-end acquisition and conversion systems for e-commerce and B2B brands.
             </p>
-          </motion.div>
+          </m.div>
 
           <div className="mb-14 md:mb-24">
             <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-start">
 
               {/* Left — Photo card */}
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, x: -24 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -144,10 +168,10 @@ export default function About() {
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </m.div>
 
               {/* Right — Bio & Core Principles */}
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, x: 24 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -189,7 +213,7 @@ export default function About() {
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </m.div>
             </div>{/* end grid */}
           </div>{/* end mb-14 */}
 
@@ -197,7 +221,7 @@ export default function About() {
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center tracking-tight">The Growth Journey of Utsa Das</h2>
             <div className="max-w-3xl mx-auto space-y-8">
               {timeline.map((item, index) => (
-                <motion.div
+                <m.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -217,7 +241,7 @@ export default function About() {
                     <h3 className="text-2xl font-bold text-foreground mb-2">{item.title}</h3>
                     <p className="text-muted-foreground font-light">{item.description}</p>
                   </div>
-                </motion.div>
+                </m.div>
               ))}
             </div>
           </div>

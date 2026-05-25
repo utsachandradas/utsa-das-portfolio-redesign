@@ -1,6 +1,6 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { SiWhatsapp } from "react-icons/si";
+import { SiWhatsapp } from "@/components/BrandIcons";
 import { X } from "lucide-react";
 import { useScroll } from "@/contexts/ScrollContext";
 
@@ -14,7 +14,7 @@ export default function WhatsAppFAB() {
   return (
     <AnimatePresence>
       {showWhatsAppFAB && (
-        <motion.div
+        <m.div
           className="fixed bottom-6 right-4 z-50 sm:hidden flex items-center gap-2"
           initial={{ opacity: 0, y: 24, scale: 0.85 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -24,7 +24,7 @@ export default function WhatsAppFAB() {
         >
           <AnimatePresence>
             {showLabel && (
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, x: 12, scale: 0.92 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 exit={{ opacity: 0, x: 12, scale: 0.92 }}
@@ -43,11 +43,11 @@ export default function WhatsAppFAB() {
                 >
                   <X size={14} />
                 </button>
-              </motion.div>
+              </m.div>
             )}
           </AnimatePresence>
 
-          <motion.a
+          <m.a
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noreferrer"
@@ -59,8 +59,8 @@ export default function WhatsAppFAB() {
             onClick={() => setShowLabel(false)}
           >
             <SiWhatsapp className="w-7 h-7 text-white" />
-          </motion.a>
-        </motion.div>
+          </m.a>
+        </m.div>
       )}
     </AnimatePresence>
   );

@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import WhatsAppFAB from "./WhatsAppFAB";
 import ScrollToTop from "./ScrollToTop";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 /**
  * Layout Component
@@ -21,14 +21,14 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       <Navbar />
-      <motion.main
+      <m.main
         className="flex-1"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.4 }}
       >
         {children}
-      </motion.main>
+      </m.main>
       <Footer />
       <WhatsAppFAB />
       <ScrollToTop />

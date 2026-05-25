@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import { Helmet } from "react-helmet-async";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowRight, Clock, Tag } from "lucide-react";
 
 const WHATSAPP_LINK = "https://wa.me/8801861393416?text=Hi%20Utsa%2C%20I%27d%20like%20to%20discuss%20a%20project";
@@ -216,7 +216,7 @@ export default function Insights() {
         <div className="container max-w-6xl mx-auto relative z-10 px-4 sm:px-6">
 
           {/* Header */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -232,12 +232,12 @@ export default function Insights() {
             <p className="text-lg md:text-xl text-muted-foreground font-light max-w-2xl mx-auto">
               In-depth perspectives on modern search strategy, AI visibility, and the future of digital discovery — written by a practitioner, not an algorithm.
             </p>
-          </motion.div>
+          </m.div>
 
           {/* Article grid */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 mb-16">
             {articles.map((article, i) => (
-              <motion.article
+              <m.article
                 key={article.slug}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -288,7 +288,7 @@ export default function Insights() {
                     <ArrowRight className="w-3.5 h-3.5" />
                   </a>
                 </div>
-              </motion.article>
+              </m.article>
             ))}
           </div>
 

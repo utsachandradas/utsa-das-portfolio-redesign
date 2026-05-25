@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import { Helmet } from "react-helmet-async";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Clock, Tag, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { blogPosts, categoryColors } from "@/data/blogPosts";
@@ -24,7 +24,7 @@ export default function Blog() {
         <div className="container max-w-6xl mx-auto relative z-10 px-4 sm:px-6">
 
           {/* Header */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -38,10 +38,10 @@ export default function Blog() {
             <p className="text-base md:text-lg text-muted-foreground font-light max-w-xl mx-auto">
               In-depth writing on modern search strategy, AI visibility, and the future of digital discovery — by a practitioner, not an algorithm.
             </p>
-          </motion.div>
+          </m.div>
 
           {/* Featured post */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.1 }}
@@ -76,10 +76,10 @@ export default function Blog() {
                 </div>
               </div>
             </Link>
-          </motion.div>
+          </m.div>
 
           {/* Grid */}
-          <motion.div
+          <m.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
@@ -87,7 +87,7 @@ export default function Blog() {
             className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 mb-16"
           >
             {rest.map((post) => (
-              <motion.div key={post.slug} variants={fadeUp} whileHover={{ y: -3 }}>
+              <m.div key={post.slug} variants={fadeUp} whileHover={{ y: -3 }}>
                 <Link href={`/blog/${post.slug}`}>
                   <div className="glass-panel rounded-xl border border-white/5 hover:border-primary/30 transition-all duration-300 group overflow-hidden flex flex-col h-full cursor-pointer p-5 md:p-6">
                     <div className="flex items-center gap-2 mb-3 flex-wrap">
@@ -114,9 +114,9 @@ export default function Blog() {
                     </span>
                   </div>
                 </Link>
-              </motion.div>
+              </m.div>
             ))}
-          </motion.div>
+          </m.div>
 
           {/* CTA */}
           <div className="text-center glass-panel rounded-2xl p-7 md:p-10 border border-primary/20 relative overflow-hidden">

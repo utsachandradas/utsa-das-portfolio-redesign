@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Home, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -16,25 +16,25 @@ const NotFound = () => {
   return (
     <div className="min-h-screen bg-background text-foreground flex items-center justify-center relative overflow-hidden">
       {/* Floating Decorative Elements */}
-      <motion.div
+      <m.div
         className="absolute top-20 left-10 w-72 h-72 bg-accent/5 rounded-full blur-3xl"
         animate={{ y: [0, 30, 0], x: [0, 20, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
-      <motion.div
+      <m.div
         className="absolute bottom-20 right-10 w-72 h-72 bg-cyan-500/5 rounded-full blur-3xl"
         animate={{ y: [0, -30, 0], x: [0, -20, 0] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       />
 
       {/* Content */}
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="container relative z-10 max-w-2xl text-center"
       >
-        <motion.div
+        <m.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.1 }}
@@ -43,9 +43,9 @@ const NotFound = () => {
           <div className="text-9xl md:text-[10rem] font-bold font-['Space_Grotesk'] bg-gradient-to-r from-accent via-cyan-500 to-accent bg-clip-text text-transparent">
             404
           </div>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -57,9 +57,9 @@ const NotFound = () => {
           <p className="text-lg text-foreground/60">
             Sorry, the page you're looking for doesn't exist or has been moved.
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -74,7 +74,7 @@ const NotFound = () => {
               Go Home
             </Button>
           </Link>
-          <motion.button
+          <m.button
             onClick={() => window.history.back()}
             className="px-8 py-3 rounded-lg border border-foreground/20 hover:border-accent hover:text-accent text-foreground font-semibold transition-all flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
@@ -82,11 +82,11 @@ const NotFound = () => {
           >
             <ArrowLeft className="w-4 h-4" />
             Go Back
-          </motion.button>
-        </motion.div>
+          </m.button>
+        </m.div>
 
         {/* Helpful Links */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -120,8 +120,8 @@ const NotFound = () => {
               </a>
             </Link>
           </div>
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
     </div>
   );
 };

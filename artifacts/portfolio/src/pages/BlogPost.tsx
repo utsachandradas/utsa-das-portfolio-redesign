@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import { Helmet } from "react-helmet-async";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowLeft, Clock, Tag, ArrowRight } from "lucide-react";
 import { Link, useRoute } from "wouter";
 import { blogPosts, categoryColors, ContentBlock } from "@/data/blogPosts";
@@ -111,16 +111,16 @@ export default function BlogPost() {
         <div className="container max-w-3xl mx-auto relative z-10 px-4 sm:px-6">
 
           {/* Back nav */}
-          <motion.div initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.35 }} className="mb-8">
+          <m.div initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.35 }} className="mb-8">
             <Link href="/blog">
               <span className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer font-medium">
                 <ArrowLeft className="w-4 h-4" /> Back to Blog
               </span>
             </Link>
-          </motion.div>
+          </m.div>
 
           {/* Post header */}
-          <motion.header
+          <m.header
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -160,20 +160,20 @@ export default function BlogPost() {
                 ))}
               </div>
             </div>
-          </motion.header>
+          </m.header>
 
           {/* Content */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.1 }}
             className="prose-custom mb-12"
           >
             {post.content.map((block, i) => renderBlock(block, i))}
-          </motion.div>
+          </m.div>
 
           {/* WhatsApp CTA inline */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -190,7 +190,7 @@ export default function BlogPost() {
                 Chat on WhatsApp <ArrowRight className="w-4 h-4" />
               </a>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Prev / Next navigation */}
           {(prev || next) && (

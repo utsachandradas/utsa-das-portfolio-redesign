@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import { Helmet } from "react-helmet-async";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowRight, FileText, Sparkles, ExternalLink } from "lucide-react";
 
 const WHATSAPP_LINK = "https://wa.me/8801861393416?text=Hi%20Utsa%2C%20I%27d%20like%20to%20discuss%20a%20project";
@@ -69,7 +69,7 @@ export default function CaseStudies() {
         <div className="container max-w-5xl mx-auto relative z-10 px-4 sm:px-6">
 
           {/* Header */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -83,14 +83,14 @@ export default function CaseStudies() {
             <p className="text-lg md:text-xl text-muted-foreground font-light max-w-2xl mx-auto">
               Real SEO strategies. Measurable outcomes. Two Bangladesh brands, built for search.
             </p>
-          </motion.div>
+          </m.div>
 
           {/* Case study cards */}
           <div className="space-y-10 mb-20">
             {cases.map((cs, i) => {
               const Icon = cs.icon;
               return (
-                <motion.div
+                <m.div
                   key={i}
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -164,7 +164,7 @@ export default function CaseStudies() {
                       ))}
                     </div>
                   </div>
-                </motion.div>
+                </m.div>
               );
             })}
           </div>

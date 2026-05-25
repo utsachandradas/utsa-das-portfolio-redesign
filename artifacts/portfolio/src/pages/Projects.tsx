@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import { Helmet } from "react-helmet-async";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 const WHATSAPP_LINK = "https://wa.me/8801861393416?text=Hi%20Utsa%2C%20I%27d%20like%20to%20discuss%20a%20project";
@@ -68,13 +68,49 @@ export default function Projects() {
       <Helmet>
         <title>Growth Marketing Projects | Real Results by Utsa Das | Paid Ads, SEO, GEO, CRO</title>
         <meta name="description" content="Featured growth marketing project work by Utsa Das (Utsa Chandra Das) — including paid advertising, e-commerce organic growth, AI citation programs, SEO, and CRO wins with measurable revenue outcomes." />
+        <link rel="canonical" href="https://utsadas.com/projects" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Utsa Das | Growth Marketing Strategist" />
+        <meta property="og:title" content="Growth Marketing Projects | Real Results by Utsa Das" />
+        <meta property="og:description" content="Featured growth marketing projects by Utsa Das — e-commerce organic growth (+82% revenue), AI citation programs, enterprise technical SEO, SaaS lead gen (+380%), and more. Measurable outcomes only." />
+        <meta property="og:url" content="https://utsadas.com/projects" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content="https://utsadas.com/opengraph.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@utsadas" />
+        <meta name="twitter:title" content="Growth Marketing Projects | Real Results by Utsa Das" />
+        <meta name="twitter:description" content="Real growth marketing results by Utsa Das — SEO, GEO, paid ads, and CRO projects with measurable revenue outcomes." />
+        <meta name="twitter:image" content="https://utsadas.com/opengraph.jpg" />
         <meta name="keywords" content="Utsa Das projects, Utsa Chandra Das portfolio, growth marketing results Bangladesh, SEO GEO projects Bangladesh" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Growth Marketing Projects by Utsa Das",
+          "url": "https://utsadas.com/projects",
+          "numberOfItems": projects.length,
+          "itemListElement": projects.map((p, i) => ({
+            "@type": "ListItem",
+            "position": i + 1,
+            "name": p.title,
+            "description": p.description
+          }))
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://utsadas.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://utsadas.com/projects" }
+          ]
+        })}</script>
       </Helmet>
 
       <section className="py-24 pt-32 relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(var(--primary),0.05)_0,transparent_50%)] pointer-events-none" />
         <div className="container max-w-6xl mx-auto relative z-10">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -87,11 +123,11 @@ export default function Projects() {
             <p className="text-xl text-muted-foreground font-light max-w-2xl mx-auto">
               Growth marketing projects across paid advertising, e-commerce SEO, GEO optimization, and AI search visibility — each with a clear problem, a clear system, and a measurable revenue outcome.
             </p>
-          </motion.div>
+          </m.div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-14 md:mb-24">
             {projects.map((project, index) => (
-              <motion.div
+              <m.div
                 key={project.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -124,7 +160,7 @@ export default function Projects() {
                     {project.metricLabel}
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
 
